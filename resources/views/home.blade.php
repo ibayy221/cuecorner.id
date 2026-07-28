@@ -8,9 +8,9 @@
 <section id="hero" class="relative min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex flex-col justify-end lg:flex-row lg:items-center overflow-hidden pt-4 pb-4 sm:pb-6 lg:py-12 px-4 sm:px-6 lg:px-12 bg-black">
     <!-- Hero Background Image - Focus CUE CORNER Illuminated Wall Sign & Ceiling Light Box at Top on Mobile -->
     <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[55%_22%] sm:object-[25%_center] opacity-95 sm:opacity-90">
+        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[18%_25%] sm:object-[25%_center] opacity-95 sm:opacity-90">
         <!-- Subtle Gradient Overlays for High Contrast & Visual Depth -->
-        <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-l from-black/85 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-l from-black/80 via-black/40 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
     </div>
 

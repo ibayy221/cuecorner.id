@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+  --color-primary: #09090b;
+  --color-secondary: #121215;
+  --color-border-accent: #3f3f46;
+  --color-text-muted: #a1a1aa;
+  --color-accent-gold: #c7a061;
+  --color-accent-glow: #fdce7e;
+  --color-accent-soft: #e4e4e7;
+  --color-text-light: #f4f4f5;
+
+  --font-serif: 'Outfit', 'Inter', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #180d05;
+}
+::-webkit-scrollbar-thumb {
+  background: #644a30;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c7a061;
+}
+
+/* Custom Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fdce7e 0%, #c7a061 50%, #917b59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(253, 206, 126, 0.35);
+}
+
+.gold-glow-subtle {
+  box-shadow: 0 0 15px rgba(199, 160, 97, 0.2);
+}
+
+.card-luxury {
+  background: linear-gradient(180deg, rgba(18, 18, 22, 0.9) 0%, rgba(9, 9, 11, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  border-color: rgba(253, 206, 126, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(253, 206, 126, 0.15);
+}
+
+/* Lenis Smooth Scroll Fixes */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

@@ -5,31 +5,31 @@
 <!-- ==========================================
      SECTION 1: HERO SECTION (First Impression)
      ========================================== -->
-<section id="hero" class="relative min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-8 sm:py-12 px-4 sm:px-6 lg:px-12 bg-black">
-    <!-- Hero Background Image - Highlight Left Side (CUE CORNER Illuminated Wall Sign) -->
+<section id="hero" class="relative min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden pt-12 sm:pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-12 bg-black">
+    <!-- Hero Background Image - Clearly Visible Lounge & Illuminated Wall Sign on Mobile -->
     <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[center_top] sm:object-[25%_center] opacity-80 sm:opacity-90">
-        <!-- Horizontal Gradient: Pure Black on Right for card, crystal clear on Left for CUE CORNER wall sign -->
-        <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-l from-black via-black/90 via-50% to-black/30 sm:to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/50"></div>
+        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[center_15%] sm:object-[25%_center] opacity-95 sm:opacity-90">
+        <!-- Soft Gradient Overlays: Retains crystal clear background visibility while keeping text highly legible -->
+        <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-l from-black/40 via-black/65 sm:via-black/85 via-60% to-black/90 sm:to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30"></div>
     </div>
 
     <!-- Subtle Ambient Glow Behind Card -->
     <div class="hero-parallax-bg absolute inset-0 pointer-events-none z-0">
-        <div class="absolute bottom-10 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-accent-gold/15 rounded-full blur-[90px] sm:blur-[120px]"></div>
+        <div class="absolute bottom-10 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-accent-gold/20 rounded-full blur-[90px] sm:blur-[120px]"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto w-full">
+    <div class="relative z-10 max-w-7xl mx-auto w-full mt-10 sm:mt-0">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             <!-- Left Side: Completely Clear Window (Exposes CUE CORNER wall sign & pool table) -->
             <div class="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none"></div>
 
-            <!-- Right Side: Sleek Black Glass Card -->
-            <div class="lg:col-span-6 xl:col-span-6 text-left bg-black/85 backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl shadow-black">
+            <!-- Right Side: Sleek Semi-Transparent Black Glass Card (Background Visible Behind & Around) -->
+            <div class="lg:col-span-6 xl:col-span-6 text-left bg-black/75 sm:bg-black/85 backdrop-blur-xl sm:backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/20 sm:border-white/10 shadow-2xl shadow-black">
                 
                 <!-- Heritage Badge -->
-                <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">
+                <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/15 mb-3 sm:mb-4">
                     <span class="w-2 h-2 rounded-full bg-accent-glow animate-ping"></span>
                     <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Official Distributor • Est. 2024') }}</span>
                 </div>
@@ -41,27 +41,27 @@
                 </h1>
 
                 <!-- Subheadline -->
-                <p class="gsap-hero-anim text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed mb-5 sm:mb-6 max-w-xl">
+                <p class="gsap-hero-anim text-xs sm:text-sm text-zinc-200 font-normal leading-relaxed mb-5 sm:mb-6 max-w-xl">
                     {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, supported by Triple Sixty media.') }}
                 </p>
 
                 <!-- Trust Badges Bar -->
-                <div class="gsap-hero-anim border-t border-white/10 pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+                <div class="gsap-hero-anim border-t border-white/15 pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('100%') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Official Warranty') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-300 uppercase tracking-wider">{{ __('Official Warranty') }}</span>
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Official') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Distributor in ID') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-300 uppercase tracking-wider">{{ __('Distributor in ID') }}</span>
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('10M+') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media Reach') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-300 uppercase tracking-wider">{{ __('Media Reach') }}</span>
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Nationwide') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Reseller Network') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-300 uppercase tracking-wider">{{ __('Reseller Network') }}</span>
                     </div>
                 </div>
 

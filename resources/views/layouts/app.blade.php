@@ -49,9 +49,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-20">
                 
-                <!-- Logo Image -->
+                <!-- Logo Image - Enlarged for Mobile View -->
                 <a href="#hero" class="flex items-center group py-1">
-                    <img src="{{ asset('Asset/Logo/Logo cue corner white.png') }}" alt="Cue Corner Logo" class="h-9 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    <img src="{{ asset('Asset/Logo/Logo cue corner white.png') }}" alt="Cue Corner Logo" class="h-12 sm:h-16 w-auto object-contain scale-[1.35] sm:scale-100 origin-left transition-transform duration-300">
                 </a>
 
                 <!-- Desktop Nav Links -->

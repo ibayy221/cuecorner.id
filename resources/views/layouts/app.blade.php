@@ -29,9 +29,6 @@
     <!-- GSAP & Plugins CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <!-- Lenis Smooth Scroll CDN -->
-    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 
     <!-- Chart.js CDN for Interactive Analytics Charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

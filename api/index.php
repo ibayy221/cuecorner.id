@@ -2,6 +2,13 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
+
+// Force HTTPS protocol detection behind Vercel reverse proxy
+$_SERVER['HTTPS'] = 'on';
+$host = $_SERVER['HTTP_HOST'] ?? 'cuecorner-id.vercel.app';
+putenv("APP_URL=https://{$host}");
+putenv("ASSET_URL=https://{$host}");
 
 // Create required directories in /tmp for Vercel serverless environment
 $dirs = [
@@ -16,11 +23,6 @@ foreach ($dirs as $dir) {
         @mkdir($dir, 0755, true);
     }
 }
-
-// Dynamically set APP_URL based on request protocol & host
-$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-putenv("APP_URL={$protocol}://{$host}");
 
 // Override environment variables for Vercel Serverless environment
 putenv('LOG_CHANNEL=stderr');
@@ -44,5 +46,8 @@ $app = require_once __DIR__ . '/../bootstrap/app.php';
 
 // Point Laravel storage directory to /tmp/storage (writable in Vercel serverless)
 $app->useStoragePath('/tmp/storage');
+
+// Force HTTPS scheme for all generated URLs (prevents Mixed Content blocking)
+URL::forceScheme('https');
 
 $app->handleRequest(Request::capture());

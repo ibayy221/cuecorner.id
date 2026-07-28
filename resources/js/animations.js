@@ -12,9 +12,9 @@ export function initAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
     // ========================================================
-    // 1. Lenis Smooth Scroll Setup (if available)
+    // 1. Lenis Smooth Scroll Setup (Desktop Only)
     // ========================================================
-    if (typeof Lenis !== 'undefined') {
+    if (typeof Lenis !== 'undefined' && window.innerWidth > 768 && !('ontouchstart' in window)) {
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

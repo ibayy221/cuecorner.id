@@ -5,13 +5,13 @@
 <!-- ==========================================
      SECTION 1: HERO SECTION (First Impression)
      ========================================== -->
-<section id="hero" class="relative min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-8 sm:py-12 px-4 sm:px-6 lg:px-12 bg-black">
-    <!-- Hero Background Image - Highlight Left Side (CUE CORNER Illuminated Wall Sign) -->
+<section id="hero" class="relative min-h-screen lg:min-h-[calc(100vh-5rem)] flex items-start lg:items-center overflow-hidden pt-6 pb-12 sm:py-12 px-4 sm:px-6 lg:px-12 bg-black">
+    <!-- Hero Background Image - Focus CUE CORNER Illuminated Wall Sign & Ceiling Light Box at Top on Mobile -->
     <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[55%_35%] sm:object-[25%_center] opacity-95 sm:opacity-90">
-        <!-- Horizontal & Vertical Gradient: Crisp clarity on CUE CORNER wall sign & pool table -->
-        <div class="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-l from-black/90 via-black/60 to-black/20 sm:to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[55%_18%] sm:object-[25%_center] opacity-95 sm:opacity-90">
+        <!-- Subtle Gradient Overlays for High Contrast & Visual Depth -->
+        <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-l from-black/90 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
     </div>
 
     <!-- Subtle Ambient Glow Behind Card -->
@@ -20,23 +20,13 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto w-full">
-        <!-- Mobile Dedicated CUE CORNER Wall Sign & Lounge Showcase Window (100% Un-obscured) -->
-        <div class="block lg:hidden w-full h-60 sm:h-72 rounded-2xl overflow-hidden relative border border-white/20 shadow-2xl mb-4 bg-zinc-950">
-            <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[55%_35%]">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
-            <div class="absolute bottom-3 left-3 bg-black/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-[10px] text-accent-gold font-bold uppercase tracking-widest flex items-center gap-1.5 shadow-lg">
-                <span class="w-2 h-2 rounded-full bg-accent-glow animate-ping"></span>
-                <span>Cue Corner Flagship Lounge</span>
-            </div>
-        </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             <!-- Left Side: Completely Clear Window on Desktop -->
             <div class="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none"></div>
 
-            <!-- Right Side: Sleek Black Glass Card -->
-            <div class="lg:col-span-6 xl:col-span-6 text-left bg-black/85 backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl shadow-black">
+            <!-- Right Side: Sleek Black Glass Card (Shifted Down on Mobile to Expose CUE CORNER Wall Sign) -->
+            <div class="mt-[220px] sm:mt-[240px] lg:mt-0 lg:col-span-6 xl:col-span-6 text-left bg-black/85 backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl shadow-black">
                 
                 <!-- Heritage Badge -->
                 <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">

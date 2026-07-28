@@ -5,12 +5,12 @@
 <!-- ==========================================
      SECTION 1: HERO SECTION (First Impression)
      ========================================== -->
-<section id="hero" class="relative min-h-screen lg:min-h-[calc(100vh-5rem)] flex items-start lg:items-center overflow-hidden pt-6 pb-12 sm:py-12 px-4 sm:px-6 lg:px-12 bg-black">
-    <!-- Hero Background Image - Focus CUE CORNER Illuminated Wall Sign & Ceiling Light Box at Top on Mobile -->
+<section id="hero" class="relative min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-6 sm:py-12 px-4 sm:px-6 lg:px-12 bg-black">
+    <!-- Hero Background Image - Centered CUE CORNER Illuminated Wall Sign & Ceiling Light Box -->
     <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[55%_10%] sm:object-[25%_center] opacity-95 sm:opacity-90">
+        <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[25%_25%] sm:object-[25%_center] opacity-90">
         <!-- Subtle Gradient Overlays for High Contrast & Visual Depth -->
-        <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-l from-black/90 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-l from-black/85 via-black/50 to-black/20 sm:to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
     </div>
 
@@ -25,8 +25,8 @@
             <!-- Left Side: Completely Clear Window on Desktop -->
             <div class="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none"></div>
 
-            <!-- Right Side: Sleek Black Glass Card (Shifted Down 360px on Mobile to Fully Expose CUE CORNER Wall Sign) -->
-            <div class="mt-[360px] sm:mt-[380px] lg:mt-0 lg:col-span-6 xl:col-span-6 text-left bg-black/85 backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl shadow-black">
+            <!-- Right Side: Sleek Black Glass Card (Balanced Mobile Positioning) -->
+            <div class="mt-20 sm:mt-28 lg:mt-0 lg:col-span-6 xl:col-span-6 text-left bg-black/80 sm:bg-black/85 backdrop-blur-xl sm:backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl shadow-black">
                 
                 <!-- Heritage Badge -->
                 <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">

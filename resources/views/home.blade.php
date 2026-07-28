@@ -229,9 +229,9 @@
             <!-- Executive 1: Steven (CEO) -->
             <div class="card-luxury p-6 sm:p-8 rounded-2xl relative group gsap-reveal">
                 <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
-                    <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-accent-gold/50 shadow-lg group-hover:border-accent-glow transition-all duration-300 flex-shrink-0 bg-primary/80 flex items-center justify-center">
-                        <i class="fa-solid fa-user-gear text-4xl sm:text-5xl text-accent-gold/70 group-hover:scale-110 transition-transform duration-300"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+                    <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-accent-gold/50 shadow-lg group-hover:border-accent-glow transition-all duration-300 flex-shrink-0 bg-black">
+                        <img src="{{ asset('Asset/Image/Profile/ko ssteven.png') }}" alt="Steven - CEO Cue Corner" class="w-full h-full object-cover object-top group-hover:scale-108 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     </div>
                     
                     <div class="text-center sm:text-left flex-1">

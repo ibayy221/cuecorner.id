@@ -20,13 +20,23 @@
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto w-full">
+        <!-- Mobile Dedicated CUE CORNER Wall Sign & Lounge Showcase Window (100% Un-obscured) -->
+        <div class="block lg:hidden w-full h-60 sm:h-72 rounded-2xl overflow-hidden relative border border-white/20 shadow-2xl mb-4 bg-zinc-950">
+            <img src="{{ asset('Asset/Image/background/Background cuecorner.png') }}" alt="Cue Corner Lounge" class="w-full h-full object-cover object-[55%_35%]">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+            <div class="absolute bottom-3 left-3 bg-black/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-[10px] text-accent-gold font-bold uppercase tracking-widest flex items-center gap-1.5 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-accent-glow animate-ping"></span>
+                <span>Cue Corner Flagship Lounge</span>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
-            <!-- Left Side: Completely Clear Window (Exposes CUE CORNER wall sign & pool table) -->
+            <!-- Left Side: Completely Clear Window on Desktop -->
             <div class="hidden lg:block lg:col-span-6 xl:col-span-6 pointer-events-none"></div>
 
             <!-- Right Side: Sleek Black Glass Card -->
-            <div class="lg:col-span-6 xl:col-span-6 text-left bg-black/75 sm:bg-black/85 backdrop-blur-xl sm:backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl shadow-black">
+            <div class="lg:col-span-6 xl:col-span-6 text-left bg-black/85 backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/15 shadow-2xl shadow-black">
                 
                 <!-- Heritage Badge -->
                 <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">

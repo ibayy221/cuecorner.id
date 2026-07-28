@@ -17,6 +17,11 @@ foreach ($dirs as $dir) {
     }
 }
 
+// Dynamically set APP_URL based on request protocol & host
+$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+putenv("APP_URL={$protocol}://{$host}");
+
 // Override environment variables for Vercel Serverless environment
 putenv('LOG_CHANNEL=stderr');
 putenv('SESSION_DRIVER=cookie');

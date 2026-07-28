@@ -47,11 +47,11 @@
     <!-- Luxury Navigation Bar (Sleek Dark Black Navbar) -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-xl border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 sm:h-20">
+            <div class="flex items-center justify-between h-20">
                 
-                <!-- Logo Image - Enlarged for Mobile View -->
+                <!-- Logo Image - Enlarged for Mobile & Desktop -->
                 <a href="#hero" class="flex items-center group py-1">
-                    <img src="{{ asset('Asset/Logo/Logo cue corner white.png') }}" alt="Cue Corner Logo" class="h-12 sm:h-16 w-auto object-contain scale-[1.35] sm:scale-100 origin-left transition-transform duration-300">
+                    <img src="{{ asset('Asset/Logo/Logo cue corner white.png') }}" alt="Cue Corner Logo" class="h-12 sm:h-16 w-auto object-contain scale-[1.3] origin-left transition-transform duration-300 group-hover:scale-[1.38]">
                 </a>
 
                 <!-- Desktop Nav Links -->
@@ -74,14 +74,14 @@
                 </div>
 
                 <!-- Mobile Menu Button & Quick Lang Switch -->
-                <div class="flex items-center gap-2.5 lg:hidden">
+                <div class="flex items-center gap-3 lg:hidden">
                     <div class="inline-flex items-center p-0.5 rounded-full bg-zinc-900 border border-white/10 text-[11px] font-semibold">
                         <a href="{{ route('lang.switch', 'id') }}" class="px-2 py-0.5 rounded-full transition-colors {{ app()->getLocale() == 'id' ? 'bg-accent-gold text-black font-bold' : 'text-zinc-400' }}">ID</a>
                         <a href="{{ route('lang.switch', 'en') }}" class="px-2 py-0.5 rounded-full transition-colors {{ app()->getLocale() == 'en' ? 'bg-accent-gold text-black font-bold' : 'text-zinc-400' }}">EN</a>
                     </div>
 
-                    <button id="mobile-menu-btn" type="button" class="w-10 h-10 rounded-xl bg-zinc-900/90 border border-white/10 text-accent-gold flex items-center justify-center focus:outline-none active:scale-95 transition-transform" aria-label="Toggle Navigation">
-                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" type="button" class="w-11 h-11 rounded-xl bg-zinc-900/90 border border-white/10 text-accent-gold flex items-center justify-center focus:outline-none active:scale-95 transition-transform" aria-label="Toggle Navigation">
+                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
@@ -90,36 +90,36 @@
         <!-- Mobile Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-black/95 border-b border-white/10 backdrop-blur-2xl px-4 pt-3 pb-6 transition-all duration-300 shadow-2xl">
             <div class="flex flex-col space-y-1">
-                <a href="#about" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-xl text-sm font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                <a href="#about" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('About Us') }}</span>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
-                <a href="#leadership" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-xl text-sm font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                <a href="#leadership" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('Leadership') }}</span>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
-                <a href="#portfolio" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-xl text-sm font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                <a href="#portfolio" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('Brands') }}</span>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
-                <a href="#media" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-xl text-sm font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                <a href="#media" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('Media Powerhouse') }}</span>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
-                <a href="#sales-network" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-xl text-sm font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                <a href="#sales-network" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('Sales Network') }}</span>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
-                <a href="#ambassadors" class="mobile-nav-link flex items-center justify-between px-3 py-3 rounded-xl text-sm font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                <a href="#ambassadors" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('Ambassadors') }}</span>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Main Content Injection -->
-    <main class="relative z-10 pt-16 sm:pt-20">
+    <main class="relative z-10 pt-20">
         @yield('content')
     </main>
 
@@ -136,17 +136,17 @@
                     const isHidden = menu.classList.contains('hidden');
                     if (isHidden) {
                         menu.classList.remove('hidden');
-                        if (icon) icon.className = "fa-solid fa-xmark text-xl";
+                        if (icon) icon.className = "fa-solid fa-xmark text-2xl";
                     } else {
                         menu.classList.add('hidden');
-                        if (icon) icon.className = "fa-solid fa-bars text-xl";
+                        if (icon) icon.className = "fa-solid fa-bars text-2xl";
                     }
                 });
 
                 links.forEach(link => {
                     link.addEventListener('click', () => {
                         menu.classList.add('hidden');
-                        if (icon) icon.className = "fa-solid fa-bars text-xl";
+                        if (icon) icon.className = "fa-solid fa-bars text-2xl";
                     });
                 });
             }

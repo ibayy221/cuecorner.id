@@ -2,10 +2,12 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
 
-// Force HTTPS protocol detection behind Vercel reverse proxy
+// Force HTTPS environment superglobals behind Vercel reverse proxy
 $_SERVER['HTTPS'] = 'on';
+$_SERVER['SERVER_PORT'] = 443;
+$_SERVER['HTTP_X_FORWARDED_PROTO'] = 'https';
+
 $host = $_SERVER['HTTP_HOST'] ?? 'cuecorner-id.vercel.app';
 putenv("APP_URL=https://{$host}");
 putenv("ASSET_URL=https://{$host}");
@@ -46,8 +48,5 @@ $app = require_once __DIR__ . '/../bootstrap/app.php';
 
 // Point Laravel storage directory to /tmp/storage (writable in Vercel serverless)
 $app->useStoragePath('/tmp/storage');
-
-// Force HTTPS scheme for all generated URLs (prevents Mixed Content blocking)
-URL::forceScheme('https');
 
 $app->handleRequest(Request::capture());

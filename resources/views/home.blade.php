@@ -99,12 +99,13 @@
                         <span class="text-[11px] sm:text-xs text-text-muted uppercase tracking-wider">{{ __('Jakarta, Indonesia') }}</span>
                     </div>
                 </div>
-                <p class="text-xs sm:text-sm text-text-light/90 leading-relaxed mb-3 sm:mb-4">
-                    {{ __('Founded with a passion for cue sports precision, Cue Corner evolved from a retail operation in 2024 into an official wholesale distributor for global billiard brands in Indonesia.') }}
+                <p id="about-story-text" class="text-xs sm:text-sm text-text-light/90 leading-relaxed mb-1 sm:mb-4 line-clamp-2 sm:line-clamp-none transition-all duration-300">
+                    {{ __('Founded with a passion for cue sports precision, Cue Corner evolved from a retail operation in 2024 into an official wholesale distributor for global billiard brands in Indonesia.') }} {{ __('We connect global manufacturers with the Indonesian billiard community, offering authentic manufacturer warranties and active marketing support.') }}
                 </p>
-                <p class="text-xs sm:text-sm text-text-muted leading-relaxed">
-                    {{ __('We connect global manufacturers with the Indonesian billiard community, offering authentic manufacturer warranties and active marketing support.') }}
-                </p>
+                <button onclick="toggleMobileText('about-story-text', this)" class="inline-flex sm:hidden items-center gap-1 text-[11px] font-bold text-accent-gold hover:text-accent-glow mb-4">
+                    <span>{{ __('Baca Selengkapnya') }}</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+                </button>
             </div>
 
             <!-- Vision & Mission Tabs Container -->
@@ -241,9 +242,13 @@
                         <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1">Steven</h4>
                         <p class="text-[11px] sm:text-xs text-accent-soft mb-3 sm:mb-4">{{ __('Head of Corporate Vision, Brand Positioning & Media Ecosystem') }}</p>
                         
-                        <p class="text-xs text-text-muted leading-relaxed mb-4">
+                        <p id="steven-bio-text" class="text-xs text-text-muted leading-relaxed mb-1 sm:mb-4 line-clamp-2 sm:line-clamp-none transition-all duration-300">
                             {{ __('Directs Cue Corner’s overall corporate vision, market strategy, brand positioning, digital marketing channels, sales infrastructure, and strategic ecosystem.') }}
                         </p>
+                        <button onclick="toggleMobileText('steven-bio-text', this)" class="inline-flex sm:hidden items-center gap-1 text-[11px] font-bold text-accent-gold hover:text-accent-glow mb-3">
+                            <span>{{ __('Baca Selengkapnya') }}</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+                        </button>
 
                         <div class="flex items-center justify-center sm:justify-start gap-3">
                             <span class="w-8 h-8 rounded-full bg-primary/60 border border-border-accent/50 flex items-center justify-center text-accent-gold text-xs">
@@ -272,9 +277,13 @@
                         <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1">Calvin</h4>
                         <p class="text-[11px] sm:text-xs text-accent-soft mb-3 sm:mb-4">{{ __('Head of Corporate Finance & Strategic Purchasing') }}</p>
                         
-                        <p class="text-xs text-text-muted leading-relaxed mb-4">
+                        <p id="calvin-bio-text" class="text-xs text-text-muted leading-relaxed mb-1 sm:mb-4 line-clamp-2 sm:line-clamp-none transition-all duration-300">
                             {{ __('Oversees corporate finance, capital allocation, international supply chain procurement, and strategic manufacturer distribution agreements.') }}
                         </p>
+                        <button onclick="toggleMobileText('calvin-bio-text', this)" class="inline-flex sm:hidden items-center gap-1 text-[11px] font-bold text-accent-gold hover:text-accent-glow mb-3">
+                            <span>{{ __('Baca Selengkapnya') }}</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+                        </button>
 
                         <div class="flex items-center justify-center sm:justify-start gap-3">
                             <span class="w-8 h-8 rounded-full bg-primary/60 border border-border-accent/50 flex items-center justify-center text-accent-gold text-xs">

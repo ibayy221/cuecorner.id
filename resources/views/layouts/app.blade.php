@@ -148,6 +148,25 @@
                 });
             }
         });
+
+        // Global Mobile Expandable Text Toggle Helper
+        window.toggleMobileText = function(targetId, btn) {
+            const el = document.getElementById(targetId);
+            if (!el || !btn) return;
+            const isClamped = el.classList.contains('line-clamp-2');
+            const icon = btn.querySelector('i');
+            const textSpan = btn.querySelector('span');
+
+            if (isClamped) {
+                el.classList.remove('line-clamp-2');
+                if (textSpan) textSpan.innerText = "{{ app()->getLocale() == 'id' ? 'Tutup' : 'Read Less' }}";
+                if (icon) icon.className = "fa-solid fa-chevron-up text-[10px] ml-1 transition-transform duration-200";
+            } else {
+                el.classList.add('line-clamp-2');
+                if (textSpan) textSpan.innerText = "{{ app()->getLocale() == 'id' ? 'Baca Selengkapnya' : 'Read More' }}";
+                if (icon) icon.className = "fa-solid fa-chevron-down text-[10px] ml-1 transition-transform duration-200";
+            }
+        };
     </script>
 
     @stack('scripts')

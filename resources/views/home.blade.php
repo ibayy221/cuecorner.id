@@ -798,31 +798,31 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center p-4 sm:p-6 bg-black/92 backdrop-blur-3xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Modal Backdrop -->
-    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/80 z-0"></div>
+    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/85 z-0"></div>
 
     <!-- Modal Content Card -->
-    <div class="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] bg-zinc-950/98 border border-accent-gold/50 rounded-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden my-auto">
+    <div class="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[86vh] bg-zinc-950/98 border border-accent-gold/40 rounded-2xl sm:rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden my-auto">
         
-        <!-- Modal Header (Always Fixed at Top inside Card, Never Obscured) -->
-        <div class="sticky top-0 z-30 flex items-center justify-between px-5 sm:px-6 py-3.5 bg-zinc-950 border-b border-white/10 shrink-0">
+        <!-- Modal Header (Fixed at top of card, never obscured) -->
+        <div class="sticky top-0 z-30 flex items-center justify-between px-5 sm:px-6 py-4 bg-zinc-950 border-b border-white/10 shrink-0">
             <div class="flex items-center gap-3">
-                <span id="modal-category-badge" class="px-3 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] uppercase font-bold tracking-wider border border-accent-gold/40">
+                <span id="modal-category-badge" class="px-3 py-1 rounded-full bg-accent-gold/15 text-accent-gold border border-accent-gold/40 text-[10px] font-bold uppercase tracking-widest">
                     Category
                 </span>
-                <h3 id="modal-category-title" class="font-serif text-base sm:text-2xl font-bold text-text-light">
+                <h3 id="modal-category-title" class="font-serif text-lg sm:text-2xl font-bold text-white tracking-tight">
                     Category Title
                 </h3>
             </div>
             
-            <button onclick="closeCategoryModal()" class="w-9 h-9 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all focus:outline-none" aria-label="Close modal">
+            <button onclick="closeCategoryModal()" class="w-9 h-9 rounded-full bg-zinc-900 border border-white/15 text-zinc-400 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all focus:outline-none" aria-label="Close modal">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
         </div>
 
-        <!-- Modal Scrollable Body (Only Body Scrolls, Header & Close X stays fixed) -->
-        <div class="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1 custom-scrollbar">
+        <!-- Modal Scrollable Body (Only Body Scrolls) -->
+        <div class="p-5 sm:p-6 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
             
             <!-- Gallery Display Section -->
             <div class="space-y-3">
@@ -831,28 +831,28 @@
                         <i class="fa-solid fa-images text-accent-gold"></i>
                         <span>{{ __('Gambar Unggulan / Featured Gallery') }}</span>
                     </span>
-                    <span id="modal-image-counter" class="text-[11px] font-semibold text-zinc-400">1 / 1</span>
+                    <span id="modal-image-counter" class="text-[11px] font-semibold text-zinc-400 bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">1 / 1</span>
                 </div>
 
-                <!-- Main Active Image Viewer (Constrained Height & Smooth Fit) -->
-                <div class="relative w-full h-52 sm:h-72 lg:h-80 max-h-[38vh] sm:max-h-[40vh] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-2">
+                <!-- Main Active Image Viewer -->
+                <div class="relative w-full h-48 sm:h-64 lg:h-72 max-h-[32vh] rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-3">
                     <!-- Ambient Blurred Background Image -->
-                    <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-45 scale-125 pointer-events-none transition-all duration-500">
+                    <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-40 scale-125 pointer-events-none transition-all duration-500">
 
-                    <!-- Active Foreground Image (Clean, Sharp & Full Ratio) -->
+                    <!-- Active Foreground Image (Sharp & Centered) -->
                     <img id="modal-main-image" onclick="openFullscreenImage()" src="" alt="Category Featured Image" class="relative z-10 w-full h-full object-contain object-center transition-all duration-300 drop-shadow-2xl cursor-pointer hover:scale-[1.02]" title="{{ __('Klik untuk melihat ukuran asli') }}">
 
                     <!-- Open Fullsize Button Overlay -->
-                    <button onclick="openFullscreenImage()" class="absolute z-20 top-3 right-3 px-3 py-1.5 rounded-full bg-black/80 border border-white/20 text-accent-gold hover:text-white hover:border-accent-gold text-[11px] font-bold flex items-center gap-1.5 transition-all opacity-80 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
+                    <button onclick="openFullscreenImage()" class="absolute z-20 top-3 right-3 px-3 py-1.5 rounded-full bg-black/80 border border-white/20 text-accent-gold hover:text-white hover:border-accent-gold text-[11px] font-bold flex items-center gap-1.5 transition-all opacity-85 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
                         <i class="fa-solid fa-expand text-xs"></i>
                         <span>{{ __('Ukuran Asli') }}</span>
                     </button>
 
                     <!-- Navigation Arrows on Main Image -->
-                    <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
+                    <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/75 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
                         <i class="fa-solid fa-chevron-left text-sm"></i>
                     </button>
-                    <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
+                    <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/75 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
                         <i class="fa-solid fa-chevron-right text-sm"></i>
                     </button>
                 </div>
@@ -863,39 +863,41 @@
                 </div>
             </div>
 
-            <!-- Details & Specifications -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-3 border-t border-white/10">
-                <div class="md:col-span-2 space-y-3">
-                    <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-accent-soft">{{ __('Deskripsi Kategori') }}</h4>
-                    <p id="modal-category-desc" class="text-xs sm:text-sm text-text-muted leading-relaxed">
-                        Category description goes here.
-                    </p>
+            <!-- Details & Specifications Section -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-4 border-t border-white/10">
+                <div class="md:col-span-7 space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-1.5">{{ __('Deskripsi Kategori') }}</h4>
+                        <p id="modal-category-desc" class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                            Category description goes here.
+                        </p>
+                    </div>
                     
                     <div class="pt-1">
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-2">{{ __('Keunggulan Utama / Key Features') }}</h4>
-                        <ul id="modal-category-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-2.5">{{ __('Keunggulan Utama / Key Features') }}</h4>
+                        <ul id="modal-category-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                             <!-- Highlights list dynamically inserted -->
                         </ul>
                     </div>
                 </div>
 
-                <!-- CTA Actions -->
-                <div class="p-4 rounded-2xl bg-zinc-900/90 border border-accent-gold/30 flex flex-col justify-between space-y-3">
+                <!-- CTA Actions Box -->
+                <div class="md:col-span-5 p-5 rounded-2xl bg-gradient-to-b from-zinc-900/90 to-zinc-950 border border-accent-gold/30 flex flex-col justify-between space-y-4 shadow-xl">
                     <div>
                         <span class="text-[11px] uppercase font-bold text-accent-gold tracking-wider block mb-1">{{ __('Official Purchase & Inquiries') }}</span>
-                        <p class="text-[11px] text-zinc-400 leading-snug">{{ __('Tanyakan ketersediaan produk & spesifikasi lengkap langsung kepada tim Cue Corner.') }}</p>
+                        <p class="text-[11px] text-zinc-400 leading-relaxed">{{ __('Tanyakan ketersediaan produk & spesifikasi lengkap langsung kepada tim Cue Corner.') }}</p>
                     </div>
 
-                    <div class="space-y-2">
-                        <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-accent-gold text-black hover:bg-accent-glow font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+                    <div class="space-y-2.5">
+                        <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-accent-gold text-black hover:bg-accent-glow font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md shadow-accent-gold/10">
                             <i class="fa-solid fa-store"></i>
                             <span>{{ __('Tokopedia Store') }}</span>
                         </a>
-                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-zinc-800 border border-white/10 text-white hover:border-accent-gold font-bold text-xs flex items-center justify-center gap-2 transition-all">
-                            <i class="fa-solid fa-bag-shopping text-accent-gold"></i>
+                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-zinc-900 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-black font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-bag-shopping"></i>
                             <span>{{ __('Shopee Official') }}</span>
                         </a>
-                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-600 hover:text-white font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold text-xs flex items-center justify-center gap-2 transition-all">
                             <i class="fa-brands fa-whatsapp text-sm"></i>
                             <span>{{ __('Tanya via WhatsApp') }}</span>
                         </a>
@@ -2115,9 +2117,11 @@
         const highlightsEl = document.getElementById('modal-category-highlights');
         if (highlightsEl) {
             highlightsEl.innerHTML = data.highlights.map(h => `
-                <li class="flex items-center gap-2 bg-zinc-900/60 p-2.5 rounded-xl border border-white/5">
-                    <i class="fa-solid fa-check text-accent-gold text-xs flex-shrink-0"></i>
-                    <span>${h}</span>
+                <li class="flex items-center gap-2.5 bg-zinc-900/80 px-3 py-2.5 rounded-xl border border-white/10 text-xs font-medium text-zinc-200 shadow-sm">
+                    <span class="w-4 h-4 rounded-full bg-accent-gold/20 border border-accent-gold/40 text-accent-gold flex items-center justify-center text-[9px] flex-shrink-0">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    <span class="line-clamp-1">${h}</span>
                 </li>
             `).join('');
         }

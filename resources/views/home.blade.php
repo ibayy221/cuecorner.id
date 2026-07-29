@@ -798,108 +798,93 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex flex-col items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-8 transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Backdrop overlay -->
-    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/80 z-0"></div>
-
-    <!-- Main Modal Box: flex-col on mobile, flex-row on desktop (md:) -->
-    <div class="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto bg-[#180d05] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300 z-10 border border-white/10 custom-scrollbar">
+    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/90 z-0"></div>
+    
+    <!-- The Modal Card (Using svh to prevent browser URL bar overlap on mobile) -->
+    <div class="relative z-10 w-full max-w-5xl h-[90svh] sm:h-auto sm:max-h-[85vh] bg-[#180d05] rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl ring-1 ring-white/10 transform scale-95 transition-transform duration-300">
         
-        <!-- INJECTED CLOSE (X) BUTTON -->
-        <button onclick="closeCategoryModal()" type="button" class="absolute top-3 right-3 md:top-4 md:right-4 z-[100] p-2 bg-[#180d05]/60 hover:bg-[#c7a061] text-[#e5e5e7] hover:text-[#180d05] rounded-full backdrop-blur-md transition-all duration-300 group focus:outline-none" aria-label="Close modal" title="{{ __('Close') }}">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-90">
-            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
-          </svg>
+        <!-- EXPLICIT CLOSE BUTTON (Forced with high z-index) -->
+        <button onclick="closeCategoryModal()" type="button" class="absolute top-4 right-4 z-[1000] p-2.5 bg-black/60 hover:bg-[#c7a061] text-white hover:text-[#180d05] rounded-full transition-all cursor-pointer backdrop-blur-md border border-white/20 focus:outline-none" aria-label="Close modal" title="{{ __('Close') }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
 
-        <!-- Left Wrapper (Image Gallery) -->
-        <div class="w-full md:w-[55%] relative flex-shrink-0 bg-black flex flex-col justify-between p-4 min-h-[300px] md:min-h-[450px]">
-            <!-- Main Featured Image Container -->
-            <div class="relative w-full flex-1 flex items-center justify-center overflow-hidden rounded-xl bg-zinc-950 p-2 min-h-[220px] md:min-h-[360px]">
-                <!-- Ambient Blurred Background Image -->
-                <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-30 scale-125 pointer-events-none transition-all duration-500">
+        <!-- LEFT: Image Section (Fixed 45% height on mobile) -->
+        <div class="w-full md:w-[55%] h-[45%] md:h-full relative bg-black shrink-0 flex items-center justify-center overflow-hidden">
+            <!-- Ambient Blurred Background Image -->
+            <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-30 scale-125 pointer-events-none transition-all duration-500">
 
-                <!-- Active Foreground Image (Clean Ratio, No Crop) -->
-                <img id="modal-main-image" onclick="openFullscreenImage()" src="" alt="Category Featured Image" class="relative z-10 max-h-[260px] md:max-h-[380px] w-auto max-w-full object-contain object-center transition-transform duration-300 drop-shadow-2xl cursor-pointer hover:scale-[1.02]" title="{{ __('Klik untuk melihat ukuran asli') }}">
-
-                <!-- Floating Pagination Badge Overlay -->
-                <div id="modal-image-counter" class="absolute top-3 right-3 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-[#c7a061] text-xs font-semibold backdrop-blur-md shadow-md">
-                    1 / 4
-                </div>
-
-                <!-- Open Fullsize Button Overlay -->
-                <button onclick="openFullscreenImage()" class="absolute top-3 left-3 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-zinc-300 hover:text-white text-xs font-medium backdrop-blur-md flex items-center gap-1.5 transition-all opacity-80 group-hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
-                    <i class="fa-solid fa-expand text-[10px] text-[#c7a061]"></i>
-                    <span class="hidden sm:inline">{{ __('Ukuran Asli') }}</span>
-                </button>
-
-                <!-- Frosted Glass Navigation Arrows -->
-                <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
-                    <i class="fa-solid fa-chevron-left text-xs"></i>
-                </button>
-                <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </button>
+            <!-- Active Foreground Image -->
+            <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="relative z-10 w-full h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform duration-300 drop-shadow-2xl" alt="Cue Product" title="{{ __('Klik untuk melihat ukuran asli') }}" />
+            
+            <!-- Floating Pagination Badge Overlay -->
+            <div id="modal-image-counter" class="absolute top-3 left-3 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-[#c7a061] text-xs font-semibold backdrop-blur-md shadow-md">
+                1 / 4
             </div>
 
-            <!-- Thumbnails Switcher Strip (At the bottom of Left Wrapper) -->
-            <div id="modal-thumbnails-container" class="overflow-x-auto snap-x flex-nowrap pt-3 pb-1 flex items-center gap-2.5 custom-scrollbar">
+            <!-- Open Fullsize Button Overlay -->
+            <button onclick="openFullscreenImage()" class="absolute top-3 right-14 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-zinc-300 hover:text-white text-xs font-medium backdrop-blur-md flex items-center gap-1.5 transition-all opacity-80 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
+                <i class="fa-solid fa-expand text-[10px] text-[#c7a061]"></i>
+                <span class="hidden sm:inline">{{ __('Ukuran Asli') }}</span>
+            </button>
+
+            <!-- Carousel Navigation Arrows -->
+            <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
+                <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+
+            <!-- Thumbnails fixed to the bottom of the image -->
+            <div id="modal-thumbnails-container" class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 flex gap-3 overflow-x-auto overscroll-contain bg-gradient-to-t from-black/90 to-transparent custom-scrollbar z-20">
                 <!-- Thumbnails dynamically rendered here -->
             </div>
         </div>
 
-        <!-- Right Wrapper (Text Content & CTA) -->
-        <div class="w-full md:w-[45%] p-6 md:p-8 flex flex-col overflow-y-auto overscroll-contain custom-scrollbar border-t md:border-t-0 md:border-l border-white/10">
+        <!-- RIGHT: Text & Scrolling Content (Fixed 55% height on mobile) -->
+        <div class="w-full md:w-[45%] h-[55%] md:h-full overflow-y-auto overscroll-contain p-5 sm:p-8 flex flex-col relative bg-[#180d05] custom-scrollbar">
             
-            <!-- Category Title & Badge -->
-            <div class="mb-4 pr-8">
-                <span id="modal-category-badge" class="px-3 py-1 rounded-full bg-[#c7a061]/15 text-[#c7a061] border border-[#c7a061]/30 text-[10px] uppercase font-bold tracking-widest inline-block mb-2">
-                    Category
-                </span>
-                <h3 id="modal-category-title" class="font-serif text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
-                    Break Cues
-                </h3>
-            </div>
-
-            <!-- Description -->
-            <div class="space-y-1.5 mb-5">
-                <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#917b59]">{{ __('DESKRIPSI KATEGORI') }}</h4>
-                <p id="modal-category-desc" class="text-xs sm:text-sm text-[#e5e5e7] leading-relaxed font-normal">
-                    Category description content goes here.
-                </p>
+            <div class="mb-6 pr-8">
+                <span id="modal-category-badge" class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-[#180d05] bg-[#c7a061] rounded-full uppercase">CARBON</span>
+                <h3 id="modal-category-title" class="text-2xl sm:text-3xl font-bold text-white">High-Performance Shafts</h3>
             </div>
             
-            <!-- Key Features Highlights -->
-            <div class="space-y-2 mb-6">
-                <h4 class="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#917b59]">{{ __('KEUNGGULAN UTAMA') }}</h4>
-                <ul id="modal-category-highlights" class="space-y-2 text-xs text-[#e5e5e7]">
+            <div class="mb-6">
+                <h4 class="text-xs font-bold tracking-widest text-[#917b59] mb-2 uppercase">{{ __('Deskripsi Kategori') }}</h4>
+                <p id="modal-category-desc" class="text-[#e5e5e7] text-sm leading-relaxed">Shaft serat karbon & Canadian Maple low-deflection profesional untuk akurasi bola sempurna.</p>
+            </div>
+            
+            <div class="mb-8">
+                <h4 class="text-xs font-bold tracking-widest text-[#917b59] mb-4 uppercase">{{ __('Keunggulan Utama') }}</h4>
+                <ul id="modal-category-highlights" class="space-y-3">
                     <!-- Dynamic highlights list -->
                 </ul>
             </div>
 
-            <!-- Bottom Action Purchase Buttons (mt-auto) -->
-            <div class="mt-auto pt-4 border-t border-white/10 space-y-3">
-                <span class="text-[11px] font-semibold text-zinc-400 block mb-1">{{ __('Official Purchase & Inquiries') }}</span>
-
-                <div class="flex flex-col gap-2.5">
-                    <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-[#c7a061] text-black hover:bg-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#c7a061]/10">
+            <!-- Bottom CTA with extra padding to prevent safe-area clipping -->
+            <div class="mt-auto pt-6 pb-6 border-t border-[#644a30]/30 shrink-0">
+                <p class="text-xs text-center text-[#917b59] mb-3">{{ __('Official Purchase & Inquiries') }}</p>
+                <div class="space-y-2.5">
+                    <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#c7a061] hover:bg-white text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-xs">
                         <i class="fa-solid fa-store"></i>
                         <span>{{ __('Tokopedia Store') }}</span>
                     </a>
                     <div class="grid grid-cols-2 gap-2">
-                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 rounded-xl bg-zinc-900 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
+                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-white hover:bg-gray-200 text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-xs">
                             <i class="fa-solid fa-bag-shopping"></i>
-                            <span>{{ __('Shopee') }}</span>
+                            <span>{{ __('Shopee Official') }}</span>
                         </a>
-                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold text-xs flex items-center justify-center gap-1.5 transition-all">
-                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-xs">
+                            <i class="fa-brands fa-whatsapp"></i>
                             <span>{{ __('WhatsApp') }}</span>
                         </a>
                     </div>
                 </div>
             </div>
-
         </div>
+
     </div>
 </div>
 
@@ -2211,9 +2196,9 @@
             } else {
                 thumbsContainer.classList.remove('hidden');
                 thumbsContainer.innerHTML = imgs.map((imgSrc, idx) => `
-                    <button onclick="setCategoryModalImage(${idx})" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all flex-shrink-0 snap-start bg-black ${idx === currentModalImgIndex ? 'ring-2 ring-[#c7a061] border-2 border-[#c7a061] scale-105 shadow-md shadow-[#c7a061]/20' : 'border border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'}">
+                    <div onclick="setCategoryModalImage(${idx})" class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-lg overflow-hidden cursor-pointer transition-all ${idx === currentModalImgIndex ? 'border-2 border-[#c7a061] shadow-lg scale-105 opacity-100' : 'border-2 border-transparent opacity-50 hover:opacity-100'}">
                         <img src="${imgSrc}" class="w-full h-full object-cover">
-                    </button>
+                    </div>
                 `).join('');
             }
         }

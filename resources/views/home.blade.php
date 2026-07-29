@@ -858,20 +858,37 @@
     <!-- Lightbox Backdrop -->
     <div onclick="closeFullscreenImage()" class="fixed inset-0 bg-black/90 z-0"></div>
 
-    <!-- Top Action Controls -->
-    <div class="fixed top-4 right-4 z-30 flex items-center gap-3">
-        <a id="lightbox-newtab-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-full bg-zinc-900/90 border border-white/20 text-zinc-300 hover:text-accent-gold hover:border-accent-gold text-xs font-semibold flex items-center gap-2 transition-all shadow-xl" title="{{ __('Buka Gambar di Tab Baru') }}">
-            <span>{{ __('Buka Tab Baru') }}</span>
+    <!-- Top Action Controls Header Bar -->
+    <div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-30 flex items-center gap-2 sm:gap-3">
+        <!-- New Tab Button -->
+        <a id="lightbox-newtab-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-zinc-900/90 hover:bg-zinc-800 border border-white/20 text-zinc-300 hover:text-accent-gold hover:border-accent-gold text-xs font-semibold flex items-center gap-1.5 transition-all shadow-2xl backdrop-blur-md" title="{{ __('Buka Gambar di Tab Baru') }}">
+            <span class="hidden sm:inline">{{ __('Buka Tab Baru') }}</span>
             <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
         </a>
-        <button onclick="closeFullscreenImage()" class="w-10 h-10 rounded-full bg-zinc-900/90 border border-white/20 text-zinc-300 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all shadow-xl focus:outline-none" aria-label="{{ __('Tutup Ukuran Asli') }}">
-            <i class="fa-solid fa-xmark text-xl"></i>
+        <!-- Prominent Close (X) Button -->
+        <button onclick="closeFullscreenImage()" type="button" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-zinc-900/95 hover:bg-accent-gold border border-white/20 hover:border-accent-gold text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-105 focus:outline-none" aria-label="{{ __('Tutup Ukuran Asli') }}">
+            <i class="fa-solid fa-xmark text-lg sm:text-xl"></i>
         </button>
     </div>
 
+    <!-- Image Counter Badge (Top Left) -->
+    <div id="lightbox-counter-badge" class="fixed top-4 left-4 sm:top-6 sm:left-6 z-30 px-3 py-1.5 rounded-full bg-black/80 border border-white/20 text-white text-xs font-semibold backdrop-blur-md shadow-xl flex items-center gap-2">
+        <i class="fa-solid fa-images text-accent-gold text-xs"></i>
+        <span id="lightbox-counter-text">1 / 1</span>
+    </div>
+
+    <!-- Navigation Slide Buttons (Previous & Next) -->
+    <button id="lightbox-prev-btn" onclick="prevFullscreenImage()" type="button" class="fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/80 hover:bg-[#c7a061] border border-white/20 hover:border-[#c7a061] text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Sebelumnya') }}">
+        <i class="fa-solid fa-chevron-left text-lg sm:text-xl"></i>
+    </button>
+    
+    <button id="lightbox-next-btn" onclick="nextFullscreenImage()" type="button" class="fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/80 hover:bg-[#c7a061] border border-white/20 hover:border-[#c7a061] text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Selanjutnya') }}">
+        <i class="fa-solid fa-chevron-right text-lg sm:text-xl"></i>
+    </button>
+
     <!-- Lightbox Image Display Container -->
-    <div class="relative z-10 max-w-full max-h-[92vh] flex items-center justify-center p-2">
-        <img id="lightbox-image" src="" alt="Ukuran Asli Gambar" class="max-w-full max-h-[92vh] object-contain rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border border-white/10 transition-transform duration-300">
+    <div class="relative z-10 max-w-full max-h-[85vh] sm:max-h-[90vh] flex items-center justify-center p-2">
+        <img id="lightbox-image" src="" alt="Ukuran Asli Gambar" class="max-w-full max-h-[85vh] sm:max-h-[90vh] object-contain rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border border-white/10 transition-all duration-300">
     </div>
 </div>
 
@@ -2193,19 +2210,34 @@
     };
 
     /* ==========================================
-       FULLSCREEN LIGHTBOX LOGIC
+       FULLSCREEN LIGHTBOX LOGIC WITH SLIDER
        ========================================== */
+    window.lightboxImages = [];
+    window.lightboxIndex = 0;
+
     window.openFullscreenImage = function(src) {
-        const targetSrc = src || (document.getElementById('modal-main-image') ? document.getElementById('modal-main-image').src : '');
-        if (!targetSrc) return;
+        let images = [];
+        let initialIndex = 0;
+
+        if (currentModalKey && window.categoryModalData && window.categoryModalData[currentModalKey]) {
+            images = window.categoryModalData[currentModalKey].images;
+            initialIndex = currentModalImgIndex;
+        } else {
+            const targetSrc = src || (document.getElementById('modal-main-image') ? document.getElementById('modal-main-image').src : '');
+            if (targetSrc) {
+                images = [targetSrc];
+                initialIndex = 0;
+            }
+        }
+
+        if (!images || images.length === 0) return;
+
+        window.lightboxImages = images;
+        window.lightboxIndex = initialIndex;
+
+        updateLightboxView();
 
         const lightboxModal = document.getElementById('image-lightbox-modal');
-        const lightboxImg = document.getElementById('lightbox-image');
-        const newTabBtn = document.getElementById('lightbox-newtab-btn');
-
-        if (lightboxImg) lightboxImg.src = targetSrc;
-        if (newTabBtn) newTabBtn.href = targetSrc;
-
         if (!lightboxModal) return;
         lightboxModal.classList.remove('hidden');
 
@@ -2213,6 +2245,49 @@
             lightboxModal.classList.remove('opacity-0', 'pointer-events-none');
             lightboxModal.classList.add('opacity-100');
         });
+    };
+
+    function updateLightboxView() {
+        const images = window.lightboxImages || [];
+        const idx = window.lightboxIndex || 0;
+        if (images.length === 0) return;
+
+        const currentSrc = images[idx];
+        const lightboxImg = document.getElementById('lightbox-image');
+        const newTabBtn = document.getElementById('lightbox-newtab-btn');
+        const counterText = document.getElementById('lightbox-counter-text');
+        const prevBtn = document.getElementById('lightbox-prev-btn');
+        const nextBtn = document.getElementById('lightbox-next-btn');
+
+        if (lightboxImg) lightboxImg.src = currentSrc;
+        if (newTabBtn) newTabBtn.href = currentSrc;
+        if (counterText) counterText.innerText = `${idx + 1} / ${images.length}`;
+
+        if (images.length <= 1) {
+            if (prevBtn) prevBtn.classList.add('hidden');
+            if (nextBtn) nextBtn.classList.add('hidden');
+        } else {
+            if (prevBtn) prevBtn.classList.remove('hidden');
+            if (nextBtn) nextBtn.classList.remove('hidden');
+        }
+    }
+
+    window.prevFullscreenImage = function() {
+        if (!window.lightboxImages || window.lightboxImages.length <= 1) return;
+        window.lightboxIndex = (window.lightboxIndex - 1 + window.lightboxImages.length) % window.lightboxImages.length;
+        updateLightboxView();
+        if (typeof window.setCategoryModalImage === 'function') {
+            window.setCategoryModalImage(window.lightboxIndex);
+        }
+    };
+
+    window.nextFullscreenImage = function() {
+        if (!window.lightboxImages || window.lightboxImages.length <= 1) return;
+        window.lightboxIndex = (window.lightboxIndex + 1) % window.lightboxImages.length;
+        updateLightboxView();
+        if (typeof window.setCategoryModalImage === 'function') {
+            window.setCategoryModalImage(window.lightboxIndex);
+        }
     };
 
     window.closeFullscreenImage = function() {
@@ -2227,11 +2302,38 @@
         }, 300);
     };
 
+    // Keyboard & Touch Swipe Listeners
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const lightboxModal = document.getElementById('image-lightbox-modal');
+        if (lightboxModal) {
+            lightboxModal.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightboxModal.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeThreshold = 40;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    window.nextFullscreenImage();
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    window.prevFullscreenImage();
+                }
+            }, { passive: true });
+        }
+    });
+
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const lightboxModal = document.getElementById('image-lightbox-modal');
-            if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+        const lightboxModal = document.getElementById('image-lightbox-modal');
+        if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+            if (e.key === 'Escape') {
                 window.closeFullscreenImage();
+            } else if (e.key === 'ArrowLeft') {
+                window.prevFullscreenImage();
+            } else if (e.key === 'ArrowRight') {
+                window.nextFullscreenImage();
             }
         }
     });

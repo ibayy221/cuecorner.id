@@ -798,18 +798,18 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" onclick="closeCategoryModal()" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-3 sm:p-4 pt-16 sm:pt-4 pb-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" onclick="closeCategoryModal()" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-3 sm:p-4 pt-14 sm:pt-4 pb-3 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     
-    <!-- MAIN MODAL CONTAINER (Using dvh for Safari mobile fix) -->
-    <div onclick="event.stopPropagation()" class="relative w-full max-w-5xl h-[80dvh] md:h-[80dvh] bg-[#180d05] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl border border-[#644a30]/40 transition-transform duration-300 scale-95 my-auto">
+    <!-- MAIN MODAL CONTAINER (Using calc for dynamic mobile viewport fit) -->
+    <div onclick="event.stopPropagation()" class="relative w-full max-w-5xl h-[calc(100dvh-5.5rem)] md:h-[80dvh] max-h-[720px] bg-[#180d05] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl border border-[#644a30]/40 transition-transform duration-300 scale-95 my-auto">
         
         <!-- EXPLICIT CLOSE BUTTON (Do not remove) -->
         <button onclick="closeCategoryModal()" type="button" class="absolute top-3.5 right-3.5 md:top-5 md:right-5 z-[1000] p-2 sm:p-2.5 bg-[#180d05]/90 hover:bg-[#c7a061] text-[#e5e5e7] hover:text-[#180d05] rounded-full transition-all duration-300 border border-[#644a30]/60 hover:border-[#c7a061] shadow-xl backdrop-blur-md cursor-pointer hover:scale-105" aria-label="Close modal">
             <svg width="20" height="20" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        <!-- LEFT COLUMN: IMAGE & THUMBNAILS (48% height on mobile, 50% width on desktop) -->
-        <div class="w-full h-[48%] md:w-1/2 md:h-full bg-black flex flex-col relative shrink-0 overflow-hidden">
+        <!-- LEFT COLUMN: IMAGE & THUMBNAILS (45% height on mobile, 50% width on desktop) -->
+        <div class="w-full h-[45%] md:w-1/2 md:h-full bg-black flex flex-col relative shrink-0 overflow-hidden">
             <!-- Main Image Container with Ambient Studio Spotlight -->
             <div class="w-full flex-1 min-h-0 relative overflow-hidden flex items-center justify-center bg-[#0d0703]">
                 <!-- Ambient Blurred Background Image -->
@@ -831,8 +831,8 @@
             </div>
         </div>
 
-        <!-- RIGHT COLUMN: TEXT (52% height on mobile, 50% width on desktop) -->
-        <div class="w-full h-[52%] md:w-1/2 md:h-full flex flex-col bg-[#180d05] justify-start overflow-hidden">
+        <!-- RIGHT COLUMN: TEXT (55% height on mobile, 50% width on desktop) -->
+        <div class="w-full h-[55%] md:w-1/2 md:h-full flex flex-col bg-[#180d05] justify-start overflow-hidden">
             <!-- Scrollable Text Area -->
             <div class="flex-1 p-5 sm:p-6 md:p-8 overflow-y-auto overscroll-contain custom-scrollbar flex flex-col justify-start space-y-4">
                 <div>

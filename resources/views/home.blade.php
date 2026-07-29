@@ -421,7 +421,7 @@
             <!-- Category 1: Playing Cues -->
             <div onclick="openCategoryModal('playing-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
                 <div class="relative w-full h-48 sm:h-60 overflow-hidden bg-zinc-950 border-b border-white/10">
-                    <img src="{{ asset('Asset/Image/Kategori/Aksesoris/Case.jpeg') }}" alt="Playing Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
+                    <img src="{{ asset('Asset/Image/Kategori/Playing Cue/CN 1.jpeg') }}" alt="Playing Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
                     <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Playing Cue
@@ -438,7 +438,7 @@
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
-                        <span>{{ __('Lihat Galeri') }}</span>
+                        <span>{{ __('Lihat Galeri (7)') }}</span>
                         <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </div>
                 </div>
@@ -1983,13 +1983,18 @@
                 "Compatible with Pro Carbon & Wood Shafts"
             ],
             images: [
-                "{{ asset('Asset/Image/Kategori/Aksesoris/Case.jpeg') }}",
-                "{{ asset('Asset/Image/Kategori/Shaft/Shaft 1.jpeg') }}"
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CN 1.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CN 2.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CN 3.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CN 4.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CP 1.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CP 2.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Playing Cue/CP 3.jpeg') }}"
             ]
         },
         'shafts': {
             title: "High-Performance Shafts",
-            badge: 'Carbon & Wood Shaft',
+            badge: 'Carbon',
             desc: "Shaft serat karbon & Canadian Maple low-deflection profesional untuk akurasi bola sempurna.",
             highlights: [
                 "Aerospace-Grade Carbon Fiber Structure",

@@ -1181,65 +1181,65 @@
                     {{ __('Cue Corner operates official flagship stores on Indonesia\'s top online marketplaces, ensuring 24/7 accessibility and fast dispatch.') }}
                 </p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <!-- Tokopedia Card -->
-                    <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="p-4 sm:p-5 rounded-xl bg-secondary/80 border border-border-accent/60 flex items-center justify-between group hover:border-accent-gold hover:scale-[1.02] transition-all">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-zinc-900/90 border border-white/10 p-2 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-secondary/80 border border-border-accent/60 flex flex-col justify-between group hover:border-accent-gold hover:scale-[1.02] transition-all min-h-[110px]">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900/90 border border-white/10 p-2 flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <img src="{{ asset('Asset/Logo/Marketplace/Tokopedia.png') }}" alt="Tokopedia" class="w-full h-full object-contain">
                             </div>
-                            <div>
-                                <h5 class="font-bold text-text-light text-sm">Tokopedia</h5>
-                                <span class="text-[10px] text-accent-gold uppercase tracking-wider font-semibold">{{ __('Official Store') }}</span>
-                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-text-muted group-hover:text-accent-glow"></i>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-text-muted group-hover:text-accent-glow"></i>
+                        <div>
+                            <h5 class="font-bold text-text-light text-sm leading-tight">Tokopedia</h5>
+                            <span class="text-[10px] text-accent-gold uppercase tracking-wider font-semibold block mt-0.5">{{ __('Official Store') }}</span>
+                        </div>
                     </a>
 
                     <!-- Shopee Card -->
-                    <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="p-4 sm:p-5 rounded-xl bg-secondary/80 border border-border-accent/60 flex items-center justify-between group hover:border-accent-gold hover:scale-[1.02] transition-all">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-zinc-900/90 border border-white/10 p-2 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-secondary/80 border border-border-accent/60 flex flex-col justify-between group hover:border-accent-gold hover:scale-[1.02] transition-all min-h-[110px]">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900/90 border border-white/10 p-2 flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <img src="{{ asset('Asset/Logo/Marketplace/Shopee.png') }}" alt="Shopee" class="w-full h-full object-contain">
                             </div>
-                            <div>
-                                <h5 class="font-bold text-text-light text-sm">Shopee</h5>
-                                <span class="text-[10px] text-accent-gold uppercase tracking-wider font-semibold">{{ __('Shopee Mall / Official') }}</span>
-                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-text-muted group-hover:text-accent-glow"></i>
                         </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-text-muted group-hover:text-accent-glow"></i>
+                        <div>
+                            <h5 class="font-bold text-text-light text-sm leading-tight">Shopee</h5>
+                            <span class="text-[10px] text-accent-gold uppercase tracking-wider font-semibold block mt-0.5">{{ __('Shopee Mall / Official') }}</span>
+                        </div>
                     </a>
 
                     <!-- Website Store Card (Coming Soon) -->
-                    <div class="p-4 sm:p-5 rounded-xl bg-secondary/80 border border-border-accent/60 flex items-center justify-between group hover:border-accent-gold/40 transition-all relative overflow-hidden">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-zinc-900/90 border border-accent-gold/30 text-accent-gold flex items-center justify-center flex-shrink-0 text-xl group-hover:scale-105 transition-transform">
+                    <div class="p-4 rounded-xl bg-secondary/80 border border-border-accent/60 flex flex-col justify-between group hover:border-accent-gold/40 transition-all min-h-[110px]">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900/90 border border-accent-gold/30 text-accent-gold flex items-center justify-center text-lg group-hover:scale-105 transition-transform">
                                 <i class="fa-solid fa-globe"></i>
                             </div>
-                            <div>
-                                <h5 class="font-bold text-text-light text-sm">{{ __('Official Web Store') }}</h5>
-                                <span class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold">{{ __('Direct Checkout') }}</span>
-                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] font-bold uppercase tracking-wider">
+                                {{ __('Coming Soon') }}
+                            </span>
                         </div>
-                        <span class="px-2.5 py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] font-bold uppercase tracking-wider flex-shrink-0">
-                            {{ __('Coming Soon') }}
-                        </span>
+                        <div>
+                            <h5 class="font-bold text-text-light text-sm leading-tight">{{ __('Official Web Store') }}</h5>
+                            <span class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold block mt-0.5">{{ __('Direct Checkout') }}</span>
+                        </div>
                     </div>
 
                     <!-- Mobile App Card (Coming Soon) -->
-                    <div class="p-4 sm:p-5 rounded-xl bg-secondary/80 border border-border-accent/60 flex items-center justify-between group hover:border-accent-gold/40 transition-all relative overflow-hidden">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-zinc-900/90 border border-accent-gold/30 text-accent-gold flex items-center justify-center flex-shrink-0 text-xl group-hover:scale-105 transition-transform">
+                    <div class="p-4 rounded-xl bg-secondary/80 border border-border-accent/60 flex flex-col justify-between group hover:border-accent-gold/40 transition-all min-h-[110px]">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900/90 border border-accent-gold/30 text-accent-gold flex items-center justify-center text-lg group-hover:scale-105 transition-transform">
                                 <i class="fa-solid fa-mobile-screen-button"></i>
                             </div>
-                            <div>
-                                <h5 class="font-bold text-text-light text-sm">{{ __('Cue Corner App') }}</h5>
-                                <span class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold">{{ __('iOS & Android') }}</span>
-                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] font-bold uppercase tracking-wider">
+                                {{ __('Coming Soon') }}
+                            </span>
                         </div>
-                        <span class="px-2.5 py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] font-bold uppercase tracking-wider flex-shrink-0">
-                            {{ __('Coming Soon') }}
-                        </span>
+                        <div>
+                            <h5 class="font-bold text-text-light text-sm leading-tight">{{ __('Cue Corner App') }}</h5>
+                            <span class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold block mt-0.5">{{ __('iOS & Android') }}</span>
+                        </div>
                     </div>
                 </div>
             </div>

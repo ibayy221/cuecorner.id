@@ -31,7 +31,7 @@
                 <!-- Heritage Badge -->
                 <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">
                     <span class="w-2 h-2 rounded-full bg-accent-glow animate-ping"></span>
-                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Official Distributor • Est. 2024') }}</span>
+                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Billiard Equipment Distributor • Est. 2024') }}</span>
                 </div>
 
                 <!-- Hero Headline -->
@@ -42,14 +42,14 @@
 
                 <!-- Subheadline -->
                 <p class="gsap-hero-anim text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed mb-5 sm:mb-6 max-w-xl">
-                    {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, supported by Triple Sixty media.') }}
+                    {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, and We collaborate with numerous media outlets') }}
                 </p>
 
                 <!-- Trust Badges Bar -->
                 <div class="gsap-hero-anim border-t border-white/10 pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('100%') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Official Warranty') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Genuinely ') }}</span>
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Official') }}</span>
@@ -57,11 +57,11 @@
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('10M+') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media Reach') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media Reach  Organic no ads') }}</span>
                     </div>
                     <div>
-                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Nationwide') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Reseller Network') }}</span>
+                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('World Wide') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Shipping') }}</span>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@
                     </div>
                     <div>
                         <h4 class="font-serif text-lg sm:text-xl font-bold text-accent-gold">{{ __('Established in 2024') }}</h4>
-                        <span class="text-[11px] sm:text-xs text-text-muted uppercase tracking-wider">{{ __('Jakarta, Indonesia') }}</span>
+                        <span class="text-[11px] sm:text-xs text-text-muted uppercase tracking-wider">{{ __('Jakarta/tangerang, Indonesia') }}</span>
                     </div>
                 </div>
                 <p id="about-story-text" class="text-xs sm:text-sm text-text-light/90 leading-relaxed mb-1 sm:mb-4 line-clamp-2 sm:line-clamp-none transition-all duration-300">
@@ -141,7 +141,7 @@
                     <!-- Mission Content -->
                     <div id="tab-content-mission" class="hidden space-y-3 sm:space-y-4">
                         <p class="text-text-light text-base sm:text-lg font-serif italic leading-relaxed">
-                            "{{ __('To deliver complete B2B support—combining authentic inventory, priority stock delivery, official warranties, and media promotion.') }}"
+                            "{{ __('To deliver complete B2B support—combining authentic inventory, priority stock delivery, and media promotion.') }}"
                         </p>
                         <ul class="space-y-2.5 sm:space-y-3 pt-1 sm:pt-2">
                             <li class="flex items-start gap-2.5 text-xs sm:text-sm text-text-muted">
@@ -150,7 +150,7 @@
                             </li>
                             <li class="flex items-start gap-2.5 text-xs sm:text-sm text-text-muted">
                                 <i class="fa-solid fa-check text-accent-gold mt-1 text-xs"></i>
-                                <span>{{ __('Drive continuous brand awareness through our ZenQ & Triple Sixty media channels.') }}</span>
+                                <span>{{ __('Drive continuous brand awareness through our Zen cues and We work with multiple media.') }}</span>
                             </li>
                         </ul>
                     </div>
@@ -223,7 +223,7 @@
         <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 gsap-reveal">
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-gold/15 border border-accent-gold/40 text-accent-glow text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
                 <i class="fa-solid fa-certificate text-accent-gold"></i>
-                <span>{{ __('100% Guaranteed Authenticity & Official Warranty') }}</span>
+                <span>{{ __('100% Guaranteed Authenticity & Genuinely Original') }}</span>
             </div>
             <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-text-light">
                 {{ __('Exclusive') }} <span class="text-gold-gradient">{{ __('Brand Portfolio') }}</span>
@@ -232,29 +232,6 @@
                 {{ __('Cue Corner collaborates with official global billiard manufacturers to supply high-performance equipment in Indonesia.') }}
             </p>
         </div>
-
-        <!-- Exclusive Flagship Distribution Showcase Banner (Mirai & Triple Sixty) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 gsap-reveal">
-            
-            <!-- Flagship Brand 1: Mirai -->
-            <div class="card-luxury p-6 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden border border-accent-gold/40 flex flex-col justify-between group hover:border-accent-gold transition-all duration-300">
-                <div class="space-y-3 sm:space-y-4 mb-5 sm:mb-6">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-accent-soft bg-zinc-900/90 border border-accent-soft/40 px-2.5 py-1 rounded-full">{{ __('Authorized Dealer') }}</span>
-                        <a href="https://miraicue.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold hover:text-white flex items-center gap-1">
-                            <span>miraicue.com</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-text-light">Mirai Billiards</h3>
-                    <p class="text-text-muted text-xs sm:text-sm leading-relaxed">
-                        {{ __('Engineered for elite accuracy, featuring aerospace-grade carbon fiber shafts, precision wood crafting, and micro-engineered joints preferred by international champions.') }}
-                    </p>
-                </div>
-
-                <div class="w-full py-5 sm:py-6 rounded-xl sm:rounded-2xl bg-black border border-white/15 flex flex-col items-center justify-center group-hover:scale-[1.02] transition-transform">
-                    <img src="{{ asset('Asset/Image/Logo partner/Mirai.png') }}" alt="Mirai" class="h-12 sm:h-16 w-auto max-w-[160px] sm:max-w-[200px] object-contain">
-                </div>
-            </div>
 
             <!-- Flagship Brand 2: Triple Sixty -->
             <div class="card-luxury p-6 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden border border-accent-gold/40 flex flex-col justify-between group hover:border-accent-gold transition-all duration-300">
@@ -291,7 +268,7 @@
                 ['name' => 'Navigator Tips', 'logo' => 'Navigator.png', 'url' => 'https://www.navigatortips.com/', 'type' => 'exclusive', 'has_web' => true],
                 ['name' => 'Valhalla Cue', 'logo' => 'valhalla.png', 'url' => 'https://www.vikingcue.com/valhalla-cues/', 'type' => 'exclusive', 'has_web' => true],
                 ['name' => 'Yi Cue', 'logo' => 'Yi Cue.png', 'url' => 'https://www.instagram.com/yi_cue_international/', 'type' => 'exclusive', 'has_web' => false, 'is_ig' => true],
-                ['name' => 'Zen Cue', 'logo' => 'Zen Custom Cue.png', 'url' => 'https://www.instagram.com/cuecorner.id/', 'type' => 'exclusive', 'has_web' => false],
+                ['name' => 'Zen Cue', 'logo' => 'Zen Custom Cue.png', 'url' => 'https://www.instagram.com/cuecorner.id/', 'type' => 'authorized', 'has_web' => false],
                 ['name' => 'Kuo Extension', 'logo' => 'Kuo extension.png', 'url' => 'https://www.instagram.com/cuecorner.id/', 'type' => 'exclusive', 'has_web' => false],
                 ['name' => 'Cuetima', 'logo' => 'Cuetima.png', 'url' => 'https://www.instagram.com/cuecorner.id/', 'type' => 'exclusive', 'has_web' => false],
                 ['name' => '3 Seconds', 'logo' => '3 Seconds.png', 'url' => 'https://www.instagram.com/cuecorner.id/', 'type' => 'authorized', 'has_web' => false],
@@ -394,12 +371,15 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             
             <!-- Category 1: Playing Cues (Butt) -->
-            <div class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl">
+            <div onclick="openCategoryModal('playing-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
                 <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
                     <img src="{{ asset('Asset/Image/Kategori/Butt.jpeg') }}" alt="Playing Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
                     <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Playing Cue
+                    </span>
+                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
                 <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
@@ -409,16 +389,23 @@
                             {{ __('High-precision handcrafted playing cues with micro-joint system and premium quality wood for consistent shots.') }}
                         </p>
                     </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
+                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </div>
                 </div>
             </div>
 
             <!-- Category 2: High-Performance Shafts (Shaft) -->
-            <div class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl">
+            <div onclick="openCategoryModal('shafts')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
                 <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
                     <img src="{{ asset('Asset/Image/Kategori/Shaft.jpg') }}" alt="High-Performance Shafts" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
                     <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Carbon & Wood Shaft
+                    </span>
+                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
                 <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
@@ -428,16 +415,23 @@
                             {{ __('Pro-grade carbon fiber shafts and low-deflection select Canadian Maple wood for perfect ball accuracy.') }}
                         </p>
                     </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
+                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </div>
                 </div>
             </div>
 
             <!-- Category 3: Break Cues (Break) -->
-            <div class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl">
+            <div onclick="openCategoryModal('break-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
                 <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
                     <img src="{{ asset('Asset/Image/Kategori/Break.jpeg') }}" alt="Break Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
                     <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Break Cue
+                    </span>
+                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
                 <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
@@ -447,16 +441,23 @@
                             {{ __('High-impact break cues engineered with durable high-density ferrules for explosive opening breaks.') }}
                         </p>
                     </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
+                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </div>
                 </div>
             </div>
 
             <!-- Category 4: Jump Cues (jump) -->
-            <div class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl">
+            <div onclick="openCategoryModal('jump-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
                 <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
                     <img src="{{ asset('Asset/Image/Kategori/jump.jpeg') }}" alt="Jump Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
                     <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Jump Cue
+                    </span>
+                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
                 <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
@@ -466,6 +467,10 @@
                             {{ __('Ultra-light precision jump cues designed for effortless cue ball elevation over obstacle balls accurately.') }}
                         </p>
                     </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
+                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </div>
                 </div>
             </div>
 
@@ -473,6 +478,138 @@
 
     </div>
 </section>
+
+<!-- Product Category Featured Images Popup Modal -->
+<div id="category-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-3 sm:p-6 pt-16 sm:pt-20 pb-6 bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+    <!-- Modal Backdrop -->
+    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/80 z-0"></div>
+
+    <!-- Modal Content Card -->
+    <div class="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[88vh] overflow-y-auto bg-zinc-950/98 border border-accent-gold/50 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.9)] z-10 flex flex-col transform scale-95 transition-transform duration-300 custom-scrollbar my-auto">
+        
+        <!-- Modal Header -->
+        <div class="sticky top-0 z-20 flex items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 bg-zinc-950/98 backdrop-blur-xl border-b border-white/10 shadow-md">
+            <div class="flex items-center gap-3">
+                <span id="modal-category-badge" class="px-3 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] uppercase font-bold tracking-wider border border-accent-gold/40">
+                    Category
+                </span>
+                <h3 id="modal-category-title" class="font-serif text-base sm:text-2xl font-bold text-text-light">
+                    Category Title
+                </h3>
+            </div>
+            
+            <button onclick="closeCategoryModal()" class="w-9 h-9 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all focus:outline-none" aria-label="Close modal">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="p-5 sm:p-8 space-y-5 sm:space-y-6">
+            
+            <!-- Gallery Display Section -->
+            <div class="space-y-3 sm:space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wider text-accent-gold flex items-center gap-2">
+                        <i class="fa-solid fa-images text-accent-gold"></i>
+                        <span>{{ __('Gambar Unggulan / Featured Gallery') }}</span>
+                    </span>
+                    <span id="modal-image-counter" class="text-[11px] font-semibold text-zinc-400">1 / 1</span>
+                </div>
+
+                <!-- Main Active Image Viewer -->
+                <div class="relative w-full h-56 sm:h-80 lg:h-96 max-h-[48vh] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-2">
+                    <!-- Ambient Blurred Background Image to eliminate empty black spaces -->
+                    <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-45 scale-125 pointer-events-none transition-all duration-500">
+
+                    <!-- Active Foreground Image (Clean, Sharp & Full Ratio) -->
+                    <img id="modal-main-image" onclick="openFullscreenImage()" src="" alt="Category Featured Image" class="relative z-10 w-full h-full object-contain object-center transition-all duration-300 drop-shadow-2xl cursor-pointer hover:scale-[1.02]" title="{{ __('Klik untuk melihat ukuran asli') }}">
+
+                    <!-- Open Fullsize Button Overlay -->
+                    <button onclick="openFullscreenImage()" class="absolute z-20 top-3 right-3 px-3 py-1.5 rounded-full bg-black/80 border border-white/20 text-accent-gold hover:text-white hover:border-accent-gold text-[11px] font-bold flex items-center gap-1.5 transition-all opacity-80 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                        <span>{{ __('Ukuran Asli') }}</span>
+                    </button>
+
+                    <!-- Navigation Arrows on Main Image -->
+                    <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
+                        <i class="fa-solid fa-chevron-left text-sm"></i>
+                    </button>
+                    <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
+                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </button>
+                </div>
+
+                <!-- Thumbnail Switcher Strip -->
+                <div id="modal-thumbnails-container" class="flex items-center gap-3 overflow-x-auto pb-2 custom-scrollbar">
+                    <!-- Thumbnails dynamically rendered here -->
+                </div>
+            </div>
+
+            <!-- Details & Specifications -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/10">
+                <div class="md:col-span-2 space-y-3">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-accent-soft">{{ __('Deskripsi Kategori') }}</h4>
+                    <p id="modal-category-desc" class="text-xs sm:text-sm text-text-muted leading-relaxed">
+                        Category description goes here.
+                    </p>
+                    
+                    <div class="pt-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-2.5">{{ __('Keunggulan Utama / Key Features') }}</h4>
+                        <ul id="modal-category-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
+                            <!-- Highlights list dynamically inserted -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA Actions -->
+                <div class="p-5 rounded-2xl bg-zinc-900/90 border border-accent-gold/30 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-[11px] uppercase font-bold text-accent-gold tracking-wider block mb-1">{{ __('Official Purchase & Inquiries') }}</span>
+                        <p class="text-[11px] text-zinc-400 leading-snug">{{ __('Tanyakan ketersediaan produk & spesifikasi lengkap langsung kepada tim Cue Corner.') }}</p>
+                    </div>
+
+                    <div class="space-y-2.5">
+                        <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-accent-gold text-black hover:bg-accent-glow font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+                            <i class="fa-solid fa-store"></i>
+                            <span>{{ __('Tokopedia Store') }}</span>
+                        </a>
+                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-zinc-800 border border-white/10 text-white hover:border-accent-gold font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-bag-shopping text-accent-gold"></i>
+                            <span>{{ __('Shopee Official') }}</span>
+                        </a>
+                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-600 hover:text-white font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                            <span>{{ __('Tanya via WhatsApp') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Fullscreen Image Lightbox Modal -->
+<div id="image-lightbox-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true">
+    <!-- Lightbox Backdrop -->
+    <div onclick="closeFullscreenImage()" class="fixed inset-0 bg-black/90 z-0"></div>
+
+    <!-- Top Action Controls -->
+    <div class="fixed top-4 right-4 z-30 flex items-center gap-3">
+        <a id="lightbox-newtab-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-full bg-zinc-900/90 border border-white/20 text-zinc-300 hover:text-accent-gold hover:border-accent-gold text-xs font-semibold flex items-center gap-2 transition-all shadow-xl" title="{{ __('Buka Gambar di Tab Baru') }}">
+            <span>{{ __('Buka Tab Baru') }}</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+        <button onclick="closeFullscreenImage()" class="w-10 h-10 rounded-full bg-zinc-900/90 border border-white/20 text-zinc-300 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all shadow-xl focus:outline-none" aria-label="{{ __('Tutup Ukuran Asli') }}">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Lightbox Image Display Container -->
+    <div class="relative z-10 max-w-full max-h-[92vh] flex items-center justify-center p-2">
+        <img id="lightbox-image" src="" alt="Ukuran Asli Gambar" class="max-w-full max-h-[92vh] object-contain rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border border-white/10 transition-transform duration-300">
+    </div>
+</div>
 
 
 <!-- ==========================================
@@ -1244,7 +1381,251 @@
     document.addEventListener('DOMContentLoaded', () => {
         setTimeout(window.initIgInsightsChart, 300);
     });
+
+    /* ==========================================
+       PRODUCT CATEGORIES POPUP MODAL LOGIC
+       ========================================== */
+    window.categoryModalData = {
+        'playing-cues': {
+            title: @json(__('Playing Cues')),
+            badge: 'Playing Cue',
+            desc: @json(__('High-precision handcrafted playing cues with micro-joint system and premium quality wood for consistent shots and unmatched feel.')),
+            highlights: [
+                @json(__('Handcrafted Exotic Wood & Custom Inlays')),
+                @json(__('Micro-Engineered Precision Joint System')),
+                @json(__('Optimal Weight Distribution & Balance')),
+                @json(__('Compatible with Pro Carbon & Wood Shafts'))
+            ],
+            images: [
+                "{{ asset('Asset/Image/Kategori/Butt.jpeg') }}",
+                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+            ]
+        },
+        'shafts': {
+            title: @json(__('High-Performance Shafts')),
+            badge: 'Carbon & Wood Shaft',
+            desc: @json(__('Pro-grade carbon fiber shafts and low-deflection select Canadian Maple wood for perfect ball accuracy and spin control.')),
+            highlights: [
+                @json(__('Aerospace-Grade Carbon Fiber Structure')),
+                @json(__('Ultra-Low Deflection Technology')),
+                @json(__('Multi-Layered Precision Leather Tip')),
+                @json(__('Silky Smooth Moisture-Resistant Finish'))
+            ],
+            images: [
+                "{{ asset('Asset/Image/Kategori/Shaft.jpg') }}",
+                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+            ]
+        },
+        'break-cues': {
+            title: @json(__('Break Cues')),
+            badge: 'Break Cue',
+            desc: @json(__('High-impact break cues engineered with durable high-density ferrules and maximum energy transfer for explosive opening breaks.')),
+            highlights: [
+                @json(__('High-Density Power Ferrule & Phenolic Tip')),
+                @json(__('Maximum Energy Transfer Stiffness')),
+                @json(__('Ergonomic Non-Slip Grip Section')),
+                @json(__('Heavy-Duty Joint Reinforcement'))
+            ],
+            images: [
+                "{{ asset('Asset/Image/Kategori/Break.jpeg') }}",
+                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+            ]
+        },
+        'jump-cues': {
+            title: @json(__('Jump Cues')),
+            badge: 'Jump Cue',
+            desc: @json(__('Ultra-light precision jump cues designed for effortless cue ball elevation over obstacle balls accurately with minimal effort.')),
+            highlights: [
+                @json(__('Ultra-Light Weight Balanced Core')),
+                @json(__('Extra-Hard Phenolic Break/Jump Tip')),
+                @json(__('Quick-Release Extension Joint')),
+                @json(__('High-Angle Jump Accuracy Control'))
+            ],
+            images: [
+                "{{ asset('Asset/Image/Kategori/jump.jpeg') }}",
+                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+            ]
+        }
+    };
+
+    let currentModalKey = null;
+    let currentModalImgIndex = 0;
+
+    window.openCategoryModal = function(key) {
+        const data = window.categoryModalData[key];
+        if (!data) return;
+
+        currentModalKey = key;
+        currentModalImgIndex = 0;
+
+        const badgeEl = document.getElementById('modal-category-badge');
+        const titleEl = document.getElementById('modal-category-title');
+        const descEl = document.getElementById('modal-category-desc');
+
+        if (badgeEl) badgeEl.innerText = data.badge;
+        if (titleEl) titleEl.innerText = data.title;
+        if (descEl) descEl.innerText = data.desc;
+
+        // Set highlights
+        const highlightsEl = document.getElementById('modal-category-highlights');
+        if (highlightsEl) {
+            highlightsEl.innerHTML = data.highlights.map(h => `
+                <li class="flex items-center gap-2 bg-zinc-900/60 p-2.5 rounded-xl border border-white/5">
+                    <i class="fa-solid fa-check text-accent-gold text-xs flex-shrink-0"></i>
+                    <span>${h}</span>
+                </li>
+            `).join('');
+        }
+
+        // Set WhatsApp link
+        const waLink = document.getElementById('modal-wa-link');
+        if (waLink) {
+            waLink.href = `https://wa.me/628123456789?text=${encodeURIComponent('Halo Cue Corner, saya ingin bertanya mengenai produk kategori: ' + data.title)}`;
+        }
+
+        renderModalGallery();
+
+        const modal = document.getElementById('category-modal');
+        if (!modal) return;
+        const modalCard = modal.querySelector('.relative.w-full');
+
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+
+        requestAnimationFrame(() => {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            if (modalCard) {
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+            }
+        });
+    };
+
+    window.closeCategoryModal = function() {
+        const modal = document.getElementById('category-modal');
+        if (!modal) return;
+        const modalCard = modal.querySelector('.relative.w-full');
+
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        if (modalCard) {
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-95');
+        }
+
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    };
+
+    function renderModalGallery() {
+        if (!currentModalKey || !window.categoryModalData[currentModalKey]) return;
+        const data = window.categoryModalData[currentModalKey];
+        const imgs = data.images;
+
+        if (currentModalImgIndex < 0) currentModalImgIndex = imgs.length - 1;
+        if (currentModalImgIndex >= imgs.length) currentModalImgIndex = 0;
+
+        const mainImg = document.getElementById('modal-main-image');
+        const bgImg = document.getElementById('modal-bg-image');
+        if (mainImg) mainImg.src = imgs[currentModalImgIndex];
+        if (bgImg) bgImg.src = imgs[currentModalImgIndex];
+
+        const counter = document.getElementById('modal-image-counter');
+        if (counter) counter.innerText = `${currentModalImgIndex + 1} / ${imgs.length}`;
+
+        // Thumbnails
+        const thumbsContainer = document.getElementById('modal-thumbnails-container');
+        if (thumbsContainer) {
+            if (imgs.length <= 1) {
+                thumbsContainer.classList.add('hidden');
+            } else {
+                thumbsContainer.classList.remove('hidden');
+                thumbsContainer.innerHTML = imgs.map((imgSrc, idx) => `
+                    <button onclick="setCategoryModalImage(${idx})" class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 bg-black ${idx === currentModalImgIndex ? 'border-accent-gold scale-105 shadow-lg' : 'border-white/10 opacity-60 hover:opacity-100'}">
+                        <img src="${imgSrc}" class="w-full h-full object-cover">
+                    </button>
+                `).join('');
+            }
+        }
+
+        // Hide/show prev/next buttons if only 1 image
+        const prevBtn = document.getElementById('modal-prev-btn');
+        const nextBtn = document.getElementById('modal-next-btn');
+        if (prevBtn && nextBtn) {
+            if (imgs.length <= 1) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+            }
+        }
+    }
+
+    window.setCategoryModalImage = function(idx) {
+        currentModalImgIndex = idx;
+        renderModalGallery();
+    };
+
+    window.prevCategoryModalImage = function() {
+        currentModalImgIndex--;
+        renderModalGallery();
+    };
+
+    window.nextCategoryModalImage = function() {
+        currentModalImgIndex++;
+        renderModalGallery();
+    };
+
+    /* ==========================================
+       FULLSCREEN LIGHTBOX LOGIC
+       ========================================== */
+    window.openFullscreenImage = function(src) {
+        const targetSrc = src || (document.getElementById('modal-main-image') ? document.getElementById('modal-main-image').src : '');
+        if (!targetSrc) return;
+
+        const lightboxModal = document.getElementById('image-lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-image');
+        const newTabBtn = document.getElementById('lightbox-newtab-btn');
+
+        if (lightboxImg) lightboxImg.src = targetSrc;
+        if (newTabBtn) newTabBtn.href = targetSrc;
+
+        if (!lightboxModal) return;
+        lightboxModal.classList.remove('hidden');
+
+        requestAnimationFrame(() => {
+            lightboxModal.classList.remove('opacity-0', 'pointer-events-none');
+            lightboxModal.classList.add('opacity-100');
+        });
+    };
+
+    window.closeFullscreenImage = function() {
+        const lightboxModal = document.getElementById('image-lightbox-modal');
+        if (!lightboxModal) return;
+
+        lightboxModal.classList.remove('opacity-100');
+        lightboxModal.classList.add('opacity-0', 'pointer-events-none');
+
+        setTimeout(() => {
+            lightboxModal.classList.add('hidden');
+        }, 300);
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const lightboxModal = document.getElementById('image-lightbox-modal');
+            if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+                window.closeFullscreenImage();
+            } else {
+                window.closeCategoryModal();
+            }
+        }
+    });
 </script>
 @endpush
 
-@section('content')
+@endsection

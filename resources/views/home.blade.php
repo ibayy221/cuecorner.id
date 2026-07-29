@@ -881,14 +881,14 @@
     </div>
 
     <!-- MAIN DISPLAYED IMAGE CONTAINER (Clean image view without arrow overlays on mobile) -->
-    <div class="relative z-10 flex-1 w-full flex items-center justify-center p-3 sm:p-6 overflow-hidden min-h-0">
+    <div class="relative z-10 flex-1 w-full flex items-center justify-center p-2 sm:p-4 overflow-hidden min-h-0" style="max-height: calc(100vh - 10.5rem);">
         <!-- Left Slide Arrow (HIDDEN ON MOBILE, ONLY VISIBLE ON DESKTOP md:flex OUTSIDE IMAGE) -->
         <button id="lightbox-prev-btn" onclick="prevFullscreenImage(event)" type="button" class="hidden md:flex absolute left-8 z-40 w-13 h-13 rounded-full bg-zinc-900/90 hover:bg-accent-gold border border-accent-gold/50 text-white hover:text-black items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Sebelumnya') }}">
             <i class="fa-solid fa-chevron-left text-xl"></i>
         </button>
 
-        <!-- Main Display Image (Strictly constrained so widescreen and vertical images fit 100% without cropping) -->
-        <img id="lightbox-image" onclick="event.stopPropagation()" src="" alt="Ukuran Asli Gambar" class="w-auto h-auto max-w-[90vw] max-h-[calc(100vh-13rem)] sm:max-h-[calc(100vh-14rem)] object-contain rounded-lg sm:rounded-xl shadow-[0_0_90px_rgba(0,0,0,1)] border border-white/10 transition-all duration-300 pointer-events-auto">
+        <!-- Main Display Image (Using inline styles to guarantee 100% full original image display without any cropping on any browser) -->
+        <img id="lightbox-image" onclick="event.stopPropagation()" src="" alt="Ukuran Asli Gambar" class="rounded-lg sm:rounded-xl shadow-[0_0_90px_rgba(0,0,0,1)] border border-white/10 transition-all duration-300 pointer-events-auto" style="max-width: 88vw; max-height: calc(100vh - 11rem); width: auto; height: auto; object-fit: contain;">
 
         <!-- Right Slide Arrow (HIDDEN ON MOBILE, ONLY VISIBLE ON DESKTOP md:flex OUTSIDE IMAGE) -->
         <button id="lightbox-next-btn" onclick="nextFullscreenImage(event)" type="button" class="hidden md:flex absolute right-8 z-40 w-13 h-13 rounded-full bg-zinc-900/90 hover:bg-accent-gold border border-accent-gold/50 text-white hover:text-black items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Selanjutnya') }}">

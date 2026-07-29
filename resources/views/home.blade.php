@@ -584,11 +584,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-5xl mx-auto">
             
             <!-- Video 1: Brand Shaft No 1 -->
-            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="cuecorner">
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" style="max-height: 640px; overflow: hidden;" data-category="cuecorner">
                 <!-- Top Creator Header Bar -->
                 <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
                     <div class="flex items-center gap-2 truncate">
-                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                        <div class="rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; max-width: 26px; max-height: 26px; aspect-ratio: 1 / 1;">
                             <img src="{{ asset('Asset/Image/Profile/ko ssteven.png') }}" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs font-semibold text-white truncate">Cue Corner Official</span>
@@ -599,7 +599,7 @@
                 </div>
 
                 <!-- Vertical Video Container with Explicit Height & Plyr Library -->
-                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center" style="height: 480px; max-height: 480px; overflow: hidden;">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"
@@ -631,11 +631,11 @@
             </div>
 
             <!-- Video 2: Joint Cuetec -->
-            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="cuecorner">
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" style="max-height: 640px; overflow: hidden;" data-category="cuecorner">
                 <!-- Top Creator Header Bar -->
                 <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
                     <div class="flex items-center gap-2 truncate">
-                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                        <div class="rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; max-width: 26px; max-height: 26px; aspect-ratio: 1 / 1;">
                             <img src="{{ asset('Asset/Image/Profile/ko ssteven.png') }}" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs font-semibold text-white truncate">Cue Corner Official</span>
@@ -646,7 +646,7 @@
                 </div>
 
                 <!-- Vertical Video Container with Explicit Height & Plyr Library -->
-                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center" style="height: 480px; max-height: 480px; overflow: hidden;">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"
@@ -678,11 +678,11 @@
             </div>
 
             <!-- Video 3: Case Review -->
-            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="massipan">
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" style="max-height: 640px; overflow: hidden;" data-category="massipan">
                 <!-- Top Creator Header Bar -->
                 <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
                     <div class="flex items-center gap-2 truncate">
-                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                        <div class="rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; max-width: 26px; max-height: 26px; aspect-ratio: 1 / 1;">
                             <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Massipan.png') }}" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs font-semibold text-white truncate">Irvandisk (Massipan)</span>
@@ -693,7 +693,7 @@
                 </div>
 
                 <!-- Vertical Video Container with Explicit Height & Plyr Library -->
-                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center" style="height: 480px; max-height: 480px; overflow: hidden;">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"
@@ -725,11 +725,11 @@
             </div>
 
             <!-- Video 4: Triple Sixty -->
-            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="bara">
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" style="max-height: 640px; overflow: hidden;" data-category="bara">
                 <!-- Top Creator Header Bar -->
                 <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
                     <div class="flex items-center gap-2 truncate">
-                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                        <div class="rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0" style="width: 26px; height: 26px; min-width: 26px; min-height: 26px; max-width: 26px; max-height: 26px; aspect-ratio: 1 / 1;">
                             <img src="{{ asset('Asset/Image/BA - Triple sixty/Bara - BA.png') }}" class="w-full h-full object-cover">
                         </div>
                         <span class="text-xs font-semibold text-white truncate">B A R A (Ambassador)</span>
@@ -740,7 +740,7 @@
                 </div>
 
                 <!-- Vertical Video Container with Explicit Height & Plyr Library -->
-                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center" style="height: 480px; max-height: 480px; overflow: hidden;">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"

@@ -798,18 +798,18 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Backdrop overlay -->
     <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/80 z-0"></div>
 
     <!-- Main Modal Box: flex-col on mobile, flex-row on desktop (md:) -->
-    <div class="relative w-full max-w-5xl max-h-[90vh] bg-[#180d05] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300 z-10 border border-white/10">
+    <div class="relative w-full max-w-5xl max-h-[85vh] overflow-y-auto bg-[#180d05] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300 z-10 border border-white/10 custom-scrollbar">
         
-        <!-- MANDATORY CLOSE BUTTON -->
-        <button onclick="closeCategoryModal()" class="absolute top-4 right-4 z-[70] p-2 bg-[#301c0d]/80 hover:bg-[#c7a061] text-[#e5e5e7] hover:text-[#180d05] rounded-full backdrop-blur-md transition-all cursor-pointer focus:outline-none" aria-label="Close modal" title="{{ __('Close') }}">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+        <!-- INJECTED CLOSE (X) BUTTON -->
+        <button onclick="closeCategoryModal()" type="button" class="absolute top-3 right-3 md:top-4 md:right-4 z-[100] p-2 bg-[#180d05]/60 hover:bg-[#c7a061] text-[#e5e5e7] hover:text-[#180d05] rounded-full backdrop-blur-md transition-all duration-300 group focus:outline-none" aria-label="Close modal" title="{{ __('Close') }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-90">
+            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          </svg>
         </button>
 
         <!-- Left Wrapper (Image Gallery) -->

@@ -795,8 +795,10 @@
             </video>
         </div>
     </div>
-</di<!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+</div>
+
+<!-- Product Category Featured Images Popup Modal -->
+<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Backdrop overlay -->
     <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/80 z-0"></div>
 

@@ -798,15 +798,15 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-3 sm:p-6 pt-16 sm:pt-20 pb-6 bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Modal Backdrop -->
     <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/80 z-0"></div>
 
     <!-- Modal Content Card -->
-    <div class="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[88vh] overflow-y-auto bg-zinc-950/98 border border-accent-gold/50 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.9)] z-10 flex flex-col transform scale-95 transition-transform duration-300 custom-scrollbar my-auto">
+    <div class="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] bg-zinc-950/98 border border-accent-gold/50 rounded-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden my-auto">
         
-        <!-- Modal Header -->
-        <div class="sticky top-0 z-20 flex items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 bg-zinc-950/98 backdrop-blur-xl border-b border-white/10 shadow-md">
+        <!-- Modal Header (Always Fixed at Top inside Card, Never Obscured) -->
+        <div class="sticky top-0 z-30 flex items-center justify-between px-5 sm:px-6 py-3.5 bg-zinc-950 border-b border-white/10 shrink-0">
             <div class="flex items-center gap-3">
                 <span id="modal-category-badge" class="px-3 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] uppercase font-bold tracking-wider border border-accent-gold/40">
                     Category
@@ -821,11 +821,11 @@
             </button>
         </div>
 
-        <!-- Modal Body -->
-        <div class="p-5 sm:p-8 space-y-5 sm:space-y-6">
+        <!-- Modal Scrollable Body (Only Body Scrolls, Header & Close X stays fixed) -->
+        <div class="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1 custom-scrollbar">
             
             <!-- Gallery Display Section -->
-            <div class="space-y-3 sm:space-y-4">
+            <div class="space-y-3">
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-accent-gold flex items-center gap-2">
                         <i class="fa-solid fa-images text-accent-gold"></i>
@@ -834,9 +834,9 @@
                     <span id="modal-image-counter" class="text-[11px] font-semibold text-zinc-400">1 / 1</span>
                 </div>
 
-                <!-- Main Active Image Viewer -->
-                <div class="relative w-full h-56 sm:h-80 lg:h-96 max-h-[48vh] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-2">
-                    <!-- Ambient Blurred Background Image to eliminate empty black spaces -->
+                <!-- Main Active Image Viewer (Constrained Height & Smooth Fit) -->
+                <div class="relative w-full h-52 sm:h-72 lg:h-80 max-h-[38vh] sm:max-h-[40vh] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-2">
+                    <!-- Ambient Blurred Background Image -->
                     <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-45 scale-125 pointer-events-none transition-all duration-500">
 
                     <!-- Active Foreground Image (Clean, Sharp & Full Ratio) -->
@@ -858,21 +858,21 @@
                 </div>
 
                 <!-- Thumbnail Switcher Strip -->
-                <div id="modal-thumbnails-container" class="flex items-center gap-3 overflow-x-auto pb-2 custom-scrollbar">
+                <div id="modal-thumbnails-container" class="flex items-center gap-2.5 overflow-x-auto py-1 custom-scrollbar">
                     <!-- Thumbnails dynamically rendered here -->
                 </div>
             </div>
 
             <!-- Details & Specifications -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-3 border-t border-white/10">
                 <div class="md:col-span-2 space-y-3">
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-accent-soft">{{ __('Deskripsi Kategori') }}</h4>
+                    <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-accent-soft">{{ __('Deskripsi Kategori') }}</h4>
                     <p id="modal-category-desc" class="text-xs sm:text-sm text-text-muted leading-relaxed">
                         Category description goes here.
                     </p>
                     
-                    <div class="pt-2">
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-2.5">{{ __('Keunggulan Utama / Key Features') }}</h4>
+                    <div class="pt-1">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-2">{{ __('Keunggulan Utama / Key Features') }}</h4>
                         <ul id="modal-category-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-300">
                             <!-- Highlights list dynamically inserted -->
                         </ul>
@@ -880,13 +880,13 @@
                 </div>
 
                 <!-- CTA Actions -->
-                <div class="p-5 rounded-2xl bg-zinc-900/90 border border-accent-gold/30 flex flex-col justify-between space-y-4">
+                <div class="p-4 rounded-2xl bg-zinc-900/90 border border-accent-gold/30 flex flex-col justify-between space-y-3">
                     <div>
                         <span class="text-[11px] uppercase font-bold text-accent-gold tracking-wider block mb-1">{{ __('Official Purchase & Inquiries') }}</span>
                         <p class="text-[11px] text-zinc-400 leading-snug">{{ __('Tanyakan ketersediaan produk & spesifikasi lengkap langsung kepada tim Cue Corner.') }}</p>
                     </div>
 
-                    <div class="space-y-2.5">
+                    <div class="space-y-2">
                         <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-accent-gold text-black hover:bg-accent-glow font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
                             <i class="fa-solid fa-store"></i>
                             <span>{{ __('Tokopedia Store') }}</span>
@@ -908,7 +908,7 @@
 </div>
 
 <!-- Fullscreen Image Lightbox Modal -->
-<div id="image-lightbox-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true">
+<div id="image-lightbox-modal" class="fixed inset-0 z-[999999] hidden flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true">
     <!-- Lightbox Backdrop -->
     <div onclick="closeFullscreenImage()" class="fixed inset-0 bg-black/90 z-0"></div>
 

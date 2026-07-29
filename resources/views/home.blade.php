@@ -11,10 +11,22 @@
         --plyr-control-radius: 12px;
         --plyr-range-track-height: 5px;
         --plyr-font-family: inherit;
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+    }
+    .plyr--video {
+        height: 100% !important;
+        max-height: 100% !important;
+    }
+    .plyr__video-wrapper {
+        height: 100% !important;
+        padding-bottom: 0 !important;
+        background: #000000 !important;
     }
     .plyr video {
+        width: 100% !important;
+        height: 100% !important;
         object-fit: cover !important;
     }
     .plyr__poster {
@@ -557,7 +569,7 @@
                 {{ __('Video') }} <span class="text-gold-gradient">{{ __('Content Overview') }}</span>
             </h3>
             <p class="text-text-muted mt-3 sm:mt-4 text-xs sm:text-base">
-                {{ __('Tonton video resmi Cue Corner, review stik custom, uji fleksibilitas carbon shaft, serta event & tournament highlight.') }}
+                {{ __('Tonton video resmi Cue Corner, review stik custom, uji fleksibilitas carbon shaft dan hal seru lainya .') }}
             </p>
 
         <!-- Video Category Filter Tabs -->
@@ -586,8 +598,8 @@
                     </span>
                 </div>
 
-                <!-- Vertical Video Container with Plyr Library -->
-                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                <!-- Vertical Video Container with Explicit Height & Plyr Library -->
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"
@@ -633,15 +645,15 @@
                     </span>
                 </div>
 
-                <!-- Vertical Video Container with Plyr Library -->
-                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                <!-- Vertical Video Container with Explicit Height & Plyr Library -->
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"
                         playsinline
                         controls
                     >
-                        <source src="{{ asset('Asset/Video/Joint cuetec.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('Asset/Video/FG57 shaft.mp4') }}" type="video/mp4">
                         Browsermu tidak mendukung pemutaran video.
                     </video>
                 </div>
@@ -658,7 +670,7 @@
                     </div>
 
                     <!-- Fullscreen Action Button -->
-                    <button onclick="openVideoPlayerModal('{{ asset('Asset/Video/Joint cuetec.mp4') }}', 'Review Joint Cuetec & Technology')" class="w-full py-2 px-3 rounded-xl bg-zinc-900 hover:bg-accent-gold text-zinc-300 hover:text-black border border-white/10 hover:border-accent-gold text-xs font-bold transition-all flex items-center justify-center gap-2">
+                    <button onclick="openVideoPlayerModal('{{ asset('Asset/Video/FG57 shaft.mp4') }}', 'Review Joint Cuetec & Technology')" class="w-full py-2 px-3 rounded-xl bg-zinc-900 hover:bg-accent-gold text-zinc-300 hover:text-black border border-white/10 hover:border-accent-gold text-xs font-bold transition-all flex items-center justify-center gap-2">
                         <i class="fa-solid fa-expand text-xs"></i>
                         <span>{{ __('Putar Layar Penuh (HD)') }}</span>
                     </button>
@@ -680,8 +692,8 @@
                     </span>
                 </div>
 
-                <!-- Vertical Video Container with Plyr Library -->
-                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                <!-- Vertical Video Container with Explicit Height & Plyr Library -->
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"
@@ -727,8 +739,8 @@
                     </span>
                 </div>
 
-                <!-- Vertical Video Container with Plyr Library -->
-                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                <!-- Vertical Video Container with Explicit Height & Plyr Library -->
+                <div class="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-black flex items-center justify-center">
                     <video 
                         class="js-plyr-player w-full h-full object-cover" 
                         preload="metadata"

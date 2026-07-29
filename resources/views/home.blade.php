@@ -798,15 +798,15 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex flex-col items-center justify-start p-2 sm:p-6 pt-14 sm:pt-20 pb-4 bg-zinc-950/98 backdrop-blur-3xl transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex flex-col items-center justify-start p-2 sm:p-6 pt-3 sm:pt-16 pb-4 bg-black/95 backdrop-blur-3xl transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Modal Backdrop -->
     <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/95 z-0"></div>
 
     <!-- Modal Content Card -->
-    <div class="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[86vh] bg-zinc-950 border border-accent-gold/40 rounded-2xl sm:rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden my-auto shrink-0">
+    <div class="relative w-full max-w-4xl max-h-[88vh] sm:max-h-[86vh] bg-zinc-950 border border-accent-gold/50 rounded-2xl sm:rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden mt-0 sm:my-auto shrink-0">
         
-        <!-- Modal Header (Fixed at top of card with high-visibility Close Button) -->
-        <div class="sticky top-0 z-30 flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 bg-zinc-950 border-b border-white/15 shrink-0">
+        <!-- Modal Header (Fixed at top of card with Bright Gold Close Button) -->
+        <div class="sticky top-0 z-30 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-zinc-950 border-b border-white/15 shrink-0 shadow-md">
             <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
                 <span id="modal-category-badge" class="px-2.5 py-0.5 sm:py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest flex-shrink-0">
                     Category
@@ -816,9 +816,9 @@
                 </h3>
             </div>
             
-            <!-- Easy-to-tap Prominent Close Button -->
-            <button onclick="closeCategoryModal()" class="w-9 sm:w-11 h-9 sm:h-11 rounded-full bg-zinc-900 border-2 border-accent-gold/60 text-accent-gold hover:text-black hover:bg-accent-gold hover:border-accent-gold flex items-center justify-center transition-all shadow-lg focus:outline-none shrink-0" aria-label="Close modal" title="{{ __('Tutup Modal') }}">
-                <i class="fa-solid fa-xmark text-lg sm:text-xl"></i>
+            <!-- Easy-to-tap Bright Gold Close Button -->
+            <button onclick="closeCategoryModal()" class="w-10 sm:w-11 h-10 sm:h-11 rounded-full bg-accent-gold text-black hover:bg-white hover:text-black flex items-center justify-center transition-all shadow-xl font-bold focus:outline-none shrink-0" aria-label="Tutup modal" title="{{ __('Tutup Modal') }}">
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
 

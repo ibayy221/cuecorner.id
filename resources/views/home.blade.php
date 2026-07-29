@@ -1472,7 +1472,7 @@
             <!-- Network Filter Tabs -->
             <div class="flex flex-wrap items-center justify-center gap-2 mt-6 sm:mt-8">
                 <button onclick="filterAffiliates('all')" id="affiliate-tab-all" class="px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md">{{ __('Semua Network') }}</button>
-                <button onclick="filterAffiliates('athlete')" id="affiliate-tab-athlete" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Atlet Pro') }}</button>
+                <button onclick="filterAffiliates('athlete')" id="affiliate-tab-athlete" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Konten Kreator') }}</button>
                 <button onclick="filterAffiliates('influencer')" id="affiliate-tab-influencer" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Influencer & Creator') }}</button>
                 <button onclick="filterAffiliates('media')" id="affiliate-tab-media" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Media Terafiliasi') }}</button>
             </div>

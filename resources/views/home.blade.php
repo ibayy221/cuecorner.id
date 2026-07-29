@@ -100,8 +100,8 @@
                         <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Genuine Original Brand ') }}</span>
                     </div>
                     <div>
-                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Official') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Distributor in ID') }}</span>
+                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Nation wide distribution') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('All Region') }}</span>
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('10M+') }}</span>

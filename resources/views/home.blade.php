@@ -801,41 +801,49 @@
 <div id="category-modal" onclick="closeCategoryModal()" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     
     <!-- MAIN MODAL CONTAINER (Using dvh for Safari mobile fix) -->
-    <div onclick="event.stopPropagation()" class="relative w-full max-w-5xl h-[85dvh] md:h-[80dvh] bg-[#180d05] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl border border-[#644a30]/30 transition-transform duration-300 scale-95">
+    <div onclick="event.stopPropagation()" class="relative w-full max-w-5xl h-[85dvh] md:h-[80dvh] bg-[#180d05] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl border border-[#644a30]/40 transition-transform duration-300 scale-95">
         
         <!-- EXPLICIT CLOSE BUTTON (Do not remove) -->
-        <button onclick="closeCategoryModal()" type="button" class="absolute top-3 right-3 md:top-4 md:right-4 z-[1000] p-2 bg-[#180d05]/80 hover:bg-[#c7a061] text-[#e5e5e7] hover:text-[#180d05] rounded-full transition-colors border border-[#644a30]/50 backdrop-blur-sm cursor-pointer" aria-label="Close modal">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <button onclick="closeCategoryModal()" type="button" class="absolute top-3.5 right-3.5 md:top-5 md:right-5 z-[1000] p-2 sm:p-2.5 bg-[#180d05]/90 hover:bg-[#c7a061] text-[#e5e5e7] hover:text-[#180d05] rounded-full transition-all duration-300 border border-[#644a30]/60 hover:border-[#c7a061] shadow-xl backdrop-blur-md cursor-pointer hover:scale-105" aria-label="Close modal">
+            <svg width="20" height="20" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
         <!-- LEFT COLUMN: IMAGE & THUMBNAILS (45% height on mobile, 50% width on desktop) -->
         <div class="w-full h-[45%] md:w-1/2 md:h-full bg-black flex flex-col relative shrink-0">
-            <!-- Main Image Container -->
-            <div class="w-full h-full relative overflow-hidden flex items-center justify-center bg-black">
+            <!-- Main Image Container with Ambient Studio Spotlight -->
+            <div class="w-full h-full relative overflow-hidden flex items-center justify-center bg-[#0d0703]">
                 <!-- Ambient Blurred Background Image -->
-                <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-30 scale-110 pointer-events-none transition-all duration-500">
+                <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-40 scale-125 pointer-events-none transition-all duration-500">
+                <div class="absolute inset-0 bg-radial from-transparent via-[#0d0703]/40 to-[#0d0703] pointer-events-none z-10"></div>
+                
+                <!-- Full Resolution Hint Badge -->
+                <div class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full bg-black/60 border border-[#c7a061]/30 text-[#c7a061] text-[10px] font-medium backdrop-blur-md flex items-center gap-1.5 shadow-md pointer-events-none opacity-90">
+                    <i class="fa-solid fa-expand text-[9px]"></i>
+                    <span>{{ __('Klik untuk ukuran asli') }}</span>
+                </div>
+
                 <!-- Main Image (object-contain ensures full image visibility without cropping) -->
-                <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="relative z-10 w-full h-full object-contain p-2 cursor-pointer" alt="Main Cue" title="{{ __('Klik untuk melihat ukuran asli') }}">
+                <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="relative z-10 w-full h-full object-contain p-3 cursor-pointer transition-transform duration-300 hover:scale-[1.02]" alt="Main Cue" title="{{ __('Klik untuk melihat ukuran asli') }}">
             </div>
             <!-- Thumbnails fixed at bottom of left column -->
-            <div id="modal-thumbnails-container" class="absolute bottom-0 z-20 w-full p-3 flex gap-3 overflow-x-auto bg-gradient-to-t from-black via-black/80 to-transparent shrink-0 custom-scrollbar">
+            <div id="modal-thumbnails-container" class="absolute bottom-0 z-20 w-full p-3 flex gap-3 overflow-x-auto bg-gradient-to-t from-black via-black/90 to-transparent shrink-0 custom-scrollbar">
                 <!-- Dynamic thumbnails rendered here -->
             </div>
         </div>
 
         <!-- RIGHT COLUMN: TEXT (55% height on mobile, 50% width on desktop) -->
-        <div class="w-full h-[55%] md:w-1/2 md:h-full flex flex-col bg-[#180d05]">
+        <div class="w-full h-[55%] md:w-1/2 md:h-full flex flex-col bg-[#180d05] justify-start overflow-hidden">
             <!-- Scrollable Text Area -->
-            <div class="flex-1 p-5 md:p-8 overflow-y-auto overscroll-contain custom-scrollbar flex flex-col justify-center">
+            <div class="flex-1 p-5 sm:p-6 md:p-8 overflow-y-auto overscroll-contain custom-scrollbar flex flex-col justify-start space-y-4">
                 <div>
-                    <span id="modal-category-badge" class="px-3 py-1 text-[10px] font-bold text-[#180d05] bg-[#c7a061] rounded-full uppercase tracking-wider inline-block">Playing Cue</span>
-                    <h3 id="modal-category-title" class="text-2xl md:text-3xl font-bold text-white mt-3 mb-4">Playing Cues</h3>
+                    <span id="modal-category-badge" class="px-3 py-1 text-[10px] font-bold text-[#180d05] bg-[#c7a061] rounded-full uppercase tracking-wider inline-block mb-1">Playing Cue</span>
+                    <h3 id="modal-category-title" class="text-2xl md:text-3xl font-bold text-white mt-1 mb-5">Playing Cues</h3>
                     
                     <h4 class="text-[10px] text-[#917b59] font-bold tracking-widest uppercase mb-2">{{ __('Deskripsi Kategori') }}</h4>
                     <p id="modal-category-desc" class="text-[#e5e5e7] text-sm leading-relaxed mb-6">Stik biliar presisi tinggi dengan sistem joint mikro dan kayu kualitas premium untuk tembakan konsisten.</p>
                     
                     <h4 class="text-[10px] text-[#917b59] font-bold tracking-widest uppercase mb-3">{{ __('Keunggulan Utama') }}</h4>
-                    <ul id="modal-category-highlights" class="space-y-3">
+                    <ul id="modal-category-highlights" class="space-y-3 pb-4">
                         <li class="flex gap-3 text-sm text-[#e5e5e7]"><span class="text-[#c7a061]">✔</span> Handcrafted Exotic Wood & Custom Inlays</li>
                     </ul>
                 </div>

@@ -85,7 +85,7 @@
                 <div class="gsap-hero-anim border-t border-white/10 pt-4 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('100%') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Genuine Original brand ') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Genuine Original Brand ') }}</span>
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Official') }}</span>

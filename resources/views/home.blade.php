@@ -854,12 +854,12 @@
 </div>
 
 <!-- Fullscreen Image Lightbox Modal -->
-<div id="image-lightbox-modal" class="fixed inset-0 z-50 hidden flex flex-col justify-between bg-black/98 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none select-none" style="z-index: 99999;" role="dialog" aria-modal="true">
+<div id="image-lightbox-modal" class="fixed inset-0 hidden flex flex-col justify-between bg-black/98 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none select-none" style="z-index: 9999999;" role="dialog" aria-modal="true">
     <!-- Lightbox Backdrop -->
     <div onclick="closeFullscreenImage()" class="absolute inset-0 bg-black/98 z-0"></div>
 
     <!-- ALWAYS VISIBLE FLOATING CLOSE BUTTON (X) FOR MOBILE & DESKTOP -->
-    <button onclick="closeFullscreenImage()" type="button" class="fixed top-3.5 right-3.5 sm:top-6 sm:right-6 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-zinc-900/95 hover:bg-accent-gold border-2 border-accent-gold text-accent-gold hover:text-black flex items-center justify-center transition-all shadow-[0_0_20px_rgba(199,160,97,0.5)] backdrop-blur-xl cursor-pointer hover:scale-110 focus:outline-none" style="z-index: 100000;" aria-label="{{ __('Tutup Ukuran Asli') }}">
+    <button onclick="closeFullscreenImage()" type="button" class="fixed top-3.5 right-3.5 sm:top-6 sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-zinc-900/95 hover:bg-accent-gold border-2 border-accent-gold text-accent-gold hover:text-black flex items-center justify-center transition-all shadow-[0_0_20px_rgba(199,160,97,0.5)] backdrop-blur-xl cursor-pointer hover:scale-110 focus:outline-none" style="z-index: 10000000;" aria-label="{{ __('Tutup Ukuran Asli') }}">
         <i class="fa-solid fa-xmark text-xl font-bold"></i>
     </button>
 
@@ -887,8 +887,8 @@
             <i class="fa-solid fa-chevron-left text-xl"></i>
         </button>
 
-        <!-- Main Display Image -->
-        <img id="lightbox-image" onclick="event.stopPropagation()" src="" alt="Ukuran Asli Gambar" class="max-w-full max-h-full object-contain rounded-lg sm:rounded-xl shadow-[0_0_90px_rgba(0,0,0,1)] border border-white/10 transition-all duration-300 pointer-events-auto">
+        <!-- Main Display Image (Strictly constrained so widescreen and vertical images fit 100% without cropping) -->
+        <img id="lightbox-image" onclick="event.stopPropagation()" src="" alt="Ukuran Asli Gambar" class="w-auto h-auto max-w-[90vw] max-h-[calc(100vh-13rem)] sm:max-h-[calc(100vh-14rem)] object-contain rounded-lg sm:rounded-xl shadow-[0_0_90px_rgba(0,0,0,1)] border border-white/10 transition-all duration-300 pointer-events-auto">
 
         <!-- Right Slide Arrow (HIDDEN ON MOBILE, ONLY VISIBLE ON DESKTOP md:flex OUTSIDE IMAGE) -->
         <button id="lightbox-next-btn" onclick="nextFullscreenImage(event)" type="button" class="hidden md:flex absolute right-8 z-40 w-13 h-13 rounded-full bg-zinc-900/90 hover:bg-accent-gold border border-accent-gold/50 text-white hover:text-black items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Selanjutnya') }}">
@@ -2264,6 +2264,9 @@
             window.wasCategoryModalOpen = false;
         }
 
+        const mainHeader = document.getElementById('main-header');
+        if (mainHeader) mainHeader.style.display = 'none';
+
         const lightboxModal = document.getElementById('image-lightbox-modal');
         if (!lightboxModal) return;
 
@@ -2341,6 +2344,9 @@
     };
 
     window.closeFullscreenImage = function() {
+        const mainHeader = document.getElementById('main-header');
+        if (mainHeader) mainHeader.style.display = '';
+
         const lightboxModal = document.getElementById('image-lightbox-modal');
         if (!lightboxModal) return;
 

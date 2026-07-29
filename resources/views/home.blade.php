@@ -1209,6 +1209,38 @@
                         </div>
                         <i class="fa-solid fa-arrow-up-right-from-square text-xs text-text-muted group-hover:text-accent-glow"></i>
                     </a>
+
+                    <!-- Website Store Card (Coming Soon) -->
+                    <div class="p-4 sm:p-5 rounded-xl bg-secondary/80 border border-border-accent/60 flex items-center justify-between group hover:border-accent-gold/40 transition-all relative overflow-hidden">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-zinc-900/90 border border-accent-gold/30 text-accent-gold flex items-center justify-center flex-shrink-0 text-xl group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-text-light text-sm">{{ __('Official Web Store') }}</h5>
+                                <span class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold">{{ __('Direct Checkout') }}</span>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] font-bold uppercase tracking-wider flex-shrink-0">
+                            {{ __('Coming Soon') }}
+                        </span>
+                    </div>
+
+                    <!-- Mobile App Card (Coming Soon) -->
+                    <div class="p-4 sm:p-5 rounded-xl bg-secondary/80 border border-border-accent/60 flex items-center justify-between group hover:border-accent-gold/40 transition-all relative overflow-hidden">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-zinc-900/90 border border-accent-gold/30 text-accent-gold flex items-center justify-center flex-shrink-0 text-xl group-hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-text-light text-sm">{{ __('Cue Corner App') }}</h5>
+                                <span class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold">{{ __('iOS & Android') }}</span>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] font-bold uppercase tracking-wider flex-shrink-0">
+                            {{ __('Coming Soon') }}
+                        </span>
+                    </div>
                 </div>
             </div>
 

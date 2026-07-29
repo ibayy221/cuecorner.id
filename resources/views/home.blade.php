@@ -798,31 +798,32 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center p-4 sm:p-6 bg-black/92 backdrop-blur-3xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex flex-col items-center justify-start p-2 sm:p-6 pt-14 sm:pt-20 pb-4 bg-zinc-950/98 backdrop-blur-3xl transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Modal Backdrop -->
-    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/85 z-0"></div>
+    <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/95 z-0"></div>
 
     <!-- Modal Content Card -->
-    <div class="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[86vh] bg-zinc-950/98 border border-accent-gold/40 rounded-2xl sm:rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden my-auto">
+    <div class="relative w-full max-w-4xl max-h-[85vh] sm:max-h-[86vh] bg-zinc-950 border border-accent-gold/40 rounded-2xl sm:rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.95)] z-10 flex flex-col transform scale-95 transition-transform duration-300 overflow-hidden my-auto shrink-0">
         
-        <!-- Modal Header (Fixed at top of card, never obscured) -->
-        <div class="sticky top-0 z-30 flex items-center justify-between px-5 sm:px-6 py-4 bg-zinc-950 border-b border-white/10 shrink-0">
-            <div class="flex items-center gap-3">
-                <span id="modal-category-badge" class="px-3 py-1 rounded-full bg-accent-gold/15 text-accent-gold border border-accent-gold/40 text-[10px] font-bold uppercase tracking-widest">
+        <!-- Modal Header (Fixed at top of card with high-visibility Close Button) -->
+        <div class="sticky top-0 z-30 flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 bg-zinc-950 border-b border-white/15 shrink-0">
+            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
+                <span id="modal-category-badge" class="px-2.5 py-0.5 sm:py-1 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest flex-shrink-0">
                     Category
                 </span>
-                <h3 id="modal-category-title" class="font-serif text-lg sm:text-2xl font-bold text-white tracking-tight">
+                <h3 id="modal-category-title" class="font-serif text-base sm:text-2xl font-bold text-white tracking-tight truncate">
                     Category Title
                 </h3>
             </div>
             
-            <button onclick="closeCategoryModal()" class="w-9 h-9 rounded-full bg-zinc-900 border border-white/15 text-zinc-400 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all focus:outline-none" aria-label="Close modal">
-                <i class="fa-solid fa-xmark text-lg"></i>
+            <!-- Easy-to-tap Prominent Close Button -->
+            <button onclick="closeCategoryModal()" class="w-9 sm:w-11 h-9 sm:h-11 rounded-full bg-zinc-900 border-2 border-accent-gold/60 text-accent-gold hover:text-black hover:bg-accent-gold hover:border-accent-gold flex items-center justify-center transition-all shadow-lg focus:outline-none shrink-0" aria-label="Close modal" title="{{ __('Tutup Modal') }}">
+                <i class="fa-solid fa-xmark text-lg sm:text-xl"></i>
             </button>
         </div>
 
         <!-- Modal Scrollable Body (Only Body Scrolls) -->
-        <div class="p-5 sm:p-6 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
+        <div class="p-4 sm:p-6 overflow-y-auto space-y-5 sm:space-y-6 flex-1 custom-scrollbar">
             
             <!-- Gallery Display Section -->
             <div class="space-y-3">
@@ -835,36 +836,36 @@
                 </div>
 
                 <!-- Main Active Image Viewer -->
-                <div class="relative w-full h-48 sm:h-64 lg:h-72 max-h-[32vh] rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-3">
+                <div class="relative w-full h-44 sm:h-64 lg:h-72 max-h-[28vh] sm:max-h-[32vh] rounded-xl sm:rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 shadow-inner group flex items-center justify-center p-2.5">
                     <!-- Ambient Blurred Background Image -->
-                    <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-40 scale-125 pointer-events-none transition-all duration-500">
+                    <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-35 scale-125 pointer-events-none transition-all duration-500">
 
                     <!-- Active Foreground Image (Sharp & Centered) -->
                     <img id="modal-main-image" onclick="openFullscreenImage()" src="" alt="Category Featured Image" class="relative z-10 w-full h-full object-contain object-center transition-all duration-300 drop-shadow-2xl cursor-pointer hover:scale-[1.02]" title="{{ __('Klik untuk melihat ukuran asli') }}">
 
                     <!-- Open Fullsize Button Overlay -->
-                    <button onclick="openFullscreenImage()" class="absolute z-20 top-3 right-3 px-3 py-1.5 rounded-full bg-black/80 border border-white/20 text-accent-gold hover:text-white hover:border-accent-gold text-[11px] font-bold flex items-center gap-1.5 transition-all opacity-85 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
+                    <button onclick="openFullscreenImage()" class="absolute z-20 top-2.5 right-2.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-black/85 border border-white/20 text-accent-gold hover:text-white hover:border-accent-gold text-[10px] sm:text-[11px] font-bold flex items-center gap-1.5 transition-all shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
                         <i class="fa-solid fa-expand text-xs"></i>
-                        <span>{{ __('Ukuran Asli') }}</span>
+                        <span class="hidden sm:inline">{{ __('Ukuran Asli') }}</span>
                     </button>
 
                     <!-- Navigation Arrows on Main Image -->
-                    <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute z-20 left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/75 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
-                        <i class="fa-solid fa-chevron-left text-sm"></i>
+                    <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute z-20 left-2 top-1/2 -translate-y-1/2 w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-black/80 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all focus:outline-none">
+                        <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
                     </button>
-                    <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute z-20 right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/75 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all opacity-80 hover:opacity-100 focus:outline-none">
-                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute z-20 right-2 top-1/2 -translate-y-1/2 w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-black/80 border border-white/20 text-white hover:bg-accent-gold hover:text-black flex items-center justify-center transition-all focus:outline-none">
+                        <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
                     </button>
                 </div>
 
                 <!-- Thumbnail Switcher Strip -->
-                <div id="modal-thumbnails-container" class="flex items-center gap-2.5 overflow-x-auto py-1 custom-scrollbar">
+                <div id="modal-thumbnails-container" class="flex items-center gap-2 overflow-x-auto py-1 custom-scrollbar">
                     <!-- Thumbnails dynamically rendered here -->
                 </div>
             </div>
 
             <!-- Details & Specifications Section -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-4 border-t border-white/10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 pt-4 border-t border-white/10">
                 <div class="md:col-span-7 space-y-4">
                     <div>
                         <h4 class="text-xs font-bold uppercase tracking-wider text-accent-gold mb-1.5">{{ __('Deskripsi Kategori') }}</h4>
@@ -882,27 +883,35 @@
                 </div>
 
                 <!-- CTA Actions Box -->
-                <div class="md:col-span-5 p-5 rounded-2xl bg-gradient-to-b from-zinc-900/90 to-zinc-950 border border-accent-gold/30 flex flex-col justify-between space-y-4 shadow-xl">
+                <div class="md:col-span-5 p-4 sm:p-5 rounded-2xl bg-zinc-900/90 border border-accent-gold/30 flex flex-col justify-between space-y-4 shadow-xl">
                     <div>
                         <span class="text-[11px] uppercase font-bold text-accent-gold tracking-wider block mb-1">{{ __('Official Purchase & Inquiries') }}</span>
                         <p class="text-[11px] text-zinc-400 leading-relaxed">{{ __('Tanyakan ketersediaan produk & spesifikasi lengkap langsung kepada tim Cue Corner.') }}</p>
                     </div>
 
                     <div class="space-y-2.5">
-                        <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-accent-gold text-black hover:bg-accent-glow font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md shadow-accent-gold/10">
+                        <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 sm:py-3 px-4 rounded-xl bg-accent-gold text-black hover:bg-accent-glow font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md shadow-accent-gold/10">
                             <i class="fa-solid fa-store"></i>
                             <span>{{ __('Tokopedia Store') }}</span>
                         </a>
-                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-zinc-900 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-black font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 sm:py-3 px-4 rounded-xl bg-zinc-950 border border-amber-500/40 text-amber-400 hover:bg-amber-500 hover:text-black font-bold text-xs flex items-center justify-center gap-2 transition-all">
                             <i class="fa-solid fa-bag-shopping"></i>
                             <span>{{ __('Shopee Official') }}</span>
                         </a>
-                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 sm:py-3 px-4 rounded-xl bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold text-xs flex items-center justify-center gap-2 transition-all">
                             <i class="fa-brands fa-whatsapp text-sm"></i>
                             <span>{{ __('Tanya via WhatsApp') }}</span>
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Mobile Easy Bottom Close Button -->
+            <div class="pt-3 border-t border-white/10 sm:hidden">
+                <button onclick="closeCategoryModal()" class="w-full py-3 px-4 rounded-xl bg-zinc-900 border border-white/20 text-zinc-300 hover:text-white font-bold text-xs flex items-center justify-center gap-2 transition-all active:scale-95">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                    <span>{{ __('Tutup Modal') }}</span>
+                </button>
             </div>
 
         </div>

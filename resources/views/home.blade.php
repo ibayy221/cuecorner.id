@@ -949,7 +949,7 @@
         </div>
 
         <!-- Media Channels Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             
             <!-- Channel 1: Cuecorner Indonesia (Instagram) -->
             <a href="https://www.instagram.com/cuecorner.id/" target="_blank" rel="noopener noreferrer" class="card-luxury p-6 sm:p-8 rounded-2xl relative overflow-hidden gsap-reveal border-l-4 border-l-accent-gold group hover:border-accent-gold transition-all duration-300 block">
@@ -966,7 +966,7 @@
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm text-text-muted group-hover:text-accent-glow transition-colors"></i>
                 </div>
                 <p class="text-text-muted text-xs sm:text-sm leading-relaxed mb-4">
-                    {{ __('Follow the official Cue Corner Indonesia social media for exclusive cue product releases, national tournament coverage, and equipment specification breakdowns.') }}
+                    {{ __('Follow official Cue Corner Indonesia social media for exclusive cue product releases, national tournament coverage, and equipment specification breakdowns.') }}
                 </p>
                 <div class="inline-flex items-center gap-2 text-xs font-semibold text-accent-gold group-hover:text-accent-glow">
                     <span>{{ __('Visit Instagram') }}</span>
@@ -974,7 +974,30 @@
                 </div>
             </a>
 
-            <!-- Channel 2: Zen Cue Corner (Instagram) -->
+            <!-- Channel 2: Triple Sixty Indonesia (Instagram) -->
+            <a href="https://www.instagram.com/triple.sixtyindonesia/" target="_blank" rel="noopener noreferrer" class="card-luxury p-6 sm:p-8 rounded-2xl relative overflow-hidden gsap-reveal border-l-4 border-l-accent-gold group hover:border-accent-gold transition-all duration-300 block">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3.5 sm:gap-4">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-gradient-to-tr from-accent-glow via-accent-gold to-accent-soft flex items-center justify-center text-primary text-xl sm:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light group-hover:text-accent-glow transition-colors">Triple Sixty Indonesia</h4>
+                            <span class="text-[10px] sm:text-xs text-accent-gold uppercase tracking-wider font-semibold">{{ __('Official Media • @triple.sixtyindonesia') }}</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm text-text-muted group-hover:text-accent-glow transition-colors"></i>
+                </div>
+                <p class="text-text-muted text-xs sm:text-sm leading-relaxed mb-4">
+                    {{ __('Official Triple Sixty Indonesia digital media channel dedicated to cue sports coverage, tournament highlights, brand ambassador features, and billiard community content.') }}
+                </p>
+                <div class="inline-flex items-center gap-2 text-xs font-semibold text-accent-gold group-hover:text-accent-glow">
+                    <span>{{ __('Visit Triple Sixty Instagram') }}</span>
+                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </div>
+            </a>
+
+            <!-- Channel 3: Zen Cue Corner (Instagram) -->
             <a href="https://www.instagram.com/zencuecorner/" target="_blank" rel="noopener noreferrer" class="card-luxury p-6 sm:p-8 rounded-2xl relative overflow-hidden gsap-reveal border-l-4 border-l-accent-gold group hover:border-accent-gold transition-all duration-300 block">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-3.5 sm:gap-4">
@@ -1020,6 +1043,7 @@
                     <!-- Account Selector Toggle Tabs -->
                     <div class="flex items-center gap-1 bg-zinc-900 p-1 rounded-xl border border-white/15 text-[11px] sm:text-xs">
                         <button onclick="switchIgAccount('cuecorner')" id="acct-tab-cuecorner" class="px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all">@cuecorner.id</button>
+                        <button onclick="switchIgAccount('triplesixty')" id="acct-tab-triplesixty" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all">@triple.sixtyindonesia</button>
                         <button onclick="switchIgAccount('zencue')" id="acct-tab-zencue" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all">@zencuecorner</button>
                     </div>
 
@@ -2301,13 +2325,43 @@
        ========================================== */
     window.switchIgAccount = function(account) {
         const tabCc = document.getElementById('acct-tab-cuecorner');
+        const tab360 = document.getElementById('acct-tab-triplesixty');
         const tabZen = document.getElementById('acct-tab-zencue');
         const subtitle = document.getElementById('ig-insights-subtitle');
 
-        if (tabCc) tabCc.className = account === 'cuecorner' ? 'px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all' : 'px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all';
-        if (tabZen) tabZen.className = account === 'zencue' ? 'px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all' : 'px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all';
+        const activeCls = 'px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all';
+        const inactiveCls = 'px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all';
 
-        if (account === 'zencue') {
+        if (tabCc) tabCc.className = account === 'cuecorner' ? activeCls : inactiveCls;
+        if (tab360) tab360.className = account === 'triplesixty' ? activeCls : inactiveCls;
+        if (tabZen) tabZen.className = account === 'zencue' ? activeCls : inactiveCls;
+
+        if (account === 'triplesixty') {
+            if (subtitle) subtitle.innerText = 'Official @triple.sixtyindonesia Meta Insights Verified Data (Views 2.2M | Reach 82.5K | Interactions 52.1K)';
+            document.getElementById('stat-val-1').innerText = '2,2M';
+            document.getElementById('stat-sub-1').innerText = '(2.200.000 total views)';
+            document.getElementById('stat-growth-1').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +100% vs prev';
+
+            document.getElementById('stat-val-2').innerText = '82,5K';
+            document.getElementById('stat-sub-2').innerText = '(82.500 accounts reached)';
+            document.getElementById('stat-growth-2').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +635%';
+
+            document.getElementById('stat-val-3').innerText = '52,1K';
+            document.getElementById('stat-sub-3').innerText = '(52.100 content interactions)';
+            document.getElementById('stat-growth-3').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +100%';
+
+            document.getElementById('stat-val-4').innerText = '29,4K';
+            document.getElementById('stat-sub-4').innerText = '(29.400 profile visits)';
+            document.getElementById('stat-growth-4').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +1.1K%';
+
+            document.getElementById('stat-val-5').innerText = '441,8K';
+            document.getElementById('stat-sub-5').innerText = '(Top Reel views)';
+            document.getElementById('stat-growth-5').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> Top Video';
+
+            document.getElementById('stat-val-6').innerText = '624';
+            document.getElementById('stat-sub-6').innerText = '(500 Stories / 124 Posts)';
+            document.getElementById('stat-growth-6').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +162%';
+        } else if (account === 'zencue') {
             if (subtitle) subtitle.innerText = 'Official @zencuecorner Meta Insights Verified Data (Views 717.4K | Reach 18.8K | Interactions 4.3K)';
             document.getElementById('stat-val-1').innerText = '717,4K';
             document.getElementById('stat-sub-1').innerText = '(717.400 views)';

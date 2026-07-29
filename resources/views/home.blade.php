@@ -31,18 +31,18 @@
                 <!-- Heritage Badge -->
                 <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">
                     <span class="w-2 h-2 rounded-full bg-accent-glow animate-ping"></span>
-                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Billiard Equipment Distributor • Est. 2024') }}</span>
+                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Official Distributor • Est. 2024') }}</span>
                 </div>
 
                 <!-- Hero Headline -->
                 <h1 class="gsap-hero-anim font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.18] mb-3 sm:mb-4 drop-shadow-md">
-                    {{ __('Cuecorner.id') }} <br />
+                    {{ __('Elevating Indonesia\'s') }} <br />
                     <span class="text-gold-gradient font-extrabold italic">{{ __('Billiard Experience') }}</span>
                 </h1>
 
                 <!-- Subheadline -->
                 <p class="gsap-hero-anim text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed mb-5 sm:mb-6 max-w-xl">
-                    {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, We collaborate with more than a few media.') }}
+                    {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, supported by Triple Sixty media.') }}
                 </p>
 
                 <!-- Trust Badges Bar -->
@@ -57,11 +57,10 @@
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('10M+') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media  ') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Reach organik no ads') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media Reach') }}</span>
                     </div>
                     <div>
-                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('World Wide') }}</span>
+                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Nationwide') }}</span>
                         <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Reseller Network') }}</span>
                     </div>
                 </div>
@@ -151,7 +150,7 @@
                             </li>
                             <li class="flex items-start gap-2.5 text-xs sm:text-sm text-text-muted">
                                 <i class="fa-solid fa-check text-accent-gold mt-1 text-xs"></i>
-                                <span>{{ __('Drive continuous brand awareness through our Zen Custom Cues & Triple Sixty media channels.') }}</span>
+                                <span>{{ __('Drive continuous brand awareness through our ZenQ & Triple Sixty media channels.') }}</span>
                             </li>
                         </ul>
                     </div>
@@ -211,24 +210,9 @@
 </section>
 
 
-<!-- ==========================================
-     SECTION 3: MANAGEMENT TEAM (Leadership)
-     ========================================== -->
-<section id="leadership" class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative bg-secondary/30">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 gsap-reveal">
-            <h2 class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-accent-soft mb-2 sm:mb-3">{{ __('Executive Leadership') }}</h2>
-            <h3 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-text-light">
-                {{ __('Driven by') }} <span class="text-gold-gradient">{{ __('Visionary Minds') }}</span>
-            </h3>
-            <p class="text-text-muted mt-3 sm:mt-4 text-xs sm:text-base">
-                {{ __('Our leadership team combines deep industry expertise, strategic purchasing power, and aggressive digital branding.') }}
-            </p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-            
-          
+
+
 <!-- ==========================================
      SECTION 4: BRAND PORTFOLIO & CATEGORIES
      ========================================== -->
@@ -1008,7 +992,6 @@
                 <ul class="space-y-2 sm:space-y-2.5 text-xs text-text-muted">
                     <li><a href="#hero" class="hover:text-accent-glow transition-colors">{{ __('Home Banner') }}</a></li>
                     <li><a href="#about" class="hover:text-accent-glow transition-colors">{{ __('About & History') }}</a></li>
-                    <li><a href="#leadership" class="hover:text-accent-glow transition-colors">{{ __('Executive Team') }}</a></li>
                     <li><a href="#portfolio" class="hover:text-accent-glow transition-colors">{{ __('Brand Portfolio') }}</a></li>
                     <li><a href="#media" class="hover:text-accent-glow transition-colors">{{ __('Media Powerhouse') }}</a></li>
                 </ul>

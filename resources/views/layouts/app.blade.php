@@ -54,7 +54,6 @@
                 <!-- Desktop Nav Links -->
                 <nav class="hidden lg:flex items-center gap-8">
                     <a href="#about" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('About Us') }}</a>
-                    <a href="#leadership" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Leadership') }}</a>
                     <a href="#portfolio" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Brands') }}</a>
                     <a href="#media" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Media Powerhouse') }}</a>
                     <a href="#sales-network" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Sales Network') }}</a>
@@ -89,10 +88,6 @@
             <div class="flex flex-col space-y-1">
                 <a href="#about" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('About Us') }}</span>
-                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
-                </a>
-                <a href="#leadership" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
-                    <span>{{ __('Leadership') }}</span>
                     <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
                 <a href="#portfolio" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">

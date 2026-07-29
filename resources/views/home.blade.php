@@ -798,89 +798,86 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" class="fixed inset-0 z-[999999] hidden flex flex-col items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-8 transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" class="fixed inset-0 z-[99999] hidden flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     <!-- Backdrop overlay -->
     <div onclick="closeCategoryModal()" class="fixed inset-0 bg-black/90 z-0"></div>
-    
-    <!-- The Modal Card (Using svh to prevent browser URL bar overlap on mobile) -->
-    <div class="relative z-10 w-full max-w-5xl h-[90svh] sm:h-auto sm:max-h-[85vh] bg-[#180d05] rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl ring-1 ring-white/10 transform scale-95 transition-transform duration-300">
+
+    <!-- Main Box: Max height 90% of screen, split to row on md -->
+    <div class="relative z-10 w-full max-w-5xl h-[90vh] bg-[#180d05] rounded-2xl flex flex-col md:flex-row overflow-hidden border border-white/10 transform scale-95 transition-transform duration-300">
         
-        <!-- EXPLICIT CLOSE BUTTON (Forced with high z-index) -->
-        <button onclick="closeCategoryModal()" type="button" class="absolute top-4 right-4 z-[1000] p-2.5 bg-black/60 hover:bg-[#c7a061] text-white hover:text-[#180d05] rounded-full transition-all cursor-pointer backdrop-blur-md border border-white/20 focus:outline-none" aria-label="Close modal" title="{{ __('Close') }}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <!-- CLOSE BUTTON (Absolute to the whole modal) -->
+        <button onclick="closeCategoryModal()" type="button" class="absolute top-4 right-4 z-[1000] p-2 bg-[#301c0d] hover:bg-[#c7a061] text-white hover:text-black rounded-full cursor-pointer focus:outline-none" aria-label="Close modal" title="{{ __('Close') }}">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
 
-        <!-- LEFT: Image Section (Fixed 45% height on mobile) -->
-        <div class="w-full md:w-[55%] h-[45%] md:h-full relative bg-black shrink-0 flex items-center justify-center overflow-hidden">
-            <!-- Ambient Blurred Background Image -->
-            <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-30 scale-125 pointer-events-none transition-all duration-500">
+        <!-- LEFT: Image & Thumbnails -->
+        <div class="w-full md:w-1/2 h-1/2 md:h-full bg-black flex flex-col relative shrink-0">
+            <!-- Main Image Container -->
+            <div class="flex-1 overflow-hidden relative flex items-center justify-center bg-black">
+                <!-- Ambient Blurred Background Image -->
+                <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-30 scale-125 pointer-events-none transition-all duration-500">
 
-            <!-- Active Foreground Image -->
-            <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="relative z-10 w-full h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform duration-300 drop-shadow-2xl" alt="Cue Product" title="{{ __('Klik untuk melihat ukuran asli') }}" />
-            
-            <!-- Floating Pagination Badge Overlay -->
-            <div id="modal-image-counter" class="absolute top-3 left-3 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-[#c7a061] text-xs font-semibold backdrop-blur-md shadow-md">
-                1 / 4
+                <!-- Active Foreground Image -->
+                <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="w-full h-full object-contain cursor-pointer relative z-10 p-2" alt="Cue" title="{{ __('Klik untuk melihat ukuran asli') }}" />
+                
+                <!-- Floating Pagination Counter -->
+                <div id="modal-image-counter" class="absolute top-3 left-3 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-[#c7a061] text-xs font-semibold backdrop-blur-md shadow-md">
+                    1 / 4
+                </div>
+
+                <!-- Open Fullsize Button Overlay -->
+                <button onclick="openFullscreenImage()" class="absolute top-3 right-14 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-zinc-300 hover:text-white text-xs font-medium backdrop-blur-md flex items-center gap-1.5 transition-all opacity-80 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
+                    <i class="fa-solid fa-expand text-[10px] text-[#c7a061]"></i>
+                    <span class="hidden sm:inline">{{ __('Ukuran Asli') }}</span>
+                </button>
+
+                <!-- Navigation Arrows -->
+                <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
+                    <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+                <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
             </div>
 
-            <!-- Open Fullsize Button Overlay -->
-            <button onclick="openFullscreenImage()" class="absolute top-3 right-14 z-20 px-2.5 py-1 rounded-full bg-black/75 border border-white/15 text-zinc-300 hover:text-white text-xs font-medium backdrop-blur-md flex items-center gap-1.5 transition-all opacity-80 hover:opacity-100 shadow-md focus:outline-none" title="{{ __('Buka Ukuran Asli') }}">
-                <i class="fa-solid fa-expand text-[10px] text-[#c7a061]"></i>
-                <span class="hidden sm:inline">{{ __('Ukuran Asli') }}</span>
-            </button>
-
-            <!-- Carousel Navigation Arrows -->
-            <button id="modal-prev-btn" onclick="prevCategoryModalImage()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
-                <i class="fa-solid fa-chevron-left text-xs"></i>
-            </button>
-            <button id="modal-next-btn" onclick="nextCategoryModalImage()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-[#c7a061] hover:bg-[#c7a061] hover:text-black flex items-center justify-center transition-all opacity-90 md:opacity-0 group-hover:opacity-100 focus:outline-none shadow-lg">
-                <i class="fa-solid fa-chevron-right text-xs"></i>
-            </button>
-
-            <!-- Thumbnails fixed to the bottom of the image -->
-            <div id="modal-thumbnails-container" class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 flex gap-3 overflow-x-auto overscroll-contain bg-gradient-to-t from-black/90 to-transparent custom-scrollbar z-20">
+            <!-- Thumbnails (Strictly at the bottom of the left column) -->
+            <div id="modal-thumbnails-container" class="h-24 bg-[#180d05] p-3 flex gap-3 overflow-x-auto shrink-0 border-t border-white/10 custom-scrollbar">
                 <!-- Thumbnails dynamically rendered here -->
             </div>
         </div>
 
-        <!-- RIGHT: Text & Scrolling Content (Fixed 55% height on mobile) -->
-        <div class="w-full md:w-[45%] h-[55%] md:h-full overflow-y-auto overscroll-contain p-5 sm:p-8 flex flex-col relative bg-[#180d05] custom-scrollbar">
-            
-            <div class="mb-6 pr-8">
-                <span id="modal-category-badge" class="inline-block px-3 py-1 mb-3 text-xs font-bold tracking-wider text-[#180d05] bg-[#c7a061] rounded-full uppercase">CARBON</span>
-                <h3 id="modal-category-title" class="text-2xl sm:text-3xl font-bold text-white">High-Performance Shafts</h3>
-            </div>
-            
-            <div class="mb-6">
-                <h4 class="text-xs font-bold tracking-widest text-[#917b59] mb-2 uppercase">{{ __('Deskripsi Kategori') }}</h4>
-                <p id="modal-category-desc" class="text-[#e5e5e7] text-sm leading-relaxed">Shaft serat karbon & Canadian Maple low-deflection profesional untuk akurasi bola sempurna.</p>
-            </div>
-            
-            <div class="mb-8">
-                <h4 class="text-xs font-bold tracking-widest text-[#917b59] mb-4 uppercase">{{ __('Keunggulan Utama') }}</h4>
-                <ul id="modal-category-highlights" class="space-y-3">
-                    <!-- Dynamic highlights list -->
+        <!-- RIGHT: Text & CTA (Scrollable) -->
+        <div class="w-full md:w-1/2 h-1/2 md:h-full flex flex-col p-6 md:p-8 bg-[#180d05]">
+            <!-- Scrollable Content Area -->
+            <div class="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+                <span id="modal-category-badge" class="px-3 py-1 text-xs font-bold bg-[#c7a061] text-black rounded-full uppercase inline-block">PLAYING CUE</span>
+                <h3 id="modal-category-title" class="text-3xl font-bold text-white mt-4 mb-6">Playing Cues</h3>
+                
+                <h4 class="text-xs font-bold text-[#917b59] mb-2 uppercase">{{ __('Deskripsi Kategori') }}</h4>
+                <p id="modal-category-desc" class="text-[#e5e5e7] text-sm mb-6">Stik biliar presisi tinggi dengan sistem joint mikro...</p>
+                
+                <h4 class="text-xs font-bold text-[#917b59] mb-4 uppercase">{{ __('Keunggulan Utama') }}</h4>
+                <ul id="modal-category-highlights" class="space-y-3 mb-6 text-sm text-[#e5e5e7]">
+                    <!-- Dynamic highlights rendered here -->
                 </ul>
             </div>
-
-            <!-- Bottom CTA with extra padding to prevent safe-area clipping -->
-            <div class="mt-auto pt-6 pb-6 border-t border-[#644a30]/30 shrink-0">
-                <p class="text-xs text-center text-[#917b59] mb-3">{{ __('Official Purchase & Inquiries') }}</p>
-                <div class="space-y-2.5">
-                    <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#c7a061] hover:bg-white text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-xs">
+            
+            <!-- CTA Button (Always visible at the bottom) -->
+            <div class="pt-4 shrink-0 border-t border-white/10 space-y-2">
+                <p class="text-xs text-center text-[#917b59] mb-1">{{ __('Official Purchase & Inquiries') }}</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <a href="https://www.tokopedia.com/cue-corner-indonesia" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#c7a061] hover:bg-white text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-1.5 text-xs">
                         <i class="fa-solid fa-store"></i>
-                        <span>{{ __('Tokopedia Store') }}</span>
+                        <span>{{ __('Tokopedia') }}</span>
                     </a>
-                    <div class="grid grid-cols-2 gap-2">
-                        <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-white hover:bg-gray-200 text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-xs">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span>{{ __('Shopee Official') }}</span>
-                        </a>
-                        <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-2 text-xs">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>{{ __('WhatsApp') }}</span>
-                        </a>
-                    </div>
+                    <a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-white hover:bg-gray-200 text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-1.5 text-xs">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>{{ __('Shopee') }}</span>
+                    </a>
+                    <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black font-bold rounded-lg transition-colors flex items-center justify-center gap-1.5 text-xs">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>{{ __('WhatsApp') }}</span>
+                    </a>
                 </div>
             </div>
         </div>

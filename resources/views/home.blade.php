@@ -798,7 +798,7 @@
 </div>
 
 <!-- Product Category Featured Images Popup Modal -->
-<div id="category-modal" onclick="closeCategoryModal()" class="fixed inset-0 z-[9999] hidden flex flex-col justify-between items-center p-3 sm:p-4 pt-14 pb-5 sm:py-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
+<div id="category-modal" onclick="closeCategoryModal()" class="fixed inset-0 z-50 hidden flex flex-col justify-between items-center p-3 sm:p-4 pt-14 pb-5 sm:py-4 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" style="z-index: 99990;" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
     
     <!-- MAIN MODAL CONTAINER (Using calc for dynamic mobile viewport fit) -->
     <div onclick="event.stopPropagation()" class="relative w-full max-w-5xl h-[calc(100dvh-6.5rem)] max-h-[640px] md:h-[80dvh] bg-[#180d05] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl border border-[#644a30]/40 transition-transform duration-300 scale-95 my-auto">
@@ -854,12 +854,12 @@
 </div>
 
 <!-- Fullscreen Image Lightbox Modal -->
-<div id="image-lightbox-modal" class="fixed inset-0 z-[99999999] hidden flex flex-col justify-between bg-black/98 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none select-none" role="dialog" aria-modal="true">
+<div id="image-lightbox-modal" class="fixed inset-0 z-50 hidden flex flex-col justify-between bg-black/98 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none select-none" style="z-index: 99999;" role="dialog" aria-modal="true">
     <!-- Lightbox Backdrop -->
     <div onclick="closeFullscreenImage()" class="absolute inset-0 bg-black/98 z-0"></div>
 
     <!-- ALWAYS VISIBLE FLOATING CLOSE BUTTON (X) FOR MOBILE & DESKTOP -->
-    <button onclick="closeFullscreenImage()" type="button" class="fixed top-3.5 right-3.5 sm:top-6 sm:right-6 z-[999999999] w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-zinc-900/95 hover:bg-accent-gold border-2 border-accent-gold text-accent-gold hover:text-black flex items-center justify-center transition-all shadow-[0_0_20px_rgba(199,160,97,0.5)] backdrop-blur-xl cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Tutup Ukuran Asli') }}">
+    <button onclick="closeFullscreenImage()" type="button" class="fixed top-3.5 right-3.5 sm:top-6 sm:right-6 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-zinc-900/95 hover:bg-accent-gold border-2 border-accent-gold text-accent-gold hover:text-black flex items-center justify-center transition-all shadow-[0_0_20px_rgba(199,160,97,0.5)] backdrop-blur-xl cursor-pointer hover:scale-110 focus:outline-none" style="z-index: 100000;" aria-label="{{ __('Tutup Ukuran Asli') }}">
         <i class="fa-solid fa-xmark text-xl font-bold"></i>
     </button>
 

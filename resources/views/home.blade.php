@@ -854,41 +854,56 @@
 </div>
 
 <!-- Fullscreen Image Lightbox Modal -->
-<div id="image-lightbox-modal" class="fixed inset-0 z-[999999] hidden flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true">
+<div id="image-lightbox-modal" class="fixed inset-0 z-[9999999] hidden flex flex-col justify-between bg-black/98 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none select-none" role="dialog" aria-modal="true">
     <!-- Lightbox Backdrop -->
-    <div onclick="closeFullscreenImage()" class="fixed inset-0 bg-black/90 z-0"></div>
+    <div onclick="closeFullscreenImage()" class="absolute inset-0 bg-black/98 z-0"></div>
 
-    <!-- Top Action Controls Header Bar -->
-    <div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-30 flex items-center gap-2 sm:gap-3">
-        <!-- New Tab Button -->
-        <a id="lightbox-newtab-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-zinc-900/90 hover:bg-zinc-800 border border-white/20 text-zinc-300 hover:text-accent-gold hover:border-accent-gold text-xs font-semibold flex items-center gap-1.5 transition-all shadow-2xl backdrop-blur-md" title="{{ __('Buka Gambar di Tab Baru') }}">
-            <span class="hidden sm:inline">{{ __('Buka Tab Baru') }}</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-        <!-- Prominent Close (X) Button -->
-        <button onclick="closeFullscreenImage()" type="button" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-zinc-900/95 hover:bg-accent-gold border border-white/20 hover:border-accent-gold text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-105 focus:outline-none" aria-label="{{ __('Tutup Ukuran Asli') }}">
-            <i class="fa-solid fa-xmark text-lg sm:text-xl"></i>
+    <!-- TOP HEADER CONTROL BAR -->
+    <div class="relative z-30 w-full px-4 pt-10 pb-3 sm:pt-6 sm:px-8 flex items-center justify-between bg-gradient-to-b from-black via-black/80 to-transparent shrink-0">
+        <!-- Counter Badge -->
+        <div id="lightbox-counter-badge" class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold backdrop-blur-md shadow-2xl flex items-center gap-2">
+            <i class="fa-solid fa-images text-accent-gold text-xs"></i>
+            <span id="lightbox-counter-text">1 / 1</span>
+        </div>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+            <a id="lightbox-newtab-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-zinc-200 hover:text-accent-gold text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xl backdrop-blur-md" title="{{ __('Buka Gambar di Tab Baru') }}">
+                <span class="hidden sm:inline">{{ __('Buka Tab Baru') }}</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+            <!-- Prominent Close (X) Button -->
+            <button onclick="closeFullscreenImage()" type="button" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/15 hover:bg-accent-gold border border-white/30 hover:border-accent-gold text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-105 focus:outline-none" aria-label="{{ __('Tutup Ukuran Asli') }}">
+                <i class="fa-solid fa-xmark text-lg sm:text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN DISPLAYED IMAGE CONTAINER -->
+    <div class="relative z-10 flex-1 w-full flex items-center justify-center p-2 sm:p-6 overflow-hidden min-h-0">
+        <!-- Left Slide Arrow (Positioned at extreme left edge) -->
+        <button id="lightbox-prev-btn" onclick="prevFullscreenImage(event)" type="button" class="absolute left-2 sm:left-6 z-40 w-10 h-10 sm:w-13 sm:h-13 rounded-full bg-black/60 hover:bg-[#c7a061] border border-white/20 hover:border-[#c7a061] text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Sebelumnya') }}">
+            <i class="fa-solid fa-chevron-left text-base sm:text-lg"></i>
+        </button>
+
+        <!-- Main Display Image -->
+        <img id="lightbox-image" onclick="event.stopPropagation()" src="" alt="Ukuran Asli Gambar" class="max-w-full max-h-full object-contain rounded-lg sm:rounded-xl shadow-[0_0_90px_rgba(0,0,0,1)] border border-white/10 transition-all duration-300 pointer-events-auto">
+
+        <!-- Right Slide Arrow (Positioned at extreme right edge) -->
+        <button id="lightbox-next-btn" onclick="nextFullscreenImage(event)" type="button" class="absolute right-2 sm:right-6 z-40 w-10 h-10 sm:w-13 sm:h-13 rounded-full bg-black/60 hover:bg-[#c7a061] border border-white/20 hover:border-[#c7a061] text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Selanjutnya') }}">
+            <i class="fa-solid fa-chevron-right text-base sm:text-lg"></i>
         </button>
     </div>
 
-    <!-- Image Counter Badge (Top Left) -->
-    <div id="lightbox-counter-badge" class="fixed top-4 left-4 sm:top-6 sm:left-6 z-30 px-3 py-1.5 rounded-full bg-black/80 border border-white/20 text-white text-xs font-semibold backdrop-blur-md shadow-xl flex items-center gap-2">
-        <i class="fa-solid fa-images text-accent-gold text-xs"></i>
-        <span id="lightbox-counter-text">1 / 1</span>
-    </div>
-
-    <!-- Navigation Slide Buttons (Previous & Next) -->
-    <button id="lightbox-prev-btn" onclick="prevFullscreenImage()" type="button" class="fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/80 hover:bg-[#c7a061] border border-white/20 hover:border-[#c7a061] text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Sebelumnya') }}">
-        <i class="fa-solid fa-chevron-left text-lg sm:text-xl"></i>
-    </button>
-    
-    <button id="lightbox-next-btn" onclick="nextFullscreenImage()" type="button" class="fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/80 hover:bg-[#c7a061] border border-white/20 hover:border-[#c7a061] text-white hover:text-black flex items-center justify-center transition-all shadow-2xl backdrop-blur-md cursor-pointer hover:scale-110 focus:outline-none" aria-label="{{ __('Gambar Selanjutnya') }}">
-        <i class="fa-solid fa-chevron-right text-lg sm:text-xl"></i>
-    </button>
-
-    <!-- Lightbox Image Display Container -->
-    <div class="relative z-10 max-w-full max-h-[85vh] sm:max-h-[90vh] flex items-center justify-center p-2">
-        <img id="lightbox-image" src="" alt="Ukuran Asli Gambar" class="max-w-full max-h-[85vh] sm:max-h-[90vh] object-contain rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.95)] border border-white/10 transition-all duration-300">
+    <!-- BOTTOM THUMBNAIL STRIP & SWIPE HINT BAR -->
+    <div class="relative z-30 w-full p-3 pb-6 sm:pb-6 flex flex-col items-center justify-center bg-gradient-to-t from-black via-black/90 to-transparent shrink-0 gap-2">
+        <div id="lightbox-thumbnails-strip" class="flex items-center gap-2 overflow-x-auto max-w-full p-1 custom-scrollbar">
+            <!-- Dynamic thumbnails strip rendered here -->
+        </div>
+        <p class="text-[10px] text-zinc-400 font-medium tracking-wider uppercase flex items-center gap-1.5">
+            <i class="fa-solid fa-hand-pointer text-[9px] text-accent-gold"></i>
+            <span>Usap layar untuk geser foto • Ketuk [X] untuk keluar</span>
+        </p>
     </div>
 </div>
 
@@ -2258,6 +2273,7 @@
         const counterText = document.getElementById('lightbox-counter-text');
         const prevBtn = document.getElementById('lightbox-prev-btn');
         const nextBtn = document.getElementById('lightbox-next-btn');
+        const stripContainer = document.getElementById('lightbox-thumbnails-strip');
 
         if (lightboxImg) lightboxImg.src = currentSrc;
         if (newTabBtn) newTabBtn.href = currentSrc;
@@ -2266,13 +2282,32 @@
         if (images.length <= 1) {
             if (prevBtn) prevBtn.classList.add('hidden');
             if (nextBtn) nextBtn.classList.add('hidden');
+            if (stripContainer) stripContainer.classList.add('hidden');
         } else {
             if (prevBtn) prevBtn.classList.remove('hidden');
             if (nextBtn) nextBtn.classList.remove('hidden');
+            if (stripContainer) {
+                stripContainer.classList.remove('hidden');
+                stripContainer.innerHTML = images.map((imgSrc, i) => `
+                    <div onclick="setFullscreenImageIndex(${i})" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border-2 ${i === idx ? 'border-accent-gold scale-105 opacity-100 shadow-md' : 'border-white/20 opacity-50 hover:opacity-100'} overflow-hidden cursor-pointer transition-all shrink-0">
+                        <img src="${imgSrc}" class="w-full h-full object-cover">
+                    </div>
+                `).join('');
+            }
         }
     }
 
-    window.prevFullscreenImage = function() {
+    window.setFullscreenImageIndex = function(idx) {
+        if (!window.lightboxImages || idx < 0 || idx >= window.lightboxImages.length) return;
+        window.lightboxIndex = idx;
+        updateLightboxView();
+        if (typeof window.setCategoryModalImage === 'function') {
+            window.setCategoryModalImage(idx);
+        }
+    };
+
+    window.prevFullscreenImage = function(e) {
+        if (e && e.stopPropagation) e.stopPropagation();
         if (!window.lightboxImages || window.lightboxImages.length <= 1) return;
         window.lightboxIndex = (window.lightboxIndex - 1 + window.lightboxImages.length) % window.lightboxImages.length;
         updateLightboxView();
@@ -2281,7 +2316,8 @@
         }
     };
 
-    window.nextFullscreenImage = function() {
+    window.nextFullscreenImage = function(e) {
+        if (e && e.stopPropagation) e.stopPropagation();
         if (!window.lightboxImages || window.lightboxImages.length <= 1) return;
         window.lightboxIndex = (window.lightboxIndex + 1) % window.lightboxImages.length;
         updateLightboxView();

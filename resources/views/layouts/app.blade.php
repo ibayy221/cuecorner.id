@@ -35,6 +35,8 @@
 
     <!-- Vite Asset Imports -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @stack('styles')
 </head>
 <body class="bg-primary text-text-light antialiased font-sans overflow-x-hidden selection:bg-accent-gold selection:text-primary">
 
@@ -58,6 +60,7 @@
                     <a href="#media" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Media Powerhouse') }}</a>
                     <a href="#sales-network" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Sales Network') }}</a>
                     <a href="#ambassadors" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Ambassadors') }}</a>
+                    <a href="#affiliates" class="text-sm font-medium text-zinc-300 hover:text-accent-glow transition-colors duration-200">{{ __('Affiliates & Athletes') }}</a>
                 </nav>
 
                 <!-- CTA Button & Language Switcher -->
@@ -104,6 +107,10 @@
                 </a>
                 <a href="#ambassadors" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
                     <span>{{ __('Ambassadors') }}</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
+                </a>
+                <a href="#affiliates" class="mobile-nav-link flex items-center justify-between px-3.5 py-3.5 rounded-xl text-base font-medium text-zinc-200 hover:text-accent-glow hover:bg-white/5 active:bg-white/10 transition-all">
+                    <span>{{ __('Affiliates & Athletes') }}</span>
                     <i class="fa-solid fa-chevron-right text-xs text-zinc-500"></i>
                 </a>
             </div>

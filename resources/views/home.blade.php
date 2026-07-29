@@ -1,5 +1,41 @@
 @extends('layouts.app')
 
+@push('styles')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+<style>
+    /* Custom Gold Theme for Plyr Media Player Library */
+    .plyr {
+        --plyr-color-main: #d4af37;
+        --plyr-video-control-color: #ffffff;
+        --plyr-video-control-color-hover: #d4af37;
+        --plyr-control-radius: 12px;
+        --plyr-range-track-height: 5px;
+        --plyr-font-family: inherit;
+        width: 100%;
+        height: 100%;
+    }
+    .plyr video {
+        object-fit: cover !important;
+    }
+    .plyr__poster {
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    .plyr--full-ui input[type=range] {
+        color: #d4af37 !important;
+    }
+    .plyr__control--overlaid {
+        background: rgba(212, 175, 55, 0.9) !important;
+        color: #000000 !important;
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.7) !important;
+    }
+    .plyr__control--overlaid:hover {
+        background: #f5d77f !important;
+        transform: scale(1.1);
+    }
+</style>
+@endpush
+
 @section('content')
 
 <!-- ==========================================
@@ -368,107 +404,133 @@
             {{ __('Product Categories') }}
         </h3>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
             
-            <!-- Category 1: Playing Cues (Butt) -->
+            <!-- Category 1: Playing Cues -->
             <div onclick="openCategoryModal('playing-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
-                <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
-                    <img src="{{ asset('Asset/Image/Kategori/Butt.jpeg') }}" alt="Playing Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
+                <div class="relative w-full h-48 sm:h-60 overflow-hidden bg-zinc-950 border-b border-white/10">
+                    <img src="{{ asset('Asset/Image/Kategori/Aksesoris/Case.jpeg') }}" alt="Playing Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Playing Cue
                     </span>
-                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
-                <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
                     <div>
-                        <h4 class="font-serif text-lg sm:text-xl font-bold text-text-light mb-1.5 group-hover:text-accent-glow transition-colors">{{ __('Playing Cues') }}</h4>
-                        <p class="text-xs text-text-muted leading-relaxed">
-                            {{ __('High-precision handcrafted playing cues with micro-joint system and premium quality wood for consistent shots.') }}
+                        <h4 class="font-serif text-base sm:text-lg font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">{{ __('Playing Cues') }}</h4>
+                        <p class="text-xs text-text-muted leading-relaxed line-clamp-3">
+                            {{ __('Stik biliar presisi tinggi dengan sistem joint mikro dan kayu kualitas premium untuk tembakan konsisten.') }}
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
-                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <span>{{ __('Lihat Galeri') }}</span>
                         <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 2: High-Performance Shafts (Shaft) -->
+            <!-- Category 2: High-Performance Shafts -->
             <div onclick="openCategoryModal('shafts')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
-                <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
-                    <img src="{{ asset('Asset/Image/Kategori/Shaft.jpg') }}" alt="High-Performance Shafts" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
+                <div class="relative w-full h-48 sm:h-60 overflow-hidden bg-zinc-950 border-b border-white/10">
+                    <img src="{{ asset('Asset/Image/Kategori/Shaft/Shaft 1.jpeg') }}" alt="High-Performance Shafts" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Carbon & Wood Shaft
                     </span>
-                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
-                <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
                     <div>
-                        <h4 class="font-serif text-lg sm:text-xl font-bold text-text-light mb-1.5 group-hover:text-accent-glow transition-colors">{{ __('High-Performance Shafts') }}</h4>
-                        <p class="text-xs text-text-muted leading-relaxed">
-                            {{ __('Pro-grade carbon fiber shafts and low-deflection select Canadian Maple wood for perfect ball accuracy.') }}
+                        <h4 class="font-serif text-base sm:text-lg font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">{{ __('Pro Shafts') }}</h4>
+                        <p class="text-xs text-text-muted leading-relaxed line-clamp-3">
+                            {{ __('Shaft serat karbon & Canadian Maple low-deflection profesional untuk akurasi bola sempurna.') }}
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
-                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <span>{{ __('Lihat Galeri (4)') }}</span>
                         <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 3: Break Cues (Break) -->
+            <!-- Category 3: Break Cues -->
             <div onclick="openCategoryModal('break-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
-                <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
-                    <img src="{{ asset('Asset/Image/Kategori/Break.jpeg') }}" alt="Break Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
+                <div class="relative w-full h-48 sm:h-60 overflow-hidden bg-zinc-950 border-b border-white/10">
+                    <img src="{{ asset('Asset/Image/Kategori/Break/Break 1.jpeg') }}" alt="Break Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Break Cue
                     </span>
-                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
-                <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
                     <div>
-                        <h4 class="font-serif text-lg sm:text-xl font-bold text-text-light mb-1.5 group-hover:text-accent-glow transition-colors">{{ __('Break Cues') }}</h4>
-                        <p class="text-xs text-text-muted leading-relaxed">
-                            {{ __('High-impact break cues engineered with durable high-density ferrules for explosive opening breaks.') }}
+                        <h4 class="font-serif text-base sm:text-lg font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">{{ __('Break Cues') }}</h4>
+                        <p class="text-xs text-text-muted leading-relaxed line-clamp-3">
+                            {{ __('Stik break berdampak tinggi dengan ferrule berdensitas tinggi untuk transfer energi pembuka yang eksplosif.') }}
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
-                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <span>{{ __('Lihat Galeri') }}</span>
                         <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 4: Jump Cues (jump) -->
+            <!-- Category 4: Jump Cues -->
             <div onclick="openCategoryModal('jump-cues')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
-                <div class="relative w-full h-48 sm:h-64 overflow-hidden bg-zinc-950 border-b border-white/10">
-                    <img src="{{ asset('Asset/Image/Kategori/jump.jpeg') }}" alt="Jump Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
+                <div class="relative w-full h-48 sm:h-60 overflow-hidden bg-zinc-950 border-b border-white/10">
+                    <img src="{{ asset('Asset/Image/Kategori/Jump/Jump.jpeg') }}" alt="Jump Cues" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
                         Jump Cue
                     </span>
-                    <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <i class="fa-solid fa-expand"></i>
                     </span>
                 </div>
-                <div class="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
                     <div>
-                        <h4 class="font-serif text-lg sm:text-xl font-bold text-text-light mb-1.5 group-hover:text-accent-glow transition-colors">{{ __('Jump Cues') }}</h4>
-                        <p class="text-xs text-text-muted leading-relaxed">
-                            {{ __('Ultra-light precision jump cues designed for effortless cue ball elevation over obstacle balls accurately.') }}
+                        <h4 class="font-serif text-base sm:text-lg font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">{{ __('Jump Cues') }}</h4>
+                        <p class="text-xs text-text-muted leading-relaxed line-clamp-3">
+                            {{ __('Stik jump presisi ultra-ringan yang dirancang untuk melompati bola rintangan secara mudah dan akurat.') }}
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
-                        <span>{{ __('Lihat Gambar Unggulan') }}</span>
+                        <span>{{ __('Lihat Galeri (2)') }}</span>
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 5: Billiard Accessories -->
+            <div onclick="openCategoryModal('accessories')" class="card-luxury rounded-2xl overflow-hidden group hover:border-accent-gold/70 transition-all duration-300 flex flex-col justify-between !bg-black border border-white/10 shadow-2xl cursor-pointer">
+                <div class="relative w-full h-48 sm:h-60 overflow-hidden bg-zinc-950 border-b border-white/10">
+                    <img src="{{ asset('Asset/Image/Kategori/Aksesoris/Chalk.jpeg') }}" alt="Billiard Accessories" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85"></div>
+                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-glow text-[10px] uppercase font-bold tracking-wider">
+                        Accessories
+                    </span>
+                    <span class="absolute top-3 right-3 w-7 h-7 rounded-full bg-black/80 backdrop-blur-md border border-accent-gold/40 text-accent-gold flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+                </div>
+                <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                        <h4 class="font-serif text-base sm:text-lg font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">{{ __('Accessories') }}</h4>
+                        <p class="text-xs text-text-muted leading-relaxed line-clamp-3">
+                            {{ __('Aksesoris biliar lengkap: luxury case, chalk premium, glove, tip, leather grip & weight balancer kit.') }}
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-gold group-hover:text-accent-glow">
+                        <span>{{ __('Lihat Galeri (7)') }}</span>
                         <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                     </div>
                 </div>
@@ -478,6 +540,250 @@
 
     </div>
 </section>
+
+
+<!-- ==========================================
+     NEW SECTION: INTERNAL VIDEO OVERVIEW
+     ========================================== -->
+<section id="video-showcase" class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative bg-secondary/30 border-t border-border-accent/30">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 gsap-reveal">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-gold/20 border border-accent-gold/40 text-accent-glow text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2">
+                <i class="fa-solid fa-film text-xs sm:text-sm"></i>
+                <span>Official Video Showcase</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-text-light">
+                {{ __('Video') }} <span class="text-gold-gradient">{{ __('Content Overview') }}</span>
+            </h3>
+            <p class="text-text-muted mt-3 sm:mt-4 text-xs sm:text-base">
+                {{ __('Tonton video resmi Cue Corner, review stik custom, uji fleksibilitas carbon shaft, serta event & tournament highlight.') }}
+            </p>
+
+        <!-- Video Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-6 sm:mt-8 mb-10 sm:mb-12">
+            <button onclick="filterVideoCategory('all')" id="video-tab-all" class="px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md">{{ __('Semua Video') }}</button>
+            <button onclick="filterVideoCategory('cuecorner')" id="video-tab-cuecorner" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Cue Corner Official') }}</button>
+            <button onclick="filterVideoCategory('massipan')" id="video-tab-massipan" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Massipan Review') }}</button>
+            <button onclick="filterVideoCategory('bara')" id="video-tab-bara" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Bara Review') }}</button>
+        </div>
+
+        <!-- Video Content Grid (Portrait Reel Aspect Ratio - 2x2 Grid with Plyr Library) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-5xl mx-auto">
+            
+            <!-- Video 1: Brand Shaft No 1 -->
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="cuecorner">
+                <!-- Top Creator Header Bar -->
+                <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
+                    <div class="flex items-center gap-2 truncate">
+                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                            <img src="{{ asset('Asset/Image/Profile/ko ssteven.png') }}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-semibold text-white truncate">Cue Corner Official</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
+                        Official
+                    </span>
+                </div>
+
+                <!-- Vertical Video Container with Plyr Library -->
+                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                    <video 
+                        class="js-plyr-player w-full h-full object-cover" 
+                        preload="metadata"
+                        playsinline
+                        controls
+                    >
+                        <source src="{{ asset('Asset/Video/brand-shaft-no1.mp4') }}" type="video/mp4">
+                        Browsermu tidak mendukung pemutaran video.
+                    </video>
+                </div>
+
+                <!-- Card Description Body & Action Button -->
+                <div class="p-4 flex flex-col justify-between flex-1 border-t border-white/10 bg-zinc-950">
+                    <div class="mb-3">
+                        <h4 class="font-serif text-base font-bold text-white group-hover:text-accent-gold transition-colors line-clamp-1 mb-1">
+                            Rekomendasi Brand Shaft No 1
+                        </h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">
+                            Review mendalam material carbon fiber shaft, kelurusan, dan power transfer untuk hasil tembakan lebih tajam & presisi.
+                        </p>
+                    </div>
+
+                    <!-- Fullscreen Action Button -->
+                    <button onclick="openVideoPlayerModal('{{ asset('Asset/Video/brand-shaft-no1.mp4') }}', 'Rekomendasi Brand Shaft No 1')" class="w-full py-2 px-3 rounded-xl bg-zinc-900 hover:bg-accent-gold text-zinc-300 hover:text-black border border-white/10 hover:border-accent-gold text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                        <span>{{ __('Putar Layar Penuh (HD)') }}</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 2: Joint Cuetec -->
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="cuecorner">
+                <!-- Top Creator Header Bar -->
+                <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
+                    <div class="flex items-center gap-2 truncate">
+                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                            <img src="{{ asset('Asset/Image/Profile/ko ssteven.png') }}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-semibold text-white truncate">Cue Corner Official</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
+                        Brand Showcase
+                    </span>
+                </div>
+
+                <!-- Vertical Video Container with Plyr Library -->
+                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                    <video 
+                        class="js-plyr-player w-full h-full object-cover" 
+                        preload="metadata"
+                        playsinline
+                        controls
+                    >
+                        <source src="{{ asset('Asset/Video/Joint cuetec.mp4') }}" type="video/mp4">
+                        Browsermu tidak mendukung pemutaran video.
+                    </video>
+                </div>
+
+                <!-- Card Description Body & Action Button -->
+                <div class="p-4 flex flex-col justify-between flex-1 border-t border-white/10 bg-zinc-950">
+                    <div class="mb-3">
+                        <h4 class="font-serif text-base font-bold text-white group-hover:text-accent-gold transition-colors line-clamp-1 mb-1">
+                            Review Joint Cuetec & Technology
+                        </h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">
+                            Uji presisi joint Cuetec, fleksibilitas shaft, dan daya tahan koneksi pin untuk performa tembakan terbaik.
+                        </p>
+                    </div>
+
+                    <!-- Fullscreen Action Button -->
+                    <button onclick="openVideoPlayerModal('{{ asset('Asset/Video/Joint cuetec.mp4') }}', 'Review Joint Cuetec & Technology')" class="w-full py-2 px-3 rounded-xl bg-zinc-900 hover:bg-accent-gold text-zinc-300 hover:text-black border border-white/10 hover:border-accent-gold text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                        <span>{{ __('Putar Layar Penuh (HD)') }}</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 3: Case Review -->
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="massipan">
+                <!-- Top Creator Header Bar -->
+                <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
+                    <div class="flex items-center gap-2 truncate">
+                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                            <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Massipan.png') }}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-semibold text-white truncate">Irvandisk (Massipan)</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
+                        Creator Review
+                    </span>
+                </div>
+
+                <!-- Vertical Video Container with Plyr Library -->
+                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                    <video 
+                        class="js-plyr-player w-full h-full object-cover" 
+                        preload="metadata"
+                        playsinline
+                        controls
+                    >
+                        <source src="{{ asset('Asset/Video/Case.mp4') }}" type="video/mp4">
+                        Browsermu tidak mendukung pemutaran video.
+                    </video>
+                </div>
+
+                <!-- Card Description Body & Action Button -->
+                <div class="p-4 flex flex-col justify-between flex-1 border-t border-white/10 bg-zinc-950">
+                    <div class="mb-3">
+                        <h4 class="font-serif text-base font-bold text-white group-hover:text-accent-gold transition-colors line-clamp-1 mb-1">
+                            Luxury Cue Case & Protection Review
+                        </h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">
+                            Review tas stik biliard premium dengan proteksi maksimal, kompartemen aksesoris lengkap & desain luxury.
+                        </p>
+                    </div>
+
+                    <!-- Fullscreen Action Button -->
+                    <button onclick="openVideoPlayerModal('{{ asset('Asset/Video/Case.mp4') }}', 'Luxury Cue Case & Protection Review')" class="w-full py-2 px-3 rounded-xl bg-zinc-900 hover:bg-accent-gold text-zinc-300 hover:text-black border border-white/10 hover:border-accent-gold text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                        <span>{{ __('Putar Layar Penuh (HD)') }}</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video 4: Triple Sixty -->
+            <div class="video-card-item card-luxury rounded-2xl border border-white/10 hover:border-accent-gold/60 transition-all duration-300 overflow-hidden group flex flex-col justify-between bg-zinc-950 shadow-2xl relative" data-category="bara">
+                <!-- Top Creator Header Bar -->
+                <div class="p-3 bg-zinc-900/95 border-b border-white/10 flex items-center justify-between z-10">
+                    <div class="flex items-center gap-2 truncate">
+                        <div class="w-6 h-6 rounded-full border border-accent-gold/50 overflow-hidden bg-black flex-shrink-0">
+                            <img src="{{ asset('Asset/Image/BA - Triple sixty/Bara - BA.png') }}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-semibold text-white truncate">B A R A (Ambassador)</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold border border-accent-gold/40 text-[10px] font-bold uppercase tracking-wider flex-shrink-0">
+                        Ambassador Review
+                    </span>
+                </div>
+
+                <!-- Vertical Video Container with Plyr Library -->
+                <div class="relative aspect-[9/14] sm:aspect-[9/15] w-full overflow-hidden bg-black flex items-center justify-center">
+                    <video 
+                        class="js-plyr-player w-full h-full object-cover" 
+                        preload="metadata"
+                        playsinline
+                        controls
+                    >
+                        <source src="{{ asset('Asset/Video/Triple sixty.mp4') }}" type="video/mp4">
+                        Browsermu tidak mendukung pemutaran video.
+                    </video>
+                </div>
+
+                <!-- Card Description Body & Action Button -->
+                <div class="p-4 flex flex-col justify-between flex-1 border-t border-white/10 bg-zinc-950">
+                    <div class="mb-3">
+                        <h4 class="font-serif text-base font-bold text-white group-hover:text-accent-gold transition-colors line-clamp-1 mb-1">
+                            Triple Sixty Cue & Performance Impression
+                        </h4>
+                        <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">
+                            Impression jujur stik dan shaft Triple Sixty dari Brand Ambassador Cue Corner untuk performa arena pro.
+                        </p>
+                    </div>
+
+                    <!-- Fullscreen Action Button -->
+                    <button onclick="openVideoPlayerModal('{{ asset('Asset/Video/Triple sixty.mp4') }}', 'Triple Sixty Cue & Performance Impression')" class="w-full py-2 px-3 rounded-xl bg-zinc-900 hover:bg-accent-gold text-zinc-300 hover:text-black border border-white/10 hover:border-accent-gold text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                        <span>{{ __('Putar Layar Penuh (HD)') }}</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Fullscreen Video Player Modal -->
+<div id="video-player-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-3 sm:p-6 bg-black/95 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+    <div onclick="closeVideoPlayerModal()" class="fixed inset-0 bg-black/90 z-0"></div>
+    <div class="relative w-full max-w-4xl bg-zinc-950 border border-accent-gold/50 rounded-2xl sm:rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.9)] z-10 overflow-hidden flex flex-col my-auto transform scale-95 transition-transform duration-300">
+        <div class="flex items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 bg-zinc-950/98 backdrop-blur-xl border-b border-white/10 shadow-md">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-gold animate-pulse"></span>
+                <h4 id="video-modal-title" class="font-serif text-sm sm:text-lg font-bold text-white truncate max-w-xs sm:max-w-md">Video Content</h4>
+            </div>
+            <button onclick="closeVideoPlayerModal()" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 hover:text-white hover:border-accent-gold flex items-center justify-center transition-all focus:outline-none" aria-label="Close video modal">
+                <i class="fa-solid fa-xmark text-base sm:text-lg"></i>
+            </button>
+        </div>
+        <div class="relative aspect-video bg-black flex items-center justify-center">
+            <video id="video-modal-element" class="w-full h-full" controls playsinline poster="">
+                <source id="video-modal-source" src="" type="video/mp4">
+                Browsermu tidak mendukung pemutaran video.
+            </video>
+        </div>
+    </div>
+</div>
 
 <!-- Product Category Featured Images Popup Modal -->
 <div id="category-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-3 sm:p-6 pt-16 sm:pt-20 pb-6 bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-category-title">
@@ -654,25 +960,25 @@
                 </div>
             </a>
 
-            <!-- Channel 2: Triple Sixty -->
-            <a href="https://triple-60.com/" target="_blank" rel="noopener noreferrer" class="card-luxury p-6 sm:p-8 rounded-2xl relative overflow-hidden gsap-reveal border-l-4 border-l-accent-gold group hover:border-accent-gold transition-all duration-300 block">
+            <!-- Channel 2: Zen Cue Corner (Instagram) -->
+            <a href="https://www.instagram.com/zencuecorner/" target="_blank" rel="noopener noreferrer" class="card-luxury p-6 sm:p-8 rounded-2xl relative overflow-hidden gsap-reveal border-l-4 border-l-accent-gold group hover:border-accent-gold transition-all duration-300 block">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-3.5 sm:gap-4">
-                        <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-xl bg-black border border-white/15 p-2 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-                            <img src="{{ asset('Asset/Image/Logo partner/Triple Sixty.png') }}" alt="Triple Sixty Logo" class="w-full h-full object-contain">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-gradient-to-tr from-accent-glow via-accent-gold to-accent-soft flex items-center justify-center text-primary text-xl sm:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-brands fa-instagram"></i>
                         </div>
                         <div>
-                            <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light group-hover:text-accent-glow transition-colors">Triple Sixty</h4>
-                            <span class="text-[10px] sm:text-xs text-accent-gold uppercase tracking-wider font-semibold">{{ __('Official Media & Broadcast Partner') }}</span>
+                            <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light group-hover:text-accent-glow transition-colors">Zen Cue Corner</h4>
+                            <span class="text-[10px] sm:text-xs text-accent-gold uppercase tracking-wider font-semibold">{{ __('Official Instagram • @zencuecorner') }}</span>
                         </div>
                     </div>
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm text-text-muted group-hover:text-accent-glow transition-colors"></i>
                 </div>
                 <p class="text-text-muted text-xs sm:text-sm leading-relaxed mb-4">
-                    {{ __('Official digital billiard media partner delivering tournament content, cue reviews, and exclusive Cue Corner brand promotions.') }}
+                    {{ __('Official Zen Cue Corner media channel dedicated to custom cue craftsmanship, high-reach video showcases, and billiard equipment reviews.') }}
                 </p>
                 <div class="inline-flex items-center gap-2 text-xs font-semibold text-accent-gold group-hover:text-accent-glow">
-                    <span>{{ __('Visit Triple Sixty Website') }}</span>
+                    <span>{{ __('Visit Zen Cue Corner Instagram') }}</span>
                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
                 </div>
             </a>
@@ -689,34 +995,42 @@
                         <span>Meta Instagram Verified Insights</span>
                     </div>
                     <h4 class="font-serif text-xl sm:text-3xl font-bold text-text-light">
-                        {{ __('1-Year Impressions & Ecosystem Performance') }}
+                        {{ __('1-Year Ecosystem Performance') }}
                     </h4>
-                    <p class="text-[11px] sm:text-xs text-text-muted mt-1">
-                        {{ __('Official @cuecorner.id Meta Insights Performance Data (Period 1 Jan 2026 – 28 Jul 2026)') }}
+                    <p id="ig-insights-subtitle" class="text-[11px] sm:text-xs text-text-muted mt-1">
+                        {{ __('Official Meta Insights Performance Data (Period 28 Jul 2025 – 28 Jul 2026)') }}
                     </p>
                 </div>
 
-                <div class="flex items-center gap-2 bg-zinc-900/90 px-3.5 sm:px-4 py-2 rounded-xl border border-white/10 text-[11px] sm:text-xs text-zinc-300">
-                    <i class="fa-solid fa-calendar-check text-accent-gold"></i>
-                    <span class="font-semibold">{{ __('This Year: 1 Jan 2026 – 28 Jul 2026') }}</span>
+                <div class="flex flex-col sm:flex-row items-center gap-3">
+                    <!-- Account Selector Toggle Tabs -->
+                    <div class="flex items-center gap-1 bg-zinc-900 p-1 rounded-xl border border-white/15 text-[11px] sm:text-xs">
+                        <button onclick="switchIgAccount('cuecorner')" id="acct-tab-cuecorner" class="px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all">@cuecorner.id</button>
+                        <button onclick="switchIgAccount('zencue')" id="acct-tab-zencue" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all">@zencuecorner</button>
+                    </div>
+
+                    <div class="flex items-center gap-2 bg-zinc-900/90 px-3.5 sm:px-4 py-2 rounded-xl border border-white/10 text-[11px] sm:text-xs text-zinc-300">
+                        <i class="fa-solid fa-calendar-check text-accent-gold"></i>
+                        <span class="font-semibold">{{ __('Verified Meta Insights') }}</span>
+                    </div>
                 </div>
             </div>
 
             <!-- 6 Key Insight Stat Cards Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 mb-8 sm:mb-10">
                 
-                <!-- Card 1: Tayangan -->
+                <!-- Card 1: Tayangan / Views -->
                 <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-zinc-950 border border-white/10 flex flex-col justify-between hover:border-accent-gold/60 transition-all shadow-lg">
                     <span class="text-[10px] sm:text-[11px] text-text-muted font-medium uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                        <span>{{ __('Impressions') }}</span>
+                        <span>{{ __('Impressions / Views') }}</span>
                         <i class="fa-solid fa-eye text-accent-gold/80"></i>
                     </span>
                     <div class="my-1.5 sm:my-2">
-                        <div class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-gradient">5,1M</div>
-                        <span class="text-[9px] sm:text-[10px] text-text-muted">(5.111.618 {{ __('impressions') }})</span>
+                        <div id="stat-val-1" class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-gradient">11,1M</div>
+                        <span id="stat-sub-1" class="text-[9px] sm:text-[10px] text-text-muted">(11.095.380 {{ __('impressions') }})</span>
                     </div>
-                    <div class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-zinc-400 font-semibold mt-1">
-                        <i class="fa-solid fa-arrow-down text-[9px]"></i> 14.5% vs prev
+                    <div id="stat-growth-1" class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
+                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +100% vs prev
                     </div>
                 </div>
 
@@ -727,11 +1041,11 @@
                         <i class="fa-solid fa-users text-accent-gold/80"></i>
                     </span>
                     <div class="my-1.5 sm:my-2">
-                        <div class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-gradient">139,2K</div>
-                        <span class="text-[9px] sm:text-[10px] text-text-muted">({{ __('Total accounts reached') }})</span>
+                        <div id="stat-val-2" class="font-serif text-2xl sm:text-3xl font-extrabold text-gold-gradient">195,6K</div>
+                        <span id="stat-sub-2" class="text-[9px] sm:text-[10px] text-text-muted">(195.600 {{ __('reached') }})</span>
                     </div>
-                    <div class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
-                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +33,7%
+                    <div id="stat-growth-2" class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
+                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +336,1%
                     </div>
                 </div>
 
@@ -742,55 +1056,55 @@
                         <i class="fa-solid fa-heart text-accent-gold/80"></i>
                     </span>
                     <div class="my-1.5 sm:my-2">
-                        <div class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-glow">37,4K</div>
-                        <span class="text-[9px] sm:text-[10px] text-text-muted">({{ __('Content interactions') }})</span>
+                        <div id="stat-val-3" class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-glow">49,2K</div>
+                        <span id="stat-sub-3" class="text-[9px] sm:text-[10px] text-text-muted">(49.200 {{ __('interactions') }})</span>
                     </div>
-                    <div class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
-                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +218%
+                    <div id="stat-growth-3" class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
+                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +100%
                     </div>
                 </div>
 
-                <!-- Card 4: Kunjungan Profil -->
+                <!-- Card 4: Kunjungan Profil / Non-Followers -->
                 <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-zinc-950 border border-white/10 flex flex-col justify-between hover:border-accent-gold/60 transition-all shadow-lg">
                     <span class="text-[10px] sm:text-[11px] text-text-muted font-medium uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                        <span>{{ __('Profile Visits') }}</span>
+                        <span>{{ __('Profile / Non-Followers') }}</span>
                         <i class="fa-solid fa-user-check text-accent-gold/80"></i>
                     </span>
                     <div class="my-1.5 sm:my-2">
-                        <div class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-soft">43,6K</div>
-                        <span class="text-[9px] sm:text-[10px] text-text-muted">({{ __('Instagram profile') }})</span>
+                        <div id="stat-val-4" class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-soft">81K</div>
+                        <span id="stat-sub-4" class="text-[9px] sm:text-[10px] text-text-muted">(81.000 {{ __('visits') }})</span>
                     </div>
-                    <div class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-zinc-400 font-semibold mt-1">
-                        {{ __('Organic Profile') }}
+                    <div id="stat-growth-4" class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
+                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +11,5%
                     </div>
                 </div>
 
-                <!-- Card 5: Pengikut -->
+                <!-- Card 5: Top Content / Followers -->
                 <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-zinc-950 border border-white/10 flex flex-col justify-between hover:border-accent-gold/60 transition-all shadow-lg">
                     <span class="text-[10px] sm:text-[11px] text-text-muted font-medium uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                        <span>{{ __('Followers') }}</span>
+                        <span>{{ __('Followers / Top Video') }}</span>
                         <i class="fa-solid fa-user-plus text-accent-gold/80"></i>
                     </span>
                     <div class="my-1.5 sm:my-2">
-                        <div class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-glow">2,3K</div>
-                        <span class="text-[9px] sm:text-[10px] text-text-muted">({{ __('New community') }})</span>
+                        <div id="stat-val-5" class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-glow">4K</div>
+                        <span id="stat-sub-5" class="text-[9px] sm:text-[10px] text-text-muted">({{ __('Total followers') }})</span>
                     </div>
-                    <div class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
-                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +42,4%
+                    <div id="stat-growth-5" class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
+                        <i class="fa-solid fa-arrow-up text-[9px]"></i> +15,7K%
                     </div>
                 </div>
 
-                <!-- Card 6: Klik Tautan -->
+                <!-- Card 6: Klik Tautan / Content Formats -->
                 <div class="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-zinc-950 border border-white/10 flex flex-col justify-between hover:border-accent-gold/60 transition-all shadow-lg">
                     <span class="text-[10px] sm:text-[11px] text-text-muted font-medium uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                        <span>{{ __('Link Clicks') }}</span>
+                        <span>{{ __('Link Clicks / Content') }}</span>
                         <i class="fa-solid fa-link text-accent-gold/80"></i>
                     </span>
                     <div class="my-1.5 sm:my-2">
-                        <div class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-soft">191</div>
-                        <span class="text-[9px] sm:text-[10px] text-text-muted">({{ __('Conversion link') }})</span>
+                        <div id="stat-val-6" class="font-serif text-2xl sm:text-3xl font-extrabold text-accent-soft">191</div>
+                        <span id="stat-sub-6" class="text-[9px] sm:text-[10px] text-text-muted">(191 {{ __('clicks') }})</span>
                     </div>
-                    <div class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
+                    <div id="stat-growth-6" class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] text-accent-gold font-semibold mt-1">
                         <i class="fa-solid fa-arrow-up text-[9px]"></i> +100%
                     </div>
                 </div>
@@ -805,7 +1119,7 @@
                             <i class="fa-solid fa-chart-line text-accent-gold"></i>
                             <span>{{ __('Instagram Ecosystem Performance Trend Chart') }}</span>
                         </h5>
-                        <p class="text-[11px] sm:text-xs text-text-muted mt-0.5">{{ __('Monthly Activity Metrics (January - July 2026)') }}</p>
+                        <p class="text-[11px] sm:text-xs text-text-muted mt-0.5">{{ __('1-Year Full Activity Metrics (28 Jul 2025 – 28 Jul 2026)') }}</p>
                     </div>
 
                     <!-- Chart Toggle Controls -->
@@ -849,7 +1163,7 @@
             <div class="card-luxury p-6 sm:p-8 rounded-2xl gsap-reveal">
                 <div class="flex items-center gap-3 mb-4 sm:mb-6">
                     <i class="fa-solid fa-cart-shopping text-xl sm:text-2xl text-accent-gold"></i>
-                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light">{{ __('Official E-Commerce Platforms') }}</h4>
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light">{{ __('Our E-Commerce Platforms') }}</h4>
                 </div>
                 <p class="text-text-muted text-xs sm:text-sm leading-relaxed mb-6">
                     {{ __('Cue Corner operates official flagship stores on Indonesia\'s top online marketplaces, ensuring 24/7 accessibility and fast dispatch.') }}
@@ -1096,6 +1410,265 @@
 
 
 <!-- ==========================================
+     SECTION 8: AFFILIATED INFLUENCERS, ATHLETES & MEDIA
+     ========================================== -->
+<section id="affiliates" class="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative bg-primary border-t border-border-accent/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 gsap-reveal">
+            <h2 class="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-accent-soft mb-2 sm:mb-3">{{ __('Media & Athlete Network') }}</h2>
+            <h3 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-text-light">
+                {{ __('Affiliated') }} <span class="text-gold-gradient">{{ __('Influencers, Athletes & Media') }}</span>
+            </h3>
+            <p class="text-text-muted mt-3 sm:mt-4 text-xs sm:text-base">
+                {{ __('Cue Corner collaborates with national billiard athletes, content creators, and broadcast channels to strengthen the billiard community in Indonesia.') }}
+            </p>
+
+            <!-- Network Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-6 sm:mt-8">
+                <button onclick="filterAffiliates('all')" id="affiliate-tab-all" class="px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md">{{ __('Semua Network') }}</button>
+                <button onclick="filterAffiliates('athlete')" id="affiliate-tab-athlete" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Atlet Pro') }}</button>
+                <button onclick="filterAffiliates('influencer')" id="affiliate-tab-influencer" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Influencer & Creator') }}</button>
+                <button onclick="filterAffiliates('media')" id="affiliate-tab-media" class="px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all">{{ __('Media Terafiliasi') }}</button>
+            </div>
+        </div>
+
+        <!-- Affiliates Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+            
+            <!-- Item 1: Greg -->
+            <div class="affiliate-card-item card-luxury p-5 sm:p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-gold/70 transition-all duration-300 !bg-black border border-white/10 shadow-2xl" data-category="influencer">
+                <div>
+                    <!-- Card Header Badge -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[10px] uppercase font-bold tracking-wider border border-purple-500/40 flex items-center gap-1.5">
+                            <i class="fa-solid fa-clapperboard text-xs"></i>
+                            <span>Content Creator</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-400 font-semibold bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">Instagram</span>
+                    </div>
+
+                    <!-- Image Frame with ZERO Cropping -->
+                    <a href="https://www.instagram.com/gregmainbl/" target="_blank" rel="noopener noreferrer" class="block relative w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-white/10 group-hover:border-accent-gold/50 transition-all p-1 flex items-center justify-center">
+                        <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Greg.png') }}" alt="Greg - Billiard Creator" class="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500">
+                    </a>
+
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">Greg</h4>
+                    <a href="https://www.instagram.com/gregmainbl/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold font-semibold tracking-wider mb-3 inline-flex items-center gap-1.5 hover:text-accent-glow transition-colors">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@gregmainbl</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+
+                    <p class="text-xs text-text-muted leading-relaxed text-center">
+                        {{ __('Billiard content creator & gear reviewer sharing cue performance breakdowns across Instagram & TikTok.') }}
+                    </p>
+                </div>
+
+                <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-400 font-medium">Affiliated Creator</span>
+                    <a href="https://www.instagram.com/gregmainbl/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-gold hover:text-accent-glow transition-colors">
+                        <span>Visit Instagram</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 2: Susi -->
+            <div class="affiliate-card-item card-luxury p-5 sm:p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-gold/70 transition-all duration-300 !bg-black border border-white/10 shadow-2xl" data-category="influencer">
+                <div>
+                    <!-- Card Header Badge -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[10px] uppercase font-bold tracking-wider border border-purple-500/40 flex items-center gap-1.5">
+                            <i class="fa-solid fa-icons text-xs"></i>
+                            <span>Billiard Ambassador</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-400 font-semibold bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">Instagram</span>
+                    </div>
+
+                    <!-- Image Frame with ZERO Cropping -->
+                    <a href="https://www.instagram.com/susiimrln/" target="_blank" rel="noopener noreferrer" class="block relative w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-white/10 group-hover:border-accent-gold/50 transition-all p-1 flex items-center justify-center">
+                        <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Susi.png') }}" alt="Susi - Billiard Ambassador" class="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500">
+                    </a>
+
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">Susi</h4>
+                    <a href="https://www.instagram.com/susiimrln/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold font-semibold tracking-wider mb-3 inline-flex items-center gap-1.5 hover:text-accent-glow transition-colors">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@susiimrln</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+
+                    <p class="text-xs text-text-muted leading-relaxed text-center">
+                        {{ __('Billiard lifestyle creator & ambassador promoting premium billiard accessories and community engagement.') }}
+                    </p>
+                </div>
+
+                <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-400 font-medium">Affiliated Ambassador</span>
+                    <a href="https://www.instagram.com/susiimrln/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-gold hover:text-accent-glow transition-colors">
+                        <span>Visit Instagram</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 3: Jason -->
+            <div class="affiliate-card-item card-luxury p-5 sm:p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-gold/70 transition-all duration-300 !bg-black border border-white/10 shadow-2xl" data-category="athlete">
+                <div>
+                    <!-- Card Header Badge -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] uppercase font-bold tracking-wider border border-accent-gold/40 flex items-center gap-1.5">
+                            <i class="fa-solid fa-trophy text-xs"></i>
+                            <span>Atlet Pro Billiard</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-400 font-semibold bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">Instagram</span>
+                    </div>
+
+                    <!-- Image Frame with ZERO Cropping -->
+                    <a href="https://www.instagram.com/jasonkeitaro/" target="_blank" rel="noopener noreferrer" class="block relative w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-white/10 group-hover:border-accent-gold/50 transition-all p-1 flex items-center justify-center">
+                        <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Jason.png') }}" alt="Jason - Billiard Athlete" class="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500">
+                    </a>
+
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">Jason</h4>
+                    <a href="https://www.instagram.com/jasonkeitaro/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold font-semibold tracking-wider mb-3 inline-flex items-center gap-1.5 hover:text-accent-glow transition-colors">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@jasonkeitaro</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+
+                    <p class="text-xs text-text-muted leading-relaxed text-center">
+                        {{ __('Tournament pool athlete & gear specialist competing actively in national circuit championships.') }}
+                    </p>
+                </div>
+
+                <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-400 font-medium">Affiliated Athlete</span>
+                    <a href="https://www.instagram.com/jasonkeitaro/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-gold hover:text-accent-glow transition-colors">
+                        <span>Visit Instagram</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 4: Coach Kelvin -->
+            <div class="affiliate-card-item card-luxury p-5 sm:p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-gold/70 transition-all duration-300 !bg-black border border-white/10 shadow-2xl" data-category="athlete">
+                <div>
+                    <!-- Card Header Badge -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] uppercase font-bold tracking-wider border border-accent-gold/40 flex items-center gap-1.5">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i>
+                            <span>Head Coach</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-400 font-semibold bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">Instagram</span>
+                    </div>
+
+                    <!-- Image Frame with ZERO Cropping -->
+                    <a href="https://www.instagram.com/coachkelvin__/" target="_blank" rel="noopener noreferrer" class="block relative w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-white/10 group-hover:border-accent-gold/50 transition-all p-1 flex items-center justify-center">
+                        <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Kelvin.png') }}" alt="Coach Kelvin - Billiard Coach" class="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500">
+                    </a>
+
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">Coach Kelvin</h4>
+                    <a href="https://www.instagram.com/coachkelvin__/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold font-semibold tracking-wider mb-3 inline-flex items-center gap-1.5 hover:text-accent-glow transition-colors">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@coachkelvin__</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+
+                    <p class="text-xs text-text-muted leading-relaxed text-center">
+                        {{ __('Certified billiard head coach & technique instructor developing pro-grade cue sports skills.') }}
+                    </p>
+                </div>
+
+                <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-400 font-medium">Head Coach</span>
+                    <a href="https://www.instagram.com/coachkelvin__/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-gold hover:text-accent-glow transition-colors">
+                        <span>Visit Instagram</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 5: KamarBilliard -->
+            <div class="affiliate-card-item card-luxury p-5 sm:p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-gold/70 transition-all duration-300 !bg-black border border-white/10 shadow-2xl" data-category="media">
+                <div>
+                    <!-- Card Header Badge -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] uppercase font-bold tracking-wider border border-emerald-500/40 flex items-center gap-1.5">
+                            <i class="fa-solid fa-tower-broadcast text-xs"></i>
+                            <span>Media Partner</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-400 font-semibold bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">Instagram</span>
+                    </div>
+
+                    <!-- Image Frame with ZERO Cropping -->
+                    <a href="https://www.instagram.com/kamarbilliard/" target="_blank" rel="noopener noreferrer" class="block relative w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-white/10 group-hover:border-accent-gold/50 transition-all p-1 flex items-center justify-center">
+                        <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Kamar biliard.png') }}" alt="KamarBilliard - Media Channel" class="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500">
+                    </a>
+
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">KamarBilliard</h4>
+                    <a href="https://www.instagram.com/kamarbilliard/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold font-semibold tracking-wider mb-3 inline-flex items-center gap-1.5 hover:text-accent-glow transition-colors">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@kamarbilliard</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+
+                    <p class="text-xs text-text-muted leading-relaxed text-center">
+                        {{ __('Official affiliated billiard media channel & community hub covering tournament news, highlights, and gear releases.') }}
+                    </p>
+                </div>
+
+                <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-400 font-medium">Affiliated Media</span>
+                    <a href="https://www.instagram.com/kamarbilliard/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-gold hover:text-accent-glow transition-colors">
+                        <span>Visit Instagram</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 6: Massipan -->
+            <div class="affiliate-card-item card-luxury p-5 sm:p-6 rounded-2xl flex flex-col justify-between group hover:border-accent-gold/70 transition-all duration-300 !bg-black border border-white/10 shadow-2xl" data-category="influencer">
+                <div>
+                    <!-- Card Header Badge -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[10px] uppercase font-bold tracking-wider border border-purple-500/40 flex items-center gap-1.5">
+                            <i class="fa-solid fa-video text-xs"></i>
+                            <span>Content Creator</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-400 font-semibold bg-zinc-900 px-2.5 py-1 rounded-full border border-white/10">Instagram</span>
+                    </div>
+
+                    <!-- Image Frame with ZERO Cropping -->
+                    <a href="https://www.instagram.com/massipannn/" target="_blank" rel="noopener noreferrer" class="block relative w-full h-80 sm:h-96 rounded-xl overflow-hidden mb-4 bg-zinc-950 border border-white/10 group-hover:border-accent-gold/50 transition-all p-1 flex items-center justify-center">
+                        <img src="{{ asset('Asset/Image/Affiliated Influencers, Athletes & Media/Massipan.png') }}" alt="Massipan - Billiard Creator" class="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500">
+                    </a>
+
+                    <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1 group-hover:text-accent-glow transition-colors">Massipan</h4>
+                    <a href="https://www.instagram.com/massipannn/" target="_blank" rel="noopener noreferrer" class="text-xs text-accent-gold font-semibold tracking-wider mb-3 inline-flex items-center gap-1.5 hover:text-accent-glow transition-colors">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <span>@massipannn</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                    </a>
+
+                    <p class="text-xs text-text-muted leading-relaxed text-center">
+                        {{ __('Popular billiard creator & reviewer producing entertaining equipment testing and cue sports videos.') }}
+                    </p>
+                </div>
+
+                <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                    <span class="text-[11px] text-zinc-400 font-medium">Affiliated Creator</span>
+                    <a href="https://www.instagram.com/massipannn/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-gold hover:text-accent-glow transition-colors">
+                        <span>Visit Instagram</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==========================================
      SECTION 8: LUXURY FOOTER
      ========================================== -->
 <footer class="bg-secondary/90 border-t border-border-accent/50 pt-12 sm:pt-16 pb-10 sm:pb-12 px-4 sm:px-6 lg:px-8 relative">
@@ -1142,6 +1715,7 @@
                     <li><a href="https://shopee.co.id/cuecornerindonesia" target="_blank" rel="noopener noreferrer" class="hover:text-accent-glow transition-colors">{{ __('Shopee Official') }} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a></li>
                     <li><a href="#sales-network" class="hover:text-accent-glow transition-colors">{{ __('Flagship Showroom') }}</a></li>
                     <li><a href="#ambassadors" class="hover:text-accent-glow transition-colors">{{ __('Brand Ambassadors') }}</a></li>
+                    <li><a href="#affiliates" class="hover:text-accent-glow transition-colors">{{ __('Affiliates & Athletes') }}</a></li>
                 </ul>
             </div>
 
@@ -1296,24 +1870,24 @@
         const ctx = document.getElementById('igInsightsChart');
         if (!ctx || typeof Chart === 'undefined') return;
 
-        const monthlyLabels = ['Jan 1', 'Feb 20', 'Apr 11', 'May 31', 'Jul 20'];
+        const monthlyLabels = ['28 Jul 25', 'Sep 25', '5 Nov 25', 'Jan 26', '13 Feb 26', 'Apr 26', '24 Mei 26', '28 Jul 26'];
 
         window.chartDataMap = {
             tayangan: {
-                label: 'Impressions',
-                data: [35000, 32000, 110000, 48000, 52000],
+                label: 'Impressions (Tayangan)',
+                data: [400000, 1850000, 2200000, 1350000, 1100000, 950000, 1650000, 1595380],
                 borderColor: '#fdce7e',
                 backgroundColor: 'rgba(253, 206, 126, 0.15)',
             },
             jangkauan: {
-                label: 'Reach',
-                data: [2500, 4200, 11500, 5200, 7800],
+                label: 'Reach (Jangkauan)',
+                data: [7000, 32000, 39000, 24000, 19000, 17000, 31000, 26600],
                 borderColor: '#c7a061',
                 backgroundColor: 'rgba(199, 160, 97, 0.15)',
             },
             interaksi: {
-                label: 'Content Engagement',
-                data: [150, 320, 1200, 480, 650],
+                label: 'Content Engagement (Interaksi)',
+                data: [1800, 7500, 9200, 5800, 4900, 6200, 8100, 5700],
                 borderColor: '#cbbe90',
                 backgroundColor: 'rgba(203, 190, 144, 0.15)',
             }
@@ -1387,63 +1961,85 @@
        ========================================== */
     window.categoryModalData = {
         'playing-cues': {
-            title: @json(__('Playing Cues')),
+            title: "Playing Cues",
             badge: 'Playing Cue',
-            desc: @json(__('High-precision handcrafted playing cues with micro-joint system and premium quality wood for consistent shots and unmatched feel.')),
+            desc: "Stik biliar presisi tinggi dengan sistem joint mikro dan kayu kualitas premium untuk tembakan konsisten.",
             highlights: [
-                @json(__('Handcrafted Exotic Wood & Custom Inlays')),
-                @json(__('Micro-Engineered Precision Joint System')),
-                @json(__('Optimal Weight Distribution & Balance')),
-                @json(__('Compatible with Pro Carbon & Wood Shafts'))
+                "Handcrafted Exotic Wood & Custom Inlays",
+                "Micro-Engineered Precision Joint System",
+                "Optimal Weight Distribution & Balance",
+                "Compatible with Pro Carbon & Wood Shafts"
             ],
             images: [
-                "{{ asset('Asset/Image/Kategori/Butt.jpeg') }}",
-                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Case.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Shaft/Shaft 1.jpeg') }}"
             ]
         },
         'shafts': {
-            title: @json(__('High-Performance Shafts')),
+            title: "High-Performance Shafts",
             badge: 'Carbon & Wood Shaft',
-            desc: @json(__('Pro-grade carbon fiber shafts and low-deflection select Canadian Maple wood for perfect ball accuracy and spin control.')),
+            desc: "Shaft serat karbon & Canadian Maple low-deflection profesional untuk akurasi bola sempurna.",
             highlights: [
-                @json(__('Aerospace-Grade Carbon Fiber Structure')),
-                @json(__('Ultra-Low Deflection Technology')),
-                @json(__('Multi-Layered Precision Leather Tip')),
-                @json(__('Silky Smooth Moisture-Resistant Finish'))
+                "Aerospace-Grade Carbon Fiber Structure",
+                "Ultra-Low Deflection Technology",
+                "Multi-Layered Precision Leather Tip",
+                "Silky Smooth Moisture-Resistant Finish"
             ],
             images: [
-                "{{ asset('Asset/Image/Kategori/Shaft.jpg') }}",
-                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+                "{{ asset('Asset/Image/Kategori/Shaft/Shaft 1.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Shaft/Shaft 2.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Shaft/Shaft 3.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Shaft/Shaft 4.jpeg') }}"
             ]
         },
         'break-cues': {
-            title: @json(__('Break Cues')),
+            title: "Break Cues",
             badge: 'Break Cue',
-            desc: @json(__('High-impact break cues engineered with durable high-density ferrules and maximum energy transfer for explosive opening breaks.')),
+            desc: "Stik break berdampak tinggi dengan ferrule berdensitas tinggi untuk transfer energi pembuka yang eksplosif.",
             highlights: [
-                @json(__('High-Density Power Ferrule & Phenolic Tip')),
-                @json(__('Maximum Energy Transfer Stiffness')),
-                @json(__('Ergonomic Non-Slip Grip Section')),
-                @json(__('Heavy-Duty Joint Reinforcement'))
+                "High-Density Power Ferrule & Phenolic Tip",
+                "Maximum Energy Transfer Stiffness",
+                "Ergonomic Non-Slip Grip Section",
+                "Heavy-Duty Joint Reinforcement"
             ],
             images: [
-                "{{ asset('Asset/Image/Kategori/Break.jpeg') }}",
-                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+                "{{ asset('Asset/Image/Kategori/Break/Break 1.jpeg') }}"
             ]
         },
         'jump-cues': {
-            title: @json(__('Jump Cues')),
+            title: "Jump Cues",
             badge: 'Jump Cue',
-            desc: @json(__('Ultra-light precision jump cues designed for effortless cue ball elevation over obstacle balls accurately with minimal effort.')),
+            desc: "Stik jump presisi ultra-ringan yang dirancang untuk melompati bola rintangan secara mudah dan akurat.",
             highlights: [
-                @json(__('Ultra-Light Weight Balanced Core')),
-                @json(__('Extra-Hard Phenolic Break/Jump Tip')),
-                @json(__('Quick-Release Extension Joint')),
-                @json(__('High-Angle Jump Accuracy Control'))
+                "Ultra-Light Weight Balanced Core",
+                "Extra-Hard Phenolic Break/Jump Tip",
+                "Quick-Release Extension Joint",
+                "High-Angle Jump Accuracy Control"
             ],
             images: [
-                "{{ asset('Asset/Image/Kategori/jump.jpeg') }}",
-                "{{ asset('Asset/Image/background/Background cuecorner.png') }}"
+                "{{ asset('Asset/Image/Kategori/Jump/Jump.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Jump/Jump 2.jpeg') }}"
+            ]
+        },
+        'accessories': {
+            title: "Billiard Accessories",
+            badge: 'Accessories & Care',
+            desc: "Aksesoris biliar lengkap meliputi luxury cue case, chalk premium, sarung tangan biliar, tip pengganti, grip leather, dan kit balancer.",
+            highlights: [
+                "Luxury Shockproof Cue Cases",
+                "High-Friction Master Billiard Chalk",
+                "Breathable Pro Billiard Gloves",
+                "Custom Leather Grips & Precision Tips",
+                "Cue Weight Balancer System"
+            ],
+            images: [
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Case.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Case 2.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Chalk.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Glove.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Grip.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Tip.jpeg') }}",
+                "{{ asset('Asset/Image/Kategori/Aksesoris/Balancer.jpeg') }}"
             ]
         }
     };
@@ -1620,10 +2216,185 @@
             const lightboxModal = document.getElementById('image-lightbox-modal');
             if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
                 window.closeFullscreenImage();
-            } else {
-                window.closeCategoryModal();
             }
         }
+    });
+
+    /* ==========================================
+       AFFILIATES NETWORK FILTER LOGIC
+       ========================================== */
+    window.filterAffiliates = function(category) {
+        const cards = document.querySelectorAll('.affiliate-card-item');
+        const tabAll = document.getElementById('affiliate-tab-all');
+        const tabAthlete = document.getElementById('affiliate-tab-athlete');
+        const tabInfluencer = document.getElementById('affiliate-tab-influencer');
+        const tabMedia = document.getElementById('affiliate-tab-media');
+
+        if (tabAll) tabAll.className = category === 'all' ? 'px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+        if (tabAthlete) tabAthlete.className = category === 'athlete' ? 'px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+        if (tabInfluencer) tabInfluencer.className = category === 'influencer' ? 'px-4 py-2 rounded-full text-xs font-bold bg-purple-500 text-white transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+        if (tabMedia) tabMedia.className = category === 'media' ? 'px-4 py-2 rounded-full text-xs font-bold bg-emerald-500 text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    };
+    /* ==========================================
+       META INSIGHTS ACCOUNT SWITCHER LOGIC
+       ========================================== */
+    window.switchIgAccount = function(account) {
+        const tabCc = document.getElementById('acct-tab-cuecorner');
+        const tabZen = document.getElementById('acct-tab-zencue');
+        const subtitle = document.getElementById('ig-insights-subtitle');
+
+        if (tabCc) tabCc.className = account === 'cuecorner' ? 'px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all' : 'px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all';
+        if (tabZen) tabZen.className = account === 'zencue' ? 'px-3 py-1.5 rounded-lg font-bold bg-accent-gold text-black transition-all' : 'px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white transition-all';
+
+        if (account === 'zencue') {
+            if (subtitle) subtitle.innerText = 'Official @zencuecorner Meta Insights Verified Data (Views 717.4K | Reach 18.8K | Interactions 4.3K)';
+            document.getElementById('stat-val-1').innerText = '717,4K';
+            document.getElementById('stat-sub-1').innerText = '(717.400 views)';
+            document.getElementById('stat-growth-1').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +100% vs prev';
+
+            document.getElementById('stat-val-2').innerText = '18,8K';
+            document.getElementById('stat-sub-2').innerText = '(18.800 accounts reached)';
+            document.getElementById('stat-growth-2').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +50,2%';
+
+            document.getElementById('stat-val-3').innerText = '4,3K';
+            document.getElementById('stat-sub-3').innerText = '(4.300 content interactions)';
+            document.getElementById('stat-growth-3').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +108,1K%';
+
+            document.getElementById('stat-val-4').innerText = '18,2K';
+            document.getElementById('stat-sub-4').innerText = '(18.211 non-followers)';
+            document.getElementById('stat-growth-4').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> Organic Reach';
+
+            document.getElementById('stat-val-5').innerText = '86,6K';
+            document.getElementById('stat-sub-5').innerText = '(Zen Cue Custom video)';
+            document.getElementById('stat-growth-5').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> Top Views';
+
+            document.getElementById('stat-val-6').innerText = '536';
+            document.getElementById('stat-sub-6').innerText = '(500 Stories / 36 Posts)';
+            document.getElementById('stat-growth-6').innerHTML = '<i class="fa-solid fa-arrow-down text-[9px]"></i> -1,1%';
+        } else {
+            if (subtitle) subtitle.innerText = 'Official @cuecorner.id Meta Insights Performance Data (Period 28 Jul 2025 – 28 Jul 2026)';
+            document.getElementById('stat-val-1').innerText = '11,1M';
+            document.getElementById('stat-sub-1').innerText = '(11.095.380 impressions)';
+            document.getElementById('stat-growth-1').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +100% vs prev';
+
+            document.getElementById('stat-val-2').innerText = '195,6K';
+            document.getElementById('stat-sub-2').innerText = '(195.600 reached)';
+            document.getElementById('stat-growth-2').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +336,1%';
+
+            document.getElementById('stat-val-3').innerText = '49,2K';
+            document.getElementById('stat-sub-3').innerText = '(49.200 interactions)';
+            document.getElementById('stat-growth-3').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +100%';
+
+            document.getElementById('stat-val-4').innerText = '81K';
+            document.getElementById('stat-sub-4').innerText = '(81.000 visits)';
+            document.getElementById('stat-growth-4').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +11,5%';
+
+            document.getElementById('stat-val-5').innerText = '4K';
+            document.getElementById('stat-sub-5').innerText = '(Total followers)';
+            document.getElementById('stat-growth-5').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +15,7K%';
+
+            document.getElementById('stat-val-6').innerText = '191';
+            document.getElementById('stat-sub-6').innerText = '(191 clicks)';
+            document.getElementById('stat-growth-6').innerHTML = '<i class="fa-solid fa-arrow-up text-[9px]"></i> +100%';
+        }
+    };
+
+    /* ==========================================
+       VIDEO CATEGORY FILTER LOGIC
+       ========================================== */
+    window.filterVideoCategory = function(category) {
+        const cards = document.querySelectorAll('.video-card-item');
+        const tabAll = document.getElementById('video-tab-all');
+        const tabCc = document.getElementById('video-tab-cuecorner');
+        const tabMassipan = document.getElementById('video-tab-massipan');
+        const tabBara = document.getElementById('video-tab-bara');
+
+        if (tabAll) tabAll.className = category === 'all' ? 'px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+        if (tabCc) tabCc.className = category === 'cuecorner' ? 'px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+        if (tabMassipan) tabMassipan.className = category === 'massipan' ? 'px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+        if (tabBara) tabBara.className = category === 'bara' ? 'px-4 py-2 rounded-full text-xs font-bold bg-accent-gold text-black transition-all shadow-md' : 'px-4 py-2 rounded-full text-xs font-medium bg-zinc-900 text-zinc-400 border border-white/10 hover:text-white transition-all';
+
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    };
+
+    /* ==========================================
+       FULLSCREEN VIDEO PLAYER MODAL LOGIC
+       ========================================== */
+    window.openVideoPlayerModal = function(videoSrc, title, posterSrc) {
+        const modal = document.getElementById('video-player-modal');
+        const modalVideo = document.getElementById('video-modal-element');
+        const modalSource = document.getElementById('video-modal-source');
+        const modalTitle = document.getElementById('video-modal-title');
+
+        if (modal && modalVideo && modalSource) {
+            if (modalTitle) modalTitle.innerText = title || 'Video Overview';
+            modalSource.src = videoSrc;
+            if (posterSrc) modalVideo.poster = posterSrc;
+            modalVideo.load();
+            
+            modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+            modal.classList.add('flex', 'opacity-100', 'pointer-events-auto');
+            
+            const cardVideos = document.querySelectorAll('.video-card-item video');
+            cardVideos.forEach(v => v.pause());
+
+            modalVideo.play().catch(() => {});
+        }
+    };
+
+    window.closeVideoPlayerModal = function() {
+        const modal = document.getElementById('video-player-modal');
+        const modalVideo = document.getElementById('video-modal-element');
+
+        if (modal) {
+            if (modalVideo) {
+                modalVideo.pause();
+            }
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                modal.classList.remove('flex', 'opacity-100', 'pointer-events-auto');
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    };
+</script>
+
+<!-- Plyr Media Player Library CDN Script -->
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Plyr.js Custom Media Player Library on all internal video cards
+        const players = Plyr.setup('.js-plyr-player', {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            tooltips: { controls: true, seek: true },
+            hideControls: true,
+            resetOnEnd: true
+        });
+
+        // Auto-pause other videos when one starts playing
+        players.forEach(player => {
+            player.on('play', () => {
+                players.forEach(p => {
+                    if (p !== player) p.pause();
+                });
+            });
+        });
+
+        window.plyrInstanceArray = players;
     });
 </script>
 @endpush

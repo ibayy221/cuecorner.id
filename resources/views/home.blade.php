@@ -811,19 +811,19 @@
         <!-- LEFT COLUMN: IMAGE & THUMBNAILS (45% height on mobile, 50% width on desktop) -->
         <div class="w-full h-[45%] md:w-1/2 md:h-full bg-black flex flex-col relative shrink-0 overflow-hidden">
             <!-- Main Image Container with Ambient Studio Spotlight -->
-            <div class="w-full flex-1 min-h-0 relative overflow-hidden flex items-center justify-center bg-[#0d0703]">
+            <div onclick="openFullscreenImage()" class="w-full flex-1 min-h-0 relative overflow-hidden flex items-center justify-center bg-[#0d0703] cursor-pointer group">
                 <!-- Ambient Blurred Background Image -->
                 <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-40 scale-125 pointer-events-none transition-all duration-500">
                 <div class="absolute inset-0 bg-radial from-transparent via-[#0d0703]/40 to-[#0d0703] pointer-events-none z-10"></div>
                 
-                <!-- Full Resolution Hint Badge -->
-                <div class="absolute top-2.5 left-2.5 z-20 px-2.5 py-1 rounded-full bg-black/60 border border-[#c7a061]/30 text-[#c7a061] text-[9px] sm:text-[10px] font-medium backdrop-blur-md flex items-center gap-1.5 shadow-md pointer-events-none opacity-90">
+                <!-- Full Resolution Hint Badge / Button -->
+                <button type="button" onclick="openFullscreenImage(event)" class="absolute top-2.5 left-2.5 z-20 px-2.5 py-1 rounded-full bg-black/70 hover:bg-[#c7a061] text-[#c7a061] hover:text-black border border-[#c7a061]/50 text-[9px] sm:text-[10px] font-medium backdrop-blur-md flex items-center gap-1.5 shadow-md transition-all duration-200 cursor-pointer opacity-90 hover:opacity-100 active:scale-95">
                     <i class="fa-solid fa-expand text-[8px] sm:text-[9px]"></i>
                     <span>{{ __('Klik untuk ukuran asli') }}</span>
-                </div>
+                </button>
 
                 <!-- Main Image (object-contain ensures full image visibility without cropping) -->
-                <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="relative z-10 w-full h-full object-contain p-2 sm:p-3 cursor-pointer transition-transform duration-300 hover:scale-[1.02]" alt="Main Cue" title="{{ __('Klik untuk melihat ukuran asli') }}">
+                <img id="modal-main-image" src="" class="relative z-10 w-full h-full object-contain p-2 sm:p-3 transition-transform duration-300 group-hover:scale-[1.02]" alt="Main Cue" title="{{ __('Klik untuk melihat ukuran asli') }}">
             </div>
             <!-- Thumbnails container (positioned as flex child on mobile so it doesn't overlay and cut main image, absolute on desktop) -->
             <div id="modal-thumbnails-container" class="relative md:absolute md:bottom-0 z-20 w-full p-2 sm:p-3 flex gap-2 sm:gap-3 overflow-x-auto bg-[#0a0502]/95 md:bg-gradient-to-t md:from-black md:via-black/90 md:to-transparent border-t border-white/10 md:border-t-0 shrink-0 custom-scrollbar">
@@ -2283,12 +2283,12 @@
         if (counterText) counterText.innerText = `${idx + 1} / ${images.length}`;
 
         if (images.length <= 1) {
-            if (prevBtn) prevBtn.classList.add('hidden');
-            if (nextBtn) nextBtn.classList.add('hidden');
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
             if (stripContainer) stripContainer.classList.add('hidden');
         } else {
-            if (prevBtn) prevBtn.classList.remove('hidden');
-            if (nextBtn) nextBtn.classList.remove('hidden');
+            if (prevBtn) prevBtn.style.display = '';
+            if (nextBtn) nextBtn.style.display = '';
             if (stripContainer) {
                 stripContainer.classList.remove('hidden');
                 stripContainer.innerHTML = images.map((imgSrc, i) => `

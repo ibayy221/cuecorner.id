@@ -810,37 +810,35 @@
 
         <!-- LEFT COLUMN: IMAGE & THUMBNAILS (45% height on mobile, 50% width on desktop) -->
         <div class="w-full h-[45%] md:w-1/2 md:h-full bg-black flex flex-col relative shrink-0">
-            <!-- Main Image -->
-            <div class="w-full h-full relative overflow-hidden">
-                <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="w-full h-full object-cover cursor-pointer" alt="Main Cue">
+            <!-- Main Image Container -->
+            <div class="w-full h-full relative overflow-hidden flex items-center justify-center bg-black">
+                <!-- Ambient Blurred Background Image -->
+                <img id="modal-bg-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-30 scale-110 pointer-events-none transition-all duration-500">
+                <!-- Main Image (object-contain ensures full image visibility without cropping) -->
+                <img id="modal-main-image" onclick="openFullscreenImage()" src="" class="relative z-10 w-full h-full object-contain p-2 cursor-pointer" alt="Main Cue" title="{{ __('Klik untuk melihat ukuran asli') }}">
             </div>
             <!-- Thumbnails fixed at bottom of left column -->
-            <div id="modal-thumbnails-container" class="absolute bottom-0 w-full p-3 flex gap-3 overflow-x-auto bg-gradient-to-t from-black to-transparent shrink-0 custom-scrollbar">
+            <div id="modal-thumbnails-container" class="absolute bottom-0 z-20 w-full p-3 flex gap-3 overflow-x-auto bg-gradient-to-t from-black via-black/80 to-transparent shrink-0 custom-scrollbar">
                 <!-- Dynamic thumbnails rendered here -->
             </div>
         </div>
 
-        <!-- RIGHT COLUMN: TEXT & CTA (55% height on mobile, 50% width on desktop) -->
+        <!-- RIGHT COLUMN: TEXT (55% height on mobile, 50% width on desktop) -->
         <div class="w-full h-[55%] md:w-1/2 md:h-full flex flex-col bg-[#180d05]">
             <!-- Scrollable Text Area -->
-            <div class="flex-1 p-5 md:p-8 overflow-y-auto overscroll-contain custom-scrollbar">
-                <span id="modal-category-badge" class="px-3 py-1 text-[10px] font-bold text-[#180d05] bg-[#c7a061] rounded-full uppercase tracking-wider inline-block">Playing Cue</span>
-                <h3 id="modal-category-title" class="text-2xl md:text-3xl font-bold text-white mt-3 mb-5">Playing Cues</h3>
-                
-                <h4 class="text-[10px] text-[#917b59] font-bold tracking-widest uppercase mb-2">{{ __('Deskripsi Kategori') }}</h4>
-                <p id="modal-category-desc" class="text-[#e5e5e7] text-sm leading-relaxed mb-6">Stik biliar presisi tinggi dengan sistem joint mikro dan kayu kualitas premium untuk tembakan konsisten.</p>
-                
-                <h4 class="text-[10px] text-[#917b59] font-bold tracking-widest uppercase mb-3">{{ __('Keunggulan Utama') }}</h4>
-                <ul id="modal-category-highlights" class="space-y-3">
-                    <li class="flex gap-3 text-sm text-[#e5e5e7]"><span class="text-[#c7a061]">✔</span> Handcrafted Exotic Wood & Custom Inlays</li>
-                </ul>
-            </div>
-            
-            <!-- Fixed CTA Area (Will never get cut off) -->
-            <div class="p-5 md:p-8 shrink-0 border-t border-[#644a30]/30 bg-[#180d05]">
-                <a id="modal-wa-link" href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-white hover:bg-gray-200 text-black font-bold rounded-lg transition-colors flex justify-center items-center gap-2 text-center text-sm font-sans block">
-                    Official Purchase
-                </a>
+            <div class="flex-1 p-5 md:p-8 overflow-y-auto overscroll-contain custom-scrollbar flex flex-col justify-center">
+                <div>
+                    <span id="modal-category-badge" class="px-3 py-1 text-[10px] font-bold text-[#180d05] bg-[#c7a061] rounded-full uppercase tracking-wider inline-block">Playing Cue</span>
+                    <h3 id="modal-category-title" class="text-2xl md:text-3xl font-bold text-white mt-3 mb-4">Playing Cues</h3>
+                    
+                    <h4 class="text-[10px] text-[#917b59] font-bold tracking-widest uppercase mb-2">{{ __('Deskripsi Kategori') }}</h4>
+                    <p id="modal-category-desc" class="text-[#e5e5e7] text-sm leading-relaxed mb-6">Stik biliar presisi tinggi dengan sistem joint mikro dan kayu kualitas premium untuk tembakan konsisten.</p>
+                    
+                    <h4 class="text-[10px] text-[#917b59] font-bold tracking-widest uppercase mb-3">{{ __('Keunggulan Utama') }}</h4>
+                    <ul id="modal-category-highlights" class="space-y-3">
+                        <li class="flex gap-3 text-sm text-[#e5e5e7]"><span class="text-[#c7a061]">✔</span> Handcrafted Exotic Wood & Custom Inlays</li>
+                    </ul>
+                </div>
             </div>
         </div>
 

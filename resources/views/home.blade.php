@@ -31,18 +31,18 @@
                 <!-- Heritage Badge -->
                 <div class="gsap-hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-white/10 mb-3 sm:mb-4">
                     <span class="w-2 h-2 rounded-full bg-accent-glow animate-ping"></span>
-                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Official Distributor • Est. 2024') }}</span>
+                    <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-gold">{{ __('Billiard Equipment Distributor • Est. 2024') }}</span>
                 </div>
 
                 <!-- Hero Headline -->
                 <h1 class="gsap-hero-anim font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.18] mb-3 sm:mb-4 drop-shadow-md">
-                    {{ __('Elevating Indonesia\'s') }} <br />
+                    {{ __('Cuecorner.id') }} <br />
                     <span class="text-gold-gradient font-extrabold italic">{{ __('Billiard Experience') }}</span>
                 </h1>
 
                 <!-- Subheadline -->
                 <p class="gsap-hero-anim text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed mb-5 sm:mb-6 max-w-xl">
-                    {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, supported by Triple Sixty media.') }}
+                    {{ __('Official distributor of premium billiard equipment, carbon shafts, and luxury accessories in Indonesia, We collaborate with more than a few media.') }}
                 </p>
 
                 <!-- Trust Badges Bar -->
@@ -57,10 +57,11 @@
                     </div>
                     <div>
                         <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('10M+') }}</span>
-                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media Reach') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Media  ') }}</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Reach organik no ads') }}</span>
                     </div>
                     <div>
-                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('Nationwide') }}</span>
+                        <span class="font-serif text-base sm:text-xl font-bold text-accent-gold block">{{ __('World Wide') }}</span>
                         <span class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider">{{ __('Reseller Network') }}</span>
                     </div>
                 </div>
@@ -150,7 +151,7 @@
                             </li>
                             <li class="flex items-start gap-2.5 text-xs sm:text-sm text-text-muted">
                                 <i class="fa-solid fa-check text-accent-gold mt-1 text-xs"></i>
-                                <span>{{ __('Drive continuous brand awareness through our ZenQ & Triple Sixty media channels.') }}</span>
+                                <span>{{ __('Drive continuous brand awareness through our Zen Custom Cues & Triple Sixty media channels.') }}</span>
                             </li>
                         </ul>
                     </div>
@@ -227,81 +228,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             
-            <!-- Executive 1: Steven (CEO) -->
-            <div class="card-luxury p-6 sm:p-8 rounded-2xl relative group gsap-reveal">
-                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
-                    <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-accent-gold/50 shadow-lg group-hover:border-accent-glow transition-all duration-300 flex-shrink-0 bg-black">
-                        <img src="{{ asset('Asset/Image/Profile/ko ssteven.png') }}" alt="Steven - CEO Cue Corner" class="w-full h-full object-cover object-top group-hover:scale-108 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    </div>
-                    
-                    <div class="text-center sm:text-left flex-1">
-                        <span class="inline-block px-2.5 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2 border border-accent-gold/30">
-                            {{ __('Chief Executive Officer (CEO)') }}
-                        </span>
-                        <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1">Steven</h4>
-                        <p class="text-[11px] sm:text-xs text-accent-soft mb-3 sm:mb-4">{{ __('Head of Corporate Vision, Brand Positioning & Media Ecosystem') }}</p>
-                        
-                        <p id="steven-bio-text" class="text-xs text-text-muted leading-relaxed mb-1 sm:mb-4 line-clamp-2 sm:line-clamp-none transition-all duration-300">
-                            {{ __('Directs Cue Corner’s overall corporate vision, market strategy, brand positioning, digital marketing channels, sales infrastructure, and strategic ecosystem.') }}
-                        </p>
-                        <button onclick="toggleMobileText('steven-bio-text', this)" class="inline-flex sm:hidden items-center gap-1 text-[11px] font-bold text-accent-gold hover:text-accent-glow mb-3">
-                            <span>{{ __('Baca Selengkapnya') }}</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
-                        </button>
-
-                        <div class="flex items-center justify-center sm:justify-start gap-3">
-                            <span class="w-8 h-8 rounded-full bg-primary/60 border border-border-accent/50 flex items-center justify-center text-accent-gold text-xs">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </span>
-                            <span class="w-8 h-8 rounded-full bg-primary/60 border border-border-accent/50 flex items-center justify-center text-accent-gold text-xs">
-                                <i class="fa-solid fa-bullhorn"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Executive 2: Calvin (CFO) -->
-            <div class="card-luxury p-6 sm:p-8 rounded-2xl relative group gsap-reveal">
-                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
-                    <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-2 border-accent-gold/50 shadow-lg group-hover:border-accent-glow transition-all duration-300 flex-shrink-0 bg-primary/80 flex items-center justify-center">
-                        <i class="fa-solid fa-user-tie text-4xl sm:text-5xl text-accent-gold/70 group-hover:scale-110 transition-transform duration-300"></i>
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
-                    </div>
-                    
-                    <div class="text-center sm:text-left flex-1">
-                        <span class="inline-block px-2.5 py-1 rounded-full bg-accent-gold/20 text-accent-glow text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2 border border-accent-gold/30">
-                            {{ __('Chief Financial Officer (CFO)') }}
-                        </span>
-                        <h4 class="font-serif text-xl sm:text-2xl font-bold text-text-light mb-1">Calvin</h4>
-                        <p class="text-[11px] sm:text-xs text-accent-soft mb-3 sm:mb-4">{{ __('Head of Corporate Finance & Strategic Purchasing') }}</p>
-                        
-                        <p id="calvin-bio-text" class="text-xs text-text-muted leading-relaxed mb-1 sm:mb-4 line-clamp-2 sm:line-clamp-none transition-all duration-300">
-                            {{ __('Oversees corporate finance, capital allocation, international supply chain procurement, and strategic manufacturer distribution agreements.') }}
-                        </p>
-                        <button onclick="toggleMobileText('calvin-bio-text', this)" class="inline-flex sm:hidden items-center gap-1 text-[11px] font-bold text-accent-gold hover:text-accent-glow mb-3">
-                            <span>{{ __('Baca Selengkapnya') }}</span>
-                            <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
-                        </button>
-
-                        <div class="flex items-center justify-center sm:justify-start gap-3">
-                            <span class="w-8 h-8 rounded-full bg-primary/60 border border-border-accent/50 flex items-center justify-center text-accent-gold text-xs">
-                                <i class="fa-solid fa-coins"></i>
-                            </span>
-                            <span class="w-8 h-8 rounded-full bg-primary/60 border border-border-accent/50 flex items-center justify-center text-accent-gold text-xs">
-                                <i class="fa-solid fa-truck-ramp-box"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
+          
 <!-- ==========================================
      SECTION 4: BRAND PORTFOLIO & CATEGORIES
      ========================================== -->
